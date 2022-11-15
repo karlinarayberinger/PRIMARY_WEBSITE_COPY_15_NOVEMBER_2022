@@ -1,0 +1,51 @@
+--------------------------------
+Start Of Program
+--------------------------------
+
+The value which was entered for N is 12.
+
+N := 12.
+
+--------------------------------
+
+Computing factorial N using recursion:
+
+factorial(12) = 12 * factorial(11). // recursive case
+
+factorial(11) = 11 * factorial(10). // recursive case
+
+factorial(10) = 10 * factorial(9). // recursive case
+
+factorial(9) = 9 * factorial(8). // recursive case
+
+factorial(8) = 8 * factorial(7). // recursive case
+
+factorial(7) = 7 * factorial(6). // recursive case
+
+factorial(6) = 6 * factorial(5). // recursive case
+
+factorial(5) = 5 * factorial(4). // recursive case
+
+factorial(4) = 4 * factorial(3). // recursive case
+
+factorial(3) = 3 * factorial(2). // recursive case
+
+factorial(2) = 2 * factorial(1). // recursive case
+
+factorial(1) = 1 * factorial(0). // recursive case
+
+factorial(0) = 1. // base case
+
+A := factorial(12) = 479001600. // 12! := 479001600.
+
+--------------------------------
+
+Computing factorial N using iteration:
+
+factorial(12) = 12 * 11 * 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 * 1.
+
+B := factorial(12) = 479001600. // 12! := 479001600.
+
+--------------------------------
+End Of Program
+--------------------------------
