@@ -1,0 +1,50 @@
+<!--
+/**
+ * file: hexidecimal_color_codes.html
+ * type: Hyper-Text-Markup-Language
+ * date: 17_AUGUST_2022
+ * author: Karlina Ray Beringer
+ * license: PUBLIC_DOMAIN
+ */
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HEXIDECIMAL_COLOR_CODES</title>
+    <link rel="stylesheet" href="karbytes_aesthetic.css">
+    <script src="hexidecimal_color_codes.js"></script>
+    <script src="time_stamp.js"></script>
+    <style>
+        .green_input_element {
+            background: #000000;
+            color: #00ff00;
+            border-color: #00ff00;
+        }
+        .green_input_element:hover {
+            background: #00ff00;
+            color: #000000;
+        }
+        .tile_text {
+            background: #000000;
+            color: #00ffff;
+        }
+    </style>
+</head>
+<body onload="initialize_application()">
+    <h1>HEXIDECIMAL_COLOR_CODES</h1>
+    <p>1) Select a color skew from the expandable menu.</p>
+    <p class="console">COLOR_SKEW := 
+        <select class="green_input_element" id="color_skew_menu">
+            <option value="none" selected>NONE</option>
+            <option value="red">RED</option>
+            <option value="green">GREEN</option>
+            <option value="blue">BLUE</option>
+        </select>
+    </p>
+    <p>2) Click the GENERATE button to generate a 3 by 3 grid of randomly colored tiles according to the selected color skew.</p>
+    <p><input class="green_input_element" type="button" value="GENERATE" onclick="generate_color_grid()"></p>
+    <div id="output"><p>???</p></div>
+    <div id="time_stamped_events" class="console"><p>???</p></div>
+</body>
+</html>
