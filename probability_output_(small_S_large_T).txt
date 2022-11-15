@@ -1,0 +1,703 @@
+--------------------------------
+Start Of Program
+--------------------------------
+
+// Declare a pointer to an int-sized block of memory.
+int * A;
+
+// Declare a pointer to a pointer to an int-sized block of memory.
+int ** B;
+
+Enter a natural number value, S, which is no larger than 1000 (and which will be used as the number of elements to include in an array of random integers): 
+
+S := 10.
+
+Enter a natural number value, T, which is no larger than 1000 (and which will be used as the maximum number of unique states which each array element may represent): 
+
+T := 100.
+
+// Allocate S consecutive int-sized blocks of memory to the instantiation of array A.
+// A is a pointer which stores the address of the first memory cell of that chunk of S consecutive int-sized blocks of memory.
+A = new int[S];
+
+Display the Initial Contents of Array A:
+
+A[0] := 0. (memory address of A[0] is 0x55a46ac438c0).
+A[1] := 0. (memory address of A[1] is 0x55a46ac438c4).
+A[2] := 0. (memory address of A[2] is 0x55a46ac438c8).
+A[3] := 0. (memory address of A[3] is 0x55a46ac438cc).
+A[4] := 0. (memory address of A[4] is 0x55a46ac438d0).
+A[5] := 0. (memory address of A[5] is 0x55a46ac438d4).
+A[6] := 0. (memory address of A[6] is 0x55a46ac438d8).
+A[7] := 0. (memory address of A[7] is 0x55a46ac438dc).
+A[8] := 0. (memory address of A[8] is 0x55a46ac438e0).
+A[9] := 0. (memory address of A[9] is 0x55a46ac438e4).
+
+// Seed the pseudo random number generator with the integer number of seconds which have elapsed since the Unix Epoch (i.e. midnight of 01_JANUARY_1970).
+srand(time(NULL));
+
+Set Each Element of Array A to a Random Nonnegative Integer No Larger Than T:
+
+A[0] := rand() % T := 12. (memory address of A[0] is 0x55a46ac438c0).
+A[1] := rand() % T := 25. (memory address of A[1] is 0x55a46ac438c4).
+A[2] := rand() % T := 46. (memory address of A[2] is 0x55a46ac438c8).
+A[3] := rand() % T := 92. (memory address of A[3] is 0x55a46ac438cc).
+A[4] := rand() % T := 31. (memory address of A[4] is 0x55a46ac438d0).
+A[5] := rand() % T := 98. (memory address of A[5] is 0x55a46ac438d4).
+A[6] := rand() % T := 46. (memory address of A[6] is 0x55a46ac438d8).
+A[7] := rand() % T := 42. (memory address of A[7] is 0x55a46ac438dc).
+A[8] := rand() % T := 17. (memory address of A[8] is 0x55a46ac438e0).
+A[9] := rand() % T := 53. (memory address of A[9] is 0x55a46ac438e4).
+
+// Sort the integer values stored in array A in ascending order.
+bubble_sort(A, S);
+
+Display the Contents of Array A in Ascending Order:
+
+A[0] := 12. (memory address of A[0] is 0x55a46ac438c0).
+A[1] := 17. (memory address of A[1] is 0x55a46ac438c4).
+A[2] := 25. (memory address of A[2] is 0x55a46ac438c8).
+A[3] := 31. (memory address of A[3] is 0x55a46ac438cc).
+A[4] := 42. (memory address of A[4] is 0x55a46ac438d0).
+A[5] := 46. (memory address of A[5] is 0x55a46ac438d4).
+A[6] := 46. (memory address of A[6] is 0x55a46ac438d8).
+A[7] := 53. (memory address of A[7] is 0x55a46ac438dc).
+A[8] := 92. (memory address of A[8] is 0x55a46ac438e0).
+A[9] := 98. (memory address of A[9] is 0x55a46ac438e4).
+
+// Assign double pointer B to address of the first memory cell constituting a two-dimensional array.
+// B represents a grid consisting of T rows and 2 columns.
+B = get_frequency_array(A, S, T);
+
+Display the Contents of Two-Dimensional Array B:
+
+------------------------------------------------
+Frequency of value 0 in array A is 0.
+------------------------------------------------
+B[0][0] := 0. (memory address of B[0][0] is 0x55a46ac43c20).
+B[0][1] := 0. (memory address of B[0][1] is 0x55a46ac43c24).
+------------------------------------------------
+Frequency of value 1 in array A is 0.
+------------------------------------------------
+B[1][0] := 1. (memory address of B[1][0] is 0x55a46ac43c40).
+B[1][1] := 0. (memory address of B[1][1] is 0x55a46ac43c44).
+------------------------------------------------
+Frequency of value 2 in array A is 0.
+------------------------------------------------
+B[2][0] := 2. (memory address of B[2][0] is 0x55a46ac43c60).
+B[2][1] := 0. (memory address of B[2][1] is 0x55a46ac43c64).
+------------------------------------------------
+Frequency of value 3 in array A is 0.
+------------------------------------------------
+B[3][0] := 3. (memory address of B[3][0] is 0x55a46ac43c80).
+B[3][1] := 0. (memory address of B[3][1] is 0x55a46ac43c84).
+------------------------------------------------
+Frequency of value 4 in array A is 0.
+------------------------------------------------
+B[4][0] := 4. (memory address of B[4][0] is 0x55a46ac43ca0).
+B[4][1] := 0. (memory address of B[4][1] is 0x55a46ac43ca4).
+------------------------------------------------
+Frequency of value 5 in array A is 0.
+------------------------------------------------
+B[5][0] := 5. (memory address of B[5][0] is 0x55a46ac43cc0).
+B[5][1] := 0. (memory address of B[5][1] is 0x55a46ac43cc4).
+------------------------------------------------
+Frequency of value 6 in array A is 0.
+------------------------------------------------
+B[6][0] := 6. (memory address of B[6][0] is 0x55a46ac43ce0).
+B[6][1] := 0. (memory address of B[6][1] is 0x55a46ac43ce4).
+------------------------------------------------
+Frequency of value 7 in array A is 0.
+------------------------------------------------
+B[7][0] := 7. (memory address of B[7][0] is 0x55a46ac43d00).
+B[7][1] := 0. (memory address of B[7][1] is 0x55a46ac43d04).
+------------------------------------------------
+Frequency of value 8 in array A is 0.
+------------------------------------------------
+B[8][0] := 8. (memory address of B[8][0] is 0x55a46ac43d20).
+B[8][1] := 0. (memory address of B[8][1] is 0x55a46ac43d24).
+------------------------------------------------
+Frequency of value 9 in array A is 0.
+------------------------------------------------
+B[9][0] := 9. (memory address of B[9][0] is 0x55a46ac43d40).
+B[9][1] := 0. (memory address of B[9][1] is 0x55a46ac43d44).
+------------------------------------------------
+Frequency of value 10 in array A is 0.
+------------------------------------------------
+B[10][0] := 10. (memory address of B[10][0] is 0x55a46ac43d60).
+B[10][1] := 0. (memory address of B[10][1] is 0x55a46ac43d64).
+------------------------------------------------
+Frequency of value 11 in array A is 0.
+------------------------------------------------
+B[11][0] := 11. (memory address of B[11][0] is 0x55a46ac43d80).
+B[11][1] := 0. (memory address of B[11][1] is 0x55a46ac43d84).
+------------------------------------------------
+Frequency of value 12 in array A is 1.
+------------------------------------------------
+B[12][0] := 12. (memory address of B[12][0] is 0x55a46ac43da0).
+B[12][1] := 1. (memory address of B[12][1] is 0x55a46ac43da4).
+------------------------------------------------
+Frequency of value 13 in array A is 0.
+------------------------------------------------
+B[13][0] := 13. (memory address of B[13][0] is 0x55a46ac43dc0).
+B[13][1] := 0. (memory address of B[13][1] is 0x55a46ac43dc4).
+------------------------------------------------
+Frequency of value 14 in array A is 0.
+------------------------------------------------
+B[14][0] := 14. (memory address of B[14][0] is 0x55a46ac43de0).
+B[14][1] := 0. (memory address of B[14][1] is 0x55a46ac43de4).
+------------------------------------------------
+Frequency of value 15 in array A is 0.
+------------------------------------------------
+B[15][0] := 15. (memory address of B[15][0] is 0x55a46ac43e00).
+B[15][1] := 0. (memory address of B[15][1] is 0x55a46ac43e04).
+------------------------------------------------
+Frequency of value 16 in array A is 0.
+------------------------------------------------
+B[16][0] := 16. (memory address of B[16][0] is 0x55a46ac43e20).
+B[16][1] := 0. (memory address of B[16][1] is 0x55a46ac43e24).
+------------------------------------------------
+Frequency of value 17 in array A is 1.
+------------------------------------------------
+B[17][0] := 17. (memory address of B[17][0] is 0x55a46ac43e40).
+B[17][1] := 1. (memory address of B[17][1] is 0x55a46ac43e44).
+------------------------------------------------
+Frequency of value 18 in array A is 0.
+------------------------------------------------
+B[18][0] := 18. (memory address of B[18][0] is 0x55a46ac43e60).
+B[18][1] := 0. (memory address of B[18][1] is 0x55a46ac43e64).
+------------------------------------------------
+Frequency of value 19 in array A is 0.
+------------------------------------------------
+B[19][0] := 19. (memory address of B[19][0] is 0x55a46ac43e80).
+B[19][1] := 0. (memory address of B[19][1] is 0x55a46ac43e84).
+------------------------------------------------
+Frequency of value 20 in array A is 0.
+------------------------------------------------
+B[20][0] := 20. (memory address of B[20][0] is 0x55a46ac43ea0).
+B[20][1] := 0. (memory address of B[20][1] is 0x55a46ac43ea4).
+------------------------------------------------
+Frequency of value 21 in array A is 0.
+------------------------------------------------
+B[21][0] := 21. (memory address of B[21][0] is 0x55a46ac43ec0).
+B[21][1] := 0. (memory address of B[21][1] is 0x55a46ac43ec4).
+------------------------------------------------
+Frequency of value 22 in array A is 0.
+------------------------------------------------
+B[22][0] := 22. (memory address of B[22][0] is 0x55a46ac43ee0).
+B[22][1] := 0. (memory address of B[22][1] is 0x55a46ac43ee4).
+------------------------------------------------
+Frequency of value 23 in array A is 0.
+------------------------------------------------
+B[23][0] := 23. (memory address of B[23][0] is 0x55a46ac43f00).
+B[23][1] := 0. (memory address of B[23][1] is 0x55a46ac43f04).
+------------------------------------------------
+Frequency of value 24 in array A is 0.
+------------------------------------------------
+B[24][0] := 24. (memory address of B[24][0] is 0x55a46ac43f20).
+B[24][1] := 0. (memory address of B[24][1] is 0x55a46ac43f24).
+------------------------------------------------
+Frequency of value 25 in array A is 1.
+------------------------------------------------
+B[25][0] := 25. (memory address of B[25][0] is 0x55a46ac43f40).
+B[25][1] := 1. (memory address of B[25][1] is 0x55a46ac43f44).
+------------------------------------------------
+Frequency of value 26 in array A is 0.
+------------------------------------------------
+B[26][0] := 26. (memory address of B[26][0] is 0x55a46ac43f60).
+B[26][1] := 0. (memory address of B[26][1] is 0x55a46ac43f64).
+------------------------------------------------
+Frequency of value 27 in array A is 0.
+------------------------------------------------
+B[27][0] := 27. (memory address of B[27][0] is 0x55a46ac43f80).
+B[27][1] := 0. (memory address of B[27][1] is 0x55a46ac43f84).
+------------------------------------------------
+Frequency of value 28 in array A is 0.
+------------------------------------------------
+B[28][0] := 28. (memory address of B[28][0] is 0x55a46ac43fa0).
+B[28][1] := 0. (memory address of B[28][1] is 0x55a46ac43fa4).
+------------------------------------------------
+Frequency of value 29 in array A is 0.
+------------------------------------------------
+B[29][0] := 29. (memory address of B[29][0] is 0x55a46ac43fc0).
+B[29][1] := 0. (memory address of B[29][1] is 0x55a46ac43fc4).
+------------------------------------------------
+Frequency of value 30 in array A is 0.
+------------------------------------------------
+B[30][0] := 30. (memory address of B[30][0] is 0x55a46ac43fe0).
+B[30][1] := 0. (memory address of B[30][1] is 0x55a46ac43fe4).
+------------------------------------------------
+Frequency of value 31 in array A is 1.
+------------------------------------------------
+B[31][0] := 31. (memory address of B[31][0] is 0x55a46ac44000).
+B[31][1] := 1. (memory address of B[31][1] is 0x55a46ac44004).
+------------------------------------------------
+Frequency of value 32 in array A is 0.
+------------------------------------------------
+B[32][0] := 32. (memory address of B[32][0] is 0x55a46ac44020).
+B[32][1] := 0. (memory address of B[32][1] is 0x55a46ac44024).
+------------------------------------------------
+Frequency of value 33 in array A is 0.
+------------------------------------------------
+B[33][0] := 33. (memory address of B[33][0] is 0x55a46ac44040).
+B[33][1] := 0. (memory address of B[33][1] is 0x55a46ac44044).
+------------------------------------------------
+Frequency of value 34 in array A is 0.
+------------------------------------------------
+B[34][0] := 34. (memory address of B[34][0] is 0x55a46ac44060).
+B[34][1] := 0. (memory address of B[34][1] is 0x55a46ac44064).
+------------------------------------------------
+Frequency of value 35 in array A is 0.
+------------------------------------------------
+B[35][0] := 35. (memory address of B[35][0] is 0x55a46ac44080).
+B[35][1] := 0. (memory address of B[35][1] is 0x55a46ac44084).
+------------------------------------------------
+Frequency of value 36 in array A is 0.
+------------------------------------------------
+B[36][0] := 36. (memory address of B[36][0] is 0x55a46ac440a0).
+B[36][1] := 0. (memory address of B[36][1] is 0x55a46ac440a4).
+------------------------------------------------
+Frequency of value 37 in array A is 0.
+------------------------------------------------
+B[37][0] := 37. (memory address of B[37][0] is 0x55a46ac440c0).
+B[37][1] := 0. (memory address of B[37][1] is 0x55a46ac440c4).
+------------------------------------------------
+Frequency of value 38 in array A is 0.
+------------------------------------------------
+B[38][0] := 38. (memory address of B[38][0] is 0x55a46ac440e0).
+B[38][1] := 0. (memory address of B[38][1] is 0x55a46ac440e4).
+------------------------------------------------
+Frequency of value 39 in array A is 0.
+------------------------------------------------
+B[39][0] := 39. (memory address of B[39][0] is 0x55a46ac44100).
+B[39][1] := 0. (memory address of B[39][1] is 0x55a46ac44104).
+------------------------------------------------
+Frequency of value 40 in array A is 0.
+------------------------------------------------
+B[40][0] := 40. (memory address of B[40][0] is 0x55a46ac44120).
+B[40][1] := 0. (memory address of B[40][1] is 0x55a46ac44124).
+------------------------------------------------
+Frequency of value 41 in array A is 0.
+------------------------------------------------
+B[41][0] := 41. (memory address of B[41][0] is 0x55a46ac44140).
+B[41][1] := 0. (memory address of B[41][1] is 0x55a46ac44144).
+------------------------------------------------
+Frequency of value 42 in array A is 1.
+------------------------------------------------
+B[42][0] := 42. (memory address of B[42][0] is 0x55a46ac44160).
+B[42][1] := 1. (memory address of B[42][1] is 0x55a46ac44164).
+------------------------------------------------
+Frequency of value 43 in array A is 0.
+------------------------------------------------
+B[43][0] := 43. (memory address of B[43][0] is 0x55a46ac44180).
+B[43][1] := 0. (memory address of B[43][1] is 0x55a46ac44184).
+------------------------------------------------
+Frequency of value 44 in array A is 0.
+------------------------------------------------
+B[44][0] := 44. (memory address of B[44][0] is 0x55a46ac441a0).
+B[44][1] := 0. (memory address of B[44][1] is 0x55a46ac441a4).
+------------------------------------------------
+Frequency of value 45 in array A is 0.
+------------------------------------------------
+B[45][0] := 45. (memory address of B[45][0] is 0x55a46ac441c0).
+B[45][1] := 0. (memory address of B[45][1] is 0x55a46ac441c4).
+------------------------------------------------
+Frequency of value 46 in array A is 2.
+------------------------------------------------
+B[46][0] := 46. (memory address of B[46][0] is 0x55a46ac441e0).
+B[46][1] := 2. (memory address of B[46][1] is 0x55a46ac441e4).
+------------------------------------------------
+Frequency of value 47 in array A is 0.
+------------------------------------------------
+B[47][0] := 47. (memory address of B[47][0] is 0x55a46ac44200).
+B[47][1] := 0. (memory address of B[47][1] is 0x55a46ac44204).
+------------------------------------------------
+Frequency of value 48 in array A is 0.
+------------------------------------------------
+B[48][0] := 48. (memory address of B[48][0] is 0x55a46ac44220).
+B[48][1] := 0. (memory address of B[48][1] is 0x55a46ac44224).
+------------------------------------------------
+Frequency of value 49 in array A is 0.
+------------------------------------------------
+B[49][0] := 49. (memory address of B[49][0] is 0x55a46ac44240).
+B[49][1] := 0. (memory address of B[49][1] is 0x55a46ac44244).
+------------------------------------------------
+Frequency of value 50 in array A is 0.
+------------------------------------------------
+B[50][0] := 50. (memory address of B[50][0] is 0x55a46ac44260).
+B[50][1] := 0. (memory address of B[50][1] is 0x55a46ac44264).
+------------------------------------------------
+Frequency of value 51 in array A is 0.
+------------------------------------------------
+B[51][0] := 51. (memory address of B[51][0] is 0x55a46ac44280).
+B[51][1] := 0. (memory address of B[51][1] is 0x55a46ac44284).
+------------------------------------------------
+Frequency of value 52 in array A is 0.
+------------------------------------------------
+B[52][0] := 52. (memory address of B[52][0] is 0x55a46ac442a0).
+B[52][1] := 0. (memory address of B[52][1] is 0x55a46ac442a4).
+------------------------------------------------
+Frequency of value 53 in array A is 1.
+------------------------------------------------
+B[53][0] := 53. (memory address of B[53][0] is 0x55a46ac442c0).
+B[53][1] := 1. (memory address of B[53][1] is 0x55a46ac442c4).
+------------------------------------------------
+Frequency of value 54 in array A is 0.
+------------------------------------------------
+B[54][0] := 54. (memory address of B[54][0] is 0x55a46ac442e0).
+B[54][1] := 0. (memory address of B[54][1] is 0x55a46ac442e4).
+------------------------------------------------
+Frequency of value 55 in array A is 0.
+------------------------------------------------
+B[55][0] := 55. (memory address of B[55][0] is 0x55a46ac44300).
+B[55][1] := 0. (memory address of B[55][1] is 0x55a46ac44304).
+------------------------------------------------
+Frequency of value 56 in array A is 0.
+------------------------------------------------
+B[56][0] := 56. (memory address of B[56][0] is 0x55a46ac44320).
+B[56][1] := 0. (memory address of B[56][1] is 0x55a46ac44324).
+------------------------------------------------
+Frequency of value 57 in array A is 0.
+------------------------------------------------
+B[57][0] := 57. (memory address of B[57][0] is 0x55a46ac44340).
+B[57][1] := 0. (memory address of B[57][1] is 0x55a46ac44344).
+------------------------------------------------
+Frequency of value 58 in array A is 0.
+------------------------------------------------
+B[58][0] := 58. (memory address of B[58][0] is 0x55a46ac44360).
+B[58][1] := 0. (memory address of B[58][1] is 0x55a46ac44364).
+------------------------------------------------
+Frequency of value 59 in array A is 0.
+------------------------------------------------
+B[59][0] := 59. (memory address of B[59][0] is 0x55a46ac44380).
+B[59][1] := 0. (memory address of B[59][1] is 0x55a46ac44384).
+------------------------------------------------
+Frequency of value 60 in array A is 0.
+------------------------------------------------
+B[60][0] := 60. (memory address of B[60][0] is 0x55a46ac443a0).
+B[60][1] := 0. (memory address of B[60][1] is 0x55a46ac443a4).
+------------------------------------------------
+Frequency of value 61 in array A is 0.
+------------------------------------------------
+B[61][0] := 61. (memory address of B[61][0] is 0x55a46ac443c0).
+B[61][1] := 0. (memory address of B[61][1] is 0x55a46ac443c4).
+------------------------------------------------
+Frequency of value 62 in array A is 0.
+------------------------------------------------
+B[62][0] := 62. (memory address of B[62][0] is 0x55a46ac443e0).
+B[62][1] := 0. (memory address of B[62][1] is 0x55a46ac443e4).
+------------------------------------------------
+Frequency of value 63 in array A is 0.
+------------------------------------------------
+B[63][0] := 63. (memory address of B[63][0] is 0x55a46ac44400).
+B[63][1] := 0. (memory address of B[63][1] is 0x55a46ac44404).
+------------------------------------------------
+Frequency of value 64 in array A is 0.
+------------------------------------------------
+B[64][0] := 64. (memory address of B[64][0] is 0x55a46ac44420).
+B[64][1] := 0. (memory address of B[64][1] is 0x55a46ac44424).
+------------------------------------------------
+Frequency of value 65 in array A is 0.
+------------------------------------------------
+B[65][0] := 65. (memory address of B[65][0] is 0x55a46ac44440).
+B[65][1] := 0. (memory address of B[65][1] is 0x55a46ac44444).
+------------------------------------------------
+Frequency of value 66 in array A is 0.
+------------------------------------------------
+B[66][0] := 66. (memory address of B[66][0] is 0x55a46ac44460).
+B[66][1] := 0. (memory address of B[66][1] is 0x55a46ac44464).
+------------------------------------------------
+Frequency of value 67 in array A is 0.
+------------------------------------------------
+B[67][0] := 67. (memory address of B[67][0] is 0x55a46ac44480).
+B[67][1] := 0. (memory address of B[67][1] is 0x55a46ac44484).
+------------------------------------------------
+Frequency of value 68 in array A is 0.
+------------------------------------------------
+B[68][0] := 68. (memory address of B[68][0] is 0x55a46ac444a0).
+B[68][1] := 0. (memory address of B[68][1] is 0x55a46ac444a4).
+------------------------------------------------
+Frequency of value 69 in array A is 0.
+------------------------------------------------
+B[69][0] := 69. (memory address of B[69][0] is 0x55a46ac444c0).
+B[69][1] := 0. (memory address of B[69][1] is 0x55a46ac444c4).
+------------------------------------------------
+Frequency of value 70 in array A is 0.
+------------------------------------------------
+B[70][0] := 70. (memory address of B[70][0] is 0x55a46ac444e0).
+B[70][1] := 0. (memory address of B[70][1] is 0x55a46ac444e4).
+------------------------------------------------
+Frequency of value 71 in array A is 0.
+------------------------------------------------
+B[71][0] := 71. (memory address of B[71][0] is 0x55a46ac44500).
+B[71][1] := 0. (memory address of B[71][1] is 0x55a46ac44504).
+------------------------------------------------
+Frequency of value 72 in array A is 0.
+------------------------------------------------
+B[72][0] := 72. (memory address of B[72][0] is 0x55a46ac44520).
+B[72][1] := 0. (memory address of B[72][1] is 0x55a46ac44524).
+------------------------------------------------
+Frequency of value 73 in array A is 0.
+------------------------------------------------
+B[73][0] := 73. (memory address of B[73][0] is 0x55a46ac44540).
+B[73][1] := 0. (memory address of B[73][1] is 0x55a46ac44544).
+------------------------------------------------
+Frequency of value 74 in array A is 0.
+------------------------------------------------
+B[74][0] := 74. (memory address of B[74][0] is 0x55a46ac44560).
+B[74][1] := 0. (memory address of B[74][1] is 0x55a46ac44564).
+------------------------------------------------
+Frequency of value 75 in array A is 0.
+------------------------------------------------
+B[75][0] := 75. (memory address of B[75][0] is 0x55a46ac44580).
+B[75][1] := 0. (memory address of B[75][1] is 0x55a46ac44584).
+------------------------------------------------
+Frequency of value 76 in array A is 0.
+------------------------------------------------
+B[76][0] := 76. (memory address of B[76][0] is 0x55a46ac445a0).
+B[76][1] := 0. (memory address of B[76][1] is 0x55a46ac445a4).
+------------------------------------------------
+Frequency of value 77 in array A is 0.
+------------------------------------------------
+B[77][0] := 77. (memory address of B[77][0] is 0x55a46ac445c0).
+B[77][1] := 0. (memory address of B[77][1] is 0x55a46ac445c4).
+------------------------------------------------
+Frequency of value 78 in array A is 0.
+------------------------------------------------
+B[78][0] := 78. (memory address of B[78][0] is 0x55a46ac445e0).
+B[78][1] := 0. (memory address of B[78][1] is 0x55a46ac445e4).
+------------------------------------------------
+Frequency of value 79 in array A is 0.
+------------------------------------------------
+B[79][0] := 79. (memory address of B[79][0] is 0x55a46ac44600).
+B[79][1] := 0. (memory address of B[79][1] is 0x55a46ac44604).
+------------------------------------------------
+Frequency of value 80 in array A is 0.
+------------------------------------------------
+B[80][0] := 80. (memory address of B[80][0] is 0x55a46ac44620).
+B[80][1] := 0. (memory address of B[80][1] is 0x55a46ac44624).
+------------------------------------------------
+Frequency of value 81 in array A is 0.
+------------------------------------------------
+B[81][0] := 81. (memory address of B[81][0] is 0x55a46ac44640).
+B[81][1] := 0. (memory address of B[81][1] is 0x55a46ac44644).
+------------------------------------------------
+Frequency of value 82 in array A is 0.
+------------------------------------------------
+B[82][0] := 82. (memory address of B[82][0] is 0x55a46ac44660).
+B[82][1] := 0. (memory address of B[82][1] is 0x55a46ac44664).
+------------------------------------------------
+Frequency of value 83 in array A is 0.
+------------------------------------------------
+B[83][0] := 83. (memory address of B[83][0] is 0x55a46ac44680).
+B[83][1] := 0. (memory address of B[83][1] is 0x55a46ac44684).
+------------------------------------------------
+Frequency of value 84 in array A is 0.
+------------------------------------------------
+B[84][0] := 84. (memory address of B[84][0] is 0x55a46ac446a0).
+B[84][1] := 0. (memory address of B[84][1] is 0x55a46ac446a4).
+------------------------------------------------
+Frequency of value 85 in array A is 0.
+------------------------------------------------
+B[85][0] := 85. (memory address of B[85][0] is 0x55a46ac446c0).
+B[85][1] := 0. (memory address of B[85][1] is 0x55a46ac446c4).
+------------------------------------------------
+Frequency of value 86 in array A is 0.
+------------------------------------------------
+B[86][0] := 86. (memory address of B[86][0] is 0x55a46ac446e0).
+B[86][1] := 0. (memory address of B[86][1] is 0x55a46ac446e4).
+------------------------------------------------
+Frequency of value 87 in array A is 0.
+------------------------------------------------
+B[87][0] := 87. (memory address of B[87][0] is 0x55a46ac44700).
+B[87][1] := 0. (memory address of B[87][1] is 0x55a46ac44704).
+------------------------------------------------
+Frequency of value 88 in array A is 0.
+------------------------------------------------
+B[88][0] := 88. (memory address of B[88][0] is 0x55a46ac44720).
+B[88][1] := 0. (memory address of B[88][1] is 0x55a46ac44724).
+------------------------------------------------
+Frequency of value 89 in array A is 0.
+------------------------------------------------
+B[89][0] := 89. (memory address of B[89][0] is 0x55a46ac44740).
+B[89][1] := 0. (memory address of B[89][1] is 0x55a46ac44744).
+------------------------------------------------
+Frequency of value 90 in array A is 0.
+------------------------------------------------
+B[90][0] := 90. (memory address of B[90][0] is 0x55a46ac44760).
+B[90][1] := 0. (memory address of B[90][1] is 0x55a46ac44764).
+------------------------------------------------
+Frequency of value 91 in array A is 0.
+------------------------------------------------
+B[91][0] := 91. (memory address of B[91][0] is 0x55a46ac44780).
+B[91][1] := 0. (memory address of B[91][1] is 0x55a46ac44784).
+------------------------------------------------
+Frequency of value 92 in array A is 1.
+------------------------------------------------
+B[92][0] := 92. (memory address of B[92][0] is 0x55a46ac447a0).
+B[92][1] := 1. (memory address of B[92][1] is 0x55a46ac447a4).
+------------------------------------------------
+Frequency of value 93 in array A is 0.
+------------------------------------------------
+B[93][0] := 93. (memory address of B[93][0] is 0x55a46ac447c0).
+B[93][1] := 0. (memory address of B[93][1] is 0x55a46ac447c4).
+------------------------------------------------
+Frequency of value 94 in array A is 0.
+------------------------------------------------
+B[94][0] := 94. (memory address of B[94][0] is 0x55a46ac447e0).
+B[94][1] := 0. (memory address of B[94][1] is 0x55a46ac447e4).
+------------------------------------------------
+Frequency of value 95 in array A is 0.
+------------------------------------------------
+B[95][0] := 95. (memory address of B[95][0] is 0x55a46ac44800).
+B[95][1] := 0. (memory address of B[95][1] is 0x55a46ac44804).
+------------------------------------------------
+Frequency of value 96 in array A is 0.
+------------------------------------------------
+B[96][0] := 96. (memory address of B[96][0] is 0x55a46ac44820).
+B[96][1] := 0. (memory address of B[96][1] is 0x55a46ac44824).
+------------------------------------------------
+Frequency of value 97 in array A is 0.
+------------------------------------------------
+B[97][0] := 97. (memory address of B[97][0] is 0x55a46ac44840).
+B[97][1] := 0. (memory address of B[97][1] is 0x55a46ac44844).
+------------------------------------------------
+Frequency of value 98 in array A is 1.
+------------------------------------------------
+B[98][0] := 98. (memory address of B[98][0] is 0x55a46ac44860).
+B[98][1] := 1. (memory address of B[98][1] is 0x55a46ac44864).
+------------------------------------------------
+Frequency of value 99 in array A is 0.
+------------------------------------------------
+B[99][0] := 99. (memory address of B[99][0] is 0x55a46ac44880).
+B[99][1] := 0. (memory address of B[99][1] is 0x55a46ac44884).
+
+// Verify that the sum of the frequencies of unique values in A is the same as the total number of elements in A.
+N = 0;
+for (i = 0; i < T; i += 1) N += B[i][1];
+N := 10. // which should be identical to S.
+
+get_average_array_value(A, S) := 46.
+
+get_smallest_array_value(A, S) := 12.
+
+get_largest_array_value(A, S) := 98.
+
+* * *
+sizeof(int) := 4 byte(s).
+The number of bytes of contiguous memory allocated to array A is: (sizeof(int) * S) = (4 * 10) = 40.
+The number of bytes of contiguous memory allocated to array B is: (sizeof(int) * T) = (4 * 100) = 400.
+* * *
+
+Histogram of Unique Array Value Frequencies:
+0:  (0)
+1:  (0)
+2:  (0)
+3:  (0)
+4:  (0)
+5:  (0)
+6:  (0)
+7:  (0)
+8:  (0)
+9:  (0)
+10:  (0)
+11:  (0)
+12: X (1)
+13:  (0)
+14:  (0)
+15:  (0)
+16:  (0)
+17: X (1)
+18:  (0)
+19:  (0)
+20:  (0)
+21:  (0)
+22:  (0)
+23:  (0)
+24:  (0)
+25: X (1)
+26:  (0)
+27:  (0)
+28:  (0)
+29:  (0)
+30:  (0)
+31: X (1)
+32:  (0)
+33:  (0)
+34:  (0)
+35:  (0)
+36:  (0)
+37:  (0)
+38:  (0)
+39:  (0)
+40:  (0)
+41:  (0)
+42: X (1)
+43:  (0)
+44:  (0)
+45:  (0)
+46: XX (2)
+47:  (0)
+48:  (0)
+49:  (0)
+50:  (0)
+51:  (0)
+52:  (0)
+53: X (1)
+54:  (0)
+55:  (0)
+56:  (0)
+57:  (0)
+58:  (0)
+59:  (0)
+60:  (0)
+61:  (0)
+62:  (0)
+63:  (0)
+64:  (0)
+65:  (0)
+66:  (0)
+67:  (0)
+68:  (0)
+69:  (0)
+70:  (0)
+71:  (0)
+72:  (0)
+73:  (0)
+74:  (0)
+75:  (0)
+76:  (0)
+77:  (0)
+78:  (0)
+79:  (0)
+80:  (0)
+81:  (0)
+82:  (0)
+83:  (0)
+84:  (0)
+85:  (0)
+86:  (0)
+87:  (0)
+88:  (0)
+89:  (0)
+90:  (0)
+91:  (0)
+92: X (1)
+93:  (0)
+94:  (0)
+95:  (0)
+96:  (0)
+97:  (0)
+98: X (1)
+99:  (0)
+
+// Deallocate memory which was assigned to the instantiation of array A during program runtime.
+delete [] A;
+
+// Deallocate memory which was assigned to the instantiation of array B during program runtime.
+for (int i = 0; i < T; i += 1) delete [] B[i];
+delete [] B;
+
+--------------------------------
+End Of Program
+--------------------------------
