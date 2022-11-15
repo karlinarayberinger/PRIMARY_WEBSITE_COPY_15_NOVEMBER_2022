@@ -1,0 +1,1200 @@
+<hr>
+<p><strong>TRIANGLE_OBJECT_15_NOVEMBER_2022_COPY</strong></p>
+<hr>
+<p>* * *</p>
+<p>START OF WEB PAGE COPY</p>
+<p>* * *</p>
+<hr>
+<p><strong>TRIANGLE_OBJECT</strong></p>
+<hr>
+<figure class="wp-block-image size-full"><img src="https://karlinaobject.files.wordpress.com/2022/07/triangle_image.png?w=1000" alt="" class="wp-image-16889"></figure>
+<hr>
+<p>image_link: <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_image.png" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_image.png</a></p>
+<hr>
+<p><span style="background:#ffff00;">The C++ program featured in this tutorial web page implements a custom data type (i.e. <strong>class</strong>) named <strong>TRIANGLE</strong>. Each TRIANGLE type variable (i.e. TRIANGLE type <strong>object</strong>) represents exactly three unique Cartesian plane coordinate pairs (and each one of those coordinate pairs is represented by a unique <a style="background:#000000;color:#00ff00;" href="https://karlinaobject.wordpress.com/point_object/" target="_blank" rel="noopener">POINT</a> type object).</span></p>
+<p><strong><em>To view hidden text inside of the preformatted text boxes below, scroll horizontally.</em></strong></p>
+<pre>class : object :: data_type : variable.</pre>
+<p>Object Oriented Programming Terminology: The POINT class definition is included in the TRIANGLE class definition through <strong>composition</strong> (i.e. containing data members whose data type is some other class) rather than through <a style="background:#000000;color:#00ff00;" href="https://karlinaobject.wordpress.com/polygon_object/" target="_blank" rel="noopener">inheritance</a> (i.e. inheriting the <strong>protected</strong> and <strong>public</strong> members of some parent class)</p>
+<pre>public -&gt; accessible to any program scope.
+protected -&gt; accessible only to child classes and to clone classes.
+private -&gt; accessible only to clone classes.
+</pre>
+<p>The data attributes of a TRIANGLE object are three POINT type objects named A, B, and C (and the coordinate pair which <strong>A</strong> represents is not the same coordinate pair which either B or C represents (and the coordinate pair which <strong>B</strong> represents is not the same coordinate pair which either A or C represents (and the coordinate pair which <strong>C</strong> represents is not the same coordinate pair which either A or B represents))).</p>
+<hr>
+<p><strong>Software Application Files</strong></p>
+<hr>
+<p>C++ header file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/point.h" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/point.h</a></p>
+<p>C++ source file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/point.cpp" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/point.cpp</a></p>
+<p>C++ header file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle.h" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle.h</a></p>
+<p>C++ source file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle.cpp" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle.cpp</a></p>
+<p>C++ source file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_driver.cpp" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_driver.cpp</a></p>
+<p>plain-text file: <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_driver_output.txt" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_driver_output.txt</a></p>
+<hr>
+<p><strong>Program Compilation &amp; Execution</strong></p>
+<hr>
+<p>STEP_0: Copy and paste each of the following C++ code files into a new text editor document and save each  document as its respective file name:</p>
+<pre>point.h</pre>
+<pre>point.cpp</pre>
+<pre>triangle.h</pre>
+<pre>triangle.cpp</pre>
+<pre>triangle_driver.cpp</pre>
+<p>STEP_1: Open a Unix command line terminal application and set the current directory to wherever the C++ is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Compile the C++ file into machine-executable instructions (i.e. object file) and then into an executable piece of software named <strong>app</strong> using the following command:</p>
+<pre>g++ triangle_driver.cpp triangle.cpp point.cpp -o app</pre>
+<p>STEP_3: If the program compilation command does not work, then use the following command to install the C++ compiler:</p>
+<pre>sudo apt install build-essential</pre>
+<p>STEP_4: After running the <strong>g++</strong> command, run the executable file using the following command:</p>
+<pre>./app</pre>
+<p>STEP_5: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_driver_output.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>POINT Class Declaration</strong></p>
+<hr>
+<p>C++ header file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/point.h" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/point.h</a></p>
+<p><strong><em>When copy-pasting the source code from the preformatted text box below into a text editor document, remove the spaces between the angle brackets and the library names in the preprocessing directives code block.</em></strong></p>
+<hr>
+<pre>/**
+ * file: point.h
+ * type: C++ (header file)
+ * author: Karlina Ray Beringer
+ * date: 30_JULY_2022
+ * license: PUBLIC_DOMAIN
+ */
+
+// If point.h has not already been linked to a source file (.cpp), then link this header file to the source file(s) which include this header file.
+#ifndef POINT_H 
+#define POINT_H
+
+#include &lt; iostream &gt; // Include the library which defines command line input and output operations.
+#include &lt; fstream &gt; // Include the library which defines file input and output operations.
+#include &lt; cmath &gt; // Include the library which defines the square root function, trigonometric functions, and the floor function (i.e. the native C++ function which rounds a number down to its nearest integer).
+#include &lt; string &gt; // Include the library which defines sequences of text characters as string type variables.
+
+#define MINIMUM_X -999 // Define the constant MINIMUM_X to represent the value -999.
+#define MINIMUM_Y -999 // Define the constant MINIMUM_Y to represent the value -999.
+#define MAXIMUM_X 999 // Define the constant MAXIMUM_X to represent the value 999.
+#define MAXIMUM_Y 999 // Define the constant MAXIMUM_X to represent the value 999.
+#define PI 3.141592653589793238462643383279502884197169399 // Define the constant PI to represent the approximate value of a circle's circumference divided by that circle's diameter.
+
+/**
+ * Define a class which is used to instantiate POINT type software objects.
+ * 
+ * (object : class :: variable : data_type).
+ * 
+ * A POINT object is a specific data model of a two-dimensional point.
+ * 
+ * X stores one integer value at a time which is no smaller than MINIMUM_X and which is no larger than MAXIMUM_X.
+ * Y stores one integer value at a time which is no smaller than MINIMUM_Y and which is no larger than MAXIMUM_Y.
+ * 
+ * X represents a specific whole number position along the x-axis (i.e. horizontal dimension) of a two-dimensional Cartesian grid.
+ * Y represents a specific whole number position along the y-axis (i.e. vertical dimension) of the same two-dimensional Cartesian grid.
+ */
+class POINT
+{
+private:
+    int X, Y; // data attributes
+public:
+    POINT(); // default constructor
+    POINT(int X, int Y); // normal constructor
+    POINT(const POINT &amp; point); // copy constructor
+    int get_X(); // getter method
+    int get_Y(); // getter method
+    bool set_X(int X); // setter method
+    bool set_Y(int Y); // setter method
+    double get_distance_from(POINT &amp; point); // getter method
+    double get_slope_of_line_to(POINT &amp; point); // getter method
+    void print(std::ostream &amp; output = std::cout); // descriptor method
+    friend std::ostream &amp; operator &lt;&lt; (std::ostream &amp; output, POINT &amp; point); // descriptor method
+    ~POINT(); // destructor
+};
+
+// end of header file
+#endif
+</pre>
+<hr>
+<p><strong>POINT Class Definition</strong></p>
+<hr>
+<p>C++ source file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/point.cpp" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/point.cpp</a></p>
+<hr>
+<pre>/**
+ * file: point.cpp
+ * type: C++ (source file)
+ * date: 31_JULY_2022
+ * author: Karlina Ray Beringer
+ * license: PUBLIC_DOMAIN 
+ */
+
+#include "point.h" // Include the C++ header file which contains preprocessing directives, variable declarations, and function prototypes for the POINT class.
+
+/**
+ * The default constructor method of the POINT class instantiates POINT type objects whose X value is set to 0 and whose Y value is set to 0.
+ * 
+ * The default constructor method of the POINT class is invoked when a POINT type variable is declared as follows:
+ * 
+ * // variable declaration one
+ * POINT point_0; 
+ * 
+ * // variable declaration two
+ * POINT point_1 = POINT();
+ */
+POINT::POINT()
+{
+    std::cout &lt;&lt; "\n\nCreating the POINT type object whose memory address is " &lt;&lt; this &lt;&lt; "...";
+    X = 0;
+    Y = 0;
+}
+
+/**
+ * The normal constructor method of the POINT class instantiates POINT type objects 
+ * whose X value is set to the leftmost function input value (if that input value is in range) and 
+ * whose Y value is set to the rightmost function input value (if that input value is in range).
+ * 
+ * If an input value is out of range, then set the corresponding int-type property of this to 0.
+ * 
+ * (The keyword this refers to the POINT object which is returned by this function).
+ *
+ * This normal constructor method of the POINT class is invoked when a POINT type variable is declared as follows:
+ * 
+ * // non-default POINT definition example one
+ * POINT point_2 = POINT(-55,84);
+ * 
+ * // non-default POINT definition example two
+ * POINT point_3 = POINT(3,-4);
+ */
+POINT::POINT(int X, int Y)
+{
+    std::cout &lt;&lt; "\n\nCreating the POINT type object whose memory address is " &lt;&lt; this &lt;&lt; "...";
+    this -&gt; X = ((X &lt; MINIMUM_X) || (X &gt; MAXIMUM_X)) ? 0 : X; // Set the X property of the POINT instance being created to 0 if the function input X value is out of range.
+    this -&gt; Y = ((Y &lt; MINIMUM_Y) || (Y &gt; MAXIMUM_Y)) ? 0 : Y; // Set the Y property of the POINT instance being created to 0 if the function input Y value is out of range.
+}
+
+/**
+ * The copy constructor method of the POINT class instantiates POINT type objects 
+ * whose X value is set to the X value of the input POINT object 
+ * and whose Y value is set to the Y value of the input POINT object.
+ * 
+ * (Note that the input POINT object named point is the predecessor to the object returned by this function).
+ * 
+ * (The keyword this refers to the POINT object which is returned by this function (i.e. the successor to point)).
+ * 
+ * The memory address of the predecessor POINT object is passed into the function as the variable named point.
+ *
+ * This copy constructor method of the POINT class is invoked when a POINT type variable is declared as follows:
+ * 
+ * // copy POINT definition example one
+ * POINT point_4 = POINT(point_3);
+ * 
+ * // copy POINT definition example two
+ * POINT point_5 = POINT(point_4);
+ */
+POINT::POINT(const POINT &amp; point) 
+{
+    std::cout &lt;&lt; "\n\nCreating the POINT type object whose memory address is " &lt;&lt; this &lt;&lt; "...";
+    X = point.X;
+    Y = point.Y;
+}
+
+/**
+ * The getter method of the POINT class returns the value of the caller POINT object's X property.
+ * 
+ * X is an int type variable which stores exactly one integer value at a time which is no smaller than MINIMUM_X and which is no larger than MAXIMUM_X.
+ */
+int POINT::get_X()
+{
+    return X;
+}
+
+/**
+ * The getter method of the POINT class returns the value of the caller POINT object's Y property.
+ * 
+ * Y is an int type variable which stores exactly one integer value at a time which is no smaller than MINIMUM_Y and which is no larger than MAXIMUM_Y.
+ */
+int POINT::get_Y()
+{
+    return Y;
+}
+
+/**
+ * The setter method of the POINT class sets the POINT object's X property to the passed in value if that passed in value is in range.
+ * 
+ * If the input value is in range, then return true. Otherwise, do not change the caller POINT object's X value and return false.
+ */
+bool POINT::set_X(int X)
+{
+    if ((X &gt;= MINIMUM_X) &amp;&amp; (X &lt;= MAXIMUM_X)) 
+    {
+        this -&gt; X = X;
+        return true;
+    }
+    return false;
+}
+
+/**
+ * The setter method of the POINT class sets the POINT object's Y property to the passed in value if that passed in value is in range.
+ * 
+ * If the input value is in range, then return true. Otherwise, do not change the caller POINT object's Y value and return false.
+ */
+bool POINT::set_Y(int Y)
+{
+    if ((Y &gt;= MINIMUM_Y) &amp;&amp; (Y &lt;= MAXIMUM_Y)) 
+    {
+        this -&gt; Y = Y;
+        return true;
+    }
+    return false;
+}
+
+/**
+ * The getter method of the POINT class returns the nonzero length of the shortest path 
+ * between the planar point represented by the the caller POINT object (i.e. this) 
+ * and the planar point represented by the input POINT instance (i.e. point).
+ * 
+ * Use the Pythagorean Theorem to compute the length of a right triangle's hypotenuse 
+ * (where the end points of that hypotenuse are represented by this and point).
+ * 
+ * A hypotenuse is the only side of a right triangle which does not form a right angle 
+ * with any other side of that triangle.
+ * 
+ * A hypotenuse is the longest side of a triangle (and a triangle is a three-sided polygon 
+ * in which three unique line segments connect three unique points).
+ * 
+ * // c is the length of a right triangle's hypotenuse.
+ * // a is the length of that right triangle's horizontal side.
+ * // b is the length of that triangle's vertical side.
+ * (c * c) := (a * a) + (b * b). 
+ * 
+ * // sqrt is a native C++ function defined in the cmath library.
+ * c := square_root( (a * a) + (b * b)). 
+ */
+double POINT::get_distance_from(POINT &amp; point)
+{
+    int horizontal_difference = 0.0, vertical_difference = 0.0;
+    horizontal_difference = X - point.X;
+    vertical_difference = Y - point.Y;
+    return sqrt((horizontal_difference * horizontal_difference) + (vertical_difference * vertical_difference));
+}
+
+/**
+ * The getter method of the POINT class returns the slope of the line which intersects 
+ * the planar point represented by the caller POINT instance (i.e. this)
+ * and the planar point represented by the input POINT instance (i.e. point).
+ * 
+ * // y := f(x), 
+ * // b := f(0), 
+ * // f is a function whose input is an x-axis position and whose output is a y-axis position.
+ * y := mx + b.
+ * 
+ * // m is a constant which represents the rate at which y changes as x changes.
+ * // y is the output to linear function f. 
+ * // b is a constant.
+ * m := (y - b) / x. 
+ * 
+ * // m represents the difference of the y-values divided by the difference of the x-values
+ * m := (point_1.y_coordinate - point_0.y_coordinate) / (point_1.x_coordinate - point_0.x_coordinate).
+ */
+double POINT::get_slope_of_line_to(POINT &amp; point)
+{
+    double vertical_difference = 0.0, horizontal_difference = 0.0, result = 0.0;
+    vertical_difference = point.Y - Y;
+    horizontal_difference = point.X - X;
+    result = vertical_difference / horizontal_difference;
+    if (result == -0) result = 0; // Signed zeros sometimes occur inside of C++ program runtime instances.
+    return result;
+}
+
+/**
+ * The print method of the POINT class prints a description of the caller POINT object to the output stream.
+ * 
+ * Note that the default value of the function input parameter is the standard command line output stream (std::cout).
+ * The default parameter is defined in the POINT class header file (i.e. point.h).
+ */
+void POINT::print(std::ostream &amp; output)
+{
+    output &lt;&lt; "\n\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nthis := " &lt;&lt; this &lt;&lt; ". // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.";
+    output &lt;&lt; "\n&amp;X = " &lt;&lt; &amp;X &lt;&lt; ". // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.";
+    output &lt;&lt; "\n&amp;Y = " &lt;&lt; &amp;Y &lt;&lt; ". // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.";    
+    output &lt;&lt; "\nsizeof(int) = " &lt;&lt; sizeof(int) &lt;&lt; ". // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.";
+    output &lt;&lt; "\nsizeof(POINT) = " &lt;&lt; sizeof(POINT) &lt;&lt; ". // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.";
+    output &lt;&lt; "\nX := " &lt;&lt; X &lt;&lt; ". // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.";
+    output &lt;&lt; "\nY := " &lt;&lt; Y &lt;&lt; ". // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.";
+    output &lt;&lt; "\n--------------------------------------------------------------------------------------------------";
+}
+
+/**
+ * The friend function is an alternative to the print method.
+ * The friend function overloads the ostream operator (&lt;&lt;).
+ * 
+ * (Overloading an operator is assigning a different function to a native operator other than the function which that operator is used to represent by default).
+ * 
+ * Note that the default value of the leftmost function input parameter is the standard command line output stream (std::cout).
+ * The default parameter is defined in the POINT class header file (i.e. point.h).
+ * 
+ * The friend function is not a member of the POINT class, but the friend function has access to the private and protected members 
+ * of the POINT class and not just the public members of the POINT class.
+ * 
+ * The friend keyword only prefaces the function prototype for this function (which is declared in the header file named point.h). 
+ * The friend keyword does not preface the definition for this function (which is defined immediately below this comment).
+ */
+std::ostream &amp; operator &lt;&lt; (std::ostream &amp; output, POINT &amp; point)
+{
+    point.print(output);
+    return output;
+}
+
+/**
+ * The destructor method of the POINT class de-allocates memory which was used to instantiate the POINT object which is calling this function.
+ * 
+ * The destructor method of the POINT class is implicitly invoked as soon as the program scope in which the caller POINT object was instantiated terminates.
+ * In other words, no C++ command is needed to call this function. The destructor is called automatically by the event of the caller object's scope terminating.
+ */
+POINT::~POINT()
+{
+    std::cout &lt;&lt; "\n\nDeleting the POINT type object whose memory address is " &lt;&lt; this &lt;&lt; "...";
+}
+</pre>
+<hr>
+<p><strong>TRIANGLE Class Declaration</strong></p>
+<hr>
+<p>C++ header file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle.h" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle.h</a></p>
+<hr>
+<pre>/**
+ * file: triangle.h
+ * type: C++ (header file)
+ * author: Karlina Ray Beringer
+ * date: 01_AUGUST_2022
+ * license: PUBLIC_DOMAIN
+ */
+
+// If TRIANGLE.h has not already been linked to a source file (.cpp), then link this header file to the source file(s) which include this header file.
+#ifndef TRIANGLE_H 
+#define TRIANGLE_H
+
+// Include the C++ header file which contains preprocessing directives, variable declarations, and function prototypes for the POINT class.
+#include "point.h" 
+
+/**
+ * Define a class which is used to instantiate TRIANGLE type software objects.
+ * 
+ * (object : class :: variable : data_type).
+ * 
+ * A TRIANGLE object is a specific data model of three unique two-dimensional points occurring within the same Cartesian plane.
+ * 
+ * A represents one POINT instance whose coordinate pair is not the same coordinate pair as the coordinate pair which B represents.
+ * 
+ * A represents one POINT instance whose coordinate pair is not the same coordinate pair as the coordinate pair which C represents.
+ * 
+ * B represents one POINT instance whose coordinate pair is not the same coordinate pair as the coordinate pair which A represents.
+ * 
+ * B represents one POINT instance whose coordinate pair is not the same coordinate pair as the coordinate pair which C represents. 
+ * 
+ * C represents one POINT instance whose coordinate pair is not the same coordinate pair as the coordinate pair which A represents.
+ * 
+ * C represents one POINT instance whose coordinate pair is not the same coordinate pair as the coordinate pair which B represents.
+ */
+class TRIANGLE
+{
+private:
+    POINT A, B, C; // data attributes
+    bool points_represent_unique_coordinate_pairs(POINT point_0, POINT point_1, POINT point_2); // helper method
+    bool points_form_nondegenerate_triangle(POINT point_0, POINT point_1, POINT point_2); // helper method
+public:
+    TRIANGLE(); // default constructor
+    TRIANGLE(int A_x, int A_y, int B_x, int B_y, int C_x, int C_y); // normal constructor
+    TRIANGLE(POINT A, POINT B, POINT C); // normal constructor
+    TRIANGLE(const TRIANGLE &amp; triangle); // copy constructor
+    POINT get_A(); // getter method
+    POINT get_B(); // getter method
+    POINT get_C(); // getter method
+    double get_side_length_AB(); // getter method
+    double get_side_length_BC(); // getter method
+    double get_side_length_CA(); // getter method
+    double get_interior_angle_ABC(); // getter method
+    double get_interior_angle_BCA(); // getter method
+    double get_interior_angle_CAB(); // getter method
+    double get_perimeter(); // getter method
+    double get_area(); // getter method
+    void print(std::ostream &amp; output = std::cout); // descriptor method
+    friend std::ostream &amp; operator &lt;&lt; (std::ostream &amp; output, TRIANGLE &amp; triangle); // descriptor method
+    ~TRIANGLE(); // destructor
+};
+
+// end of header file
+#endif
+</pre>
+<hr>
+<p><strong>TRIANGLE Class Definition</strong></p>
+<hr>
+<p>C++ source file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle.cpp" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle.cpp</a></p>
+<hr>
+<pre>/**
+ * file: triangle.cpp
+ * type: C++ (source file)
+ * date: 01_AUGUST_2022
+ * author: Karlina Ray Beringer
+ * license: PUBLIC_DOMAIN 
+ */
+
+#include "triangle.h" // Include the C++ header file which contains preprocessing directives, variable declarations, and function prototypes for the TRIANGLE class.
+
+/**
+ * Determine whether or not point_0, point_1, and point_2 each represent unique coordinate pairs.
+ * 
+ * (Assume that point_0, point_1, and point_2 each represent valid POINT instances).
+ * 
+ * If each of the three POINT objects represent unique coordinate pairs, then return true.
+ * 
+ * Otherwise, return false.
+ */
+bool TRIANGLE::points_represent_unique_coordinate_pairs(POINT point_0, POINT point_1, POINT point_2)
+{
+    if ((point_0.get_X() == point_1.get_X()) &amp;&amp; (point_0.get_Y() == point_1.get_Y())) 
+    {
+        std::cout &lt;&lt; "\n\npoint_0 and point_1 appear to represent the same coordinate pair.";
+        std::cout &lt;&lt; "\npoint_0 := POINT(" &lt;&lt; point_0.get_X() &lt;&lt; ", " &lt;&lt; point_0.get_Y() &lt;&lt; ").";
+        std::cout &lt;&lt; "\npoint_1 := POINT(" &lt;&lt; point_1.get_X() &lt;&lt; ", " &lt;&lt; point_1.get_Y() &lt;&lt; ").";
+        return false;
+    }
+    if ((point_0.get_X() == point_2.get_X()) &amp;&amp; (point_0.get_Y() == point_2.get_Y())) 
+    {
+        std::cout &lt;&lt; "\n\npoint_0 and point_2 appear to represent the same coordinate pair.";
+        std::cout &lt;&lt; "\npoint_0 := POINT(" &lt;&lt; point_0.get_X() &lt;&lt; ", " &lt;&lt; point_0.get_Y() &lt;&lt; ").";
+        std::cout &lt;&lt; "\npoint_2 := POINT(" &lt;&lt; point_2.get_X() &lt;&lt; ", " &lt;&lt; point_2.get_Y() &lt;&lt; ").";
+        return false;
+    }
+    if ((point_1.get_X() == point_2.get_X()) &amp;&amp; (point_1.get_Y() == point_2.get_Y())) 
+    {
+        std::cout &lt;&lt; "\n\npoint_1 and point_2 appear to represent the same coordinate pair.";
+        std::cout &lt;&lt; "\npoint_1 := POINT(" &lt;&lt; point_1.get_X() &lt;&lt; ", " &lt;&lt; point_1.get_Y() &lt;&lt; ").";
+        std::cout &lt;&lt; "\npoint_2 := POINT(" &lt;&lt; point_2.get_X() &lt;&lt; ", " &lt;&lt; point_2.get_Y() &lt;&lt; ").";
+        return false;
+    }
+    if ((point_2.get_X() == point_0.get_X()) &amp;&amp; (point_2.get_Y() == point_0.get_Y())) 
+    {
+        std::cout &lt;&lt; "\n\npoint_2 and point_0 appear to represent the same coordinate pair.";
+        std::cout &lt;&lt; "\npoint_2 := POINT(" &lt;&lt; point_2.get_X() &lt;&lt; ", " &lt;&lt; point_2.get_Y() &lt;&lt; ").";
+        std::cout &lt;&lt; "\npoint_0 := POINT(" &lt;&lt; point_0.get_X() &lt;&lt; ", " &lt;&lt; point_0.get_Y() &lt;&lt; ").";
+        return false;
+    }
+    return true;
+}
+
+/**
+ * Determine whether or not point_0, point_1, and point_2 collectively form a non-degenerate triangle.
+ * 
+ * (Assume that point_0, point_1, and point_2 each represent valid POINT instances).
+ * 
+ * A non-degenerate triangle is a triangle whose area is some positive real number quantity.
+ * 
+ * A degenerate triangle is a triangle whose area is zero (due to the fact that one line intersects each of the three points).
+ * 
+ * If each of the three POINT objects represent a non-degenerate triangle, then return true.
+ * 
+ * Otherwise, return false.
+ */
+bool TRIANGLE::points_form_nondegenerate_triangle(POINT point_0, POINT point_1, POINT point_2)
+{
+    if (!points_represent_unique_coordinate_pairs(point_0, point_1, point_2))
+    {
+        std::cout &lt;&lt; "\n\npoint_0, point_1, and point_2 do not each represent unique coordinate pairs.";
+        std::cout &lt;&lt; "\nHence, points_form_degenerate_triangle(point_0, point_1, point_2) is returning false.";
+        return false;
+    }
+    A = point_0;
+    B = point_1;
+    C = point_2;
+    if (get_area() &lt;= 0) 
+    {
+        std::cout &lt;&lt; "\n\nWhen setting the POINT values of the caller TRIANGLE object to the function parameters, get_area() returned a non-positive number result.";
+        std::cout &lt;&lt; "\nHence, points_form_nondegenerate_triangle(POINT point_0, POINT point_1, POINT point_2) is returning false.";
+        return false;
+    }
+    return true;
+}
+
+/**
+ * The default constructor method of the TRIANGLE class returns a TRIANGLE object 
+ * whose POINT property named A represents the coordinate pair (0, 0),
+ * whose POINT property named B represents the coordinate pair (0, 1), and
+ * whose POINT property named C represents the coordinate pair (1, 0).
+ */
+TRIANGLE::TRIANGLE()
+{
+    std::cout &lt;&lt; "\n\nCreating the TRIANGLE type object whose memory address is " &lt;&lt; this &lt;&lt; "...";
+    A = POINT(0, 0);
+    B = POINT(0, 1);
+    C = POINT(1, 0);
+}
+
+/**
+ * The normal constructor method of the TRIANGLE class which takes six int values as its only parameters returns a TRIANGLE object 
+ * whose POINT property named A represents the coordinate pair (A_x, A_y),
+ * whose POINT property named B represents the coordinate pair (B_x, B_y), and
+ * whose POINT property named C represents the coordinate pair (C_x, C_y)
+ * if POINT(A_x, A_y), POINT(B_x, B_y), and POINT(C_x, C_y) represent a non-degenerate triangle.
+ * 
+ * If POINT(A_x, A_y), POINT(B_x, B_y), and POINT(C_x, C_y) do not represent a non-degenerate triangle,
+ * then this function will return a TRIANGLE object
+ * whose POINT property named A represents the coordinate pair (0, 0),
+ * whose POINT property named B represents the coordinate pair (0, 1), and
+ * whose POINT property named C represents the coordinate pair (1, 0).
+ */
+TRIANGLE::TRIANGLE(int A_x, int A_y, int B_x, int B_y, int C_x, int C_y)
+{
+    std::cout &lt;&lt; "\n\nCreating the TRIANGLE type object whose memory address is " &lt;&lt; this &lt;&lt; "...";
+    POINT input_A = POINT(A_x, A_y);
+    POINT input_B = POINT(B_x, B_y);
+    POINT input_C = POINT(C_x, C_y);
+    if (points_form_nondegenerate_triangle(input_A, input_B, input_C))
+    {
+        A = input_A;
+        B = input_B;
+        C = input_C;
+    }
+    else
+    {
+        A = POINT(0, 0);
+        B = POINT(0, 1);
+        C = POINT(1, 0);
+    }
+}
+
+/**
+ * The normal constructor method of the TRIANGLE class which takes three POINT objects as its only parameters returns a TRIANGLE object 
+ * whose POINT property named A represents the same coordinate pair as the parameter named A,
+ * whose POINT property named B represents the same coordinate pair as the parameter named B, and
+ * whose POINT property named C represents the same coordinate pair as the parameter named C
+ * if parameter A, parameter B, and parameter C represent a non-degenerate triangle.
+ * 
+ * If parameter A, parameter B, and parameter C do not represent a non-degenerate triangle,
+ * then this function will return a TRIANGLE object
+ * whose POINT property named A represents the coordinate pair (0, 0),
+ * whose POINT property named B represents the coordinate pair (0, 1), and
+ * whose POINT property named C represents the coordinate pair (1, 0).
+ */
+TRIANGLE::TRIANGLE(POINT A, POINT B, POINT C)
+{
+    std::cout &lt;&lt; "\n\nCreating the TRIANGLE type object whose memory address is " &lt;&lt; this &lt;&lt; ".";
+    if (points_form_nondegenerate_triangle(A, B, C))
+    {
+        this -&gt; A = A;
+        this -&gt; B = B;
+        this -&gt; C = C;
+    }
+    else
+    {
+        this -&gt; A = POINT(0, 0);
+        this -&gt; B = POINT(0, 1);
+        this -&gt; C = POINT(1, 0);
+    }
+}
+
+/**
+ * The copy constructor method of the TRIANGLE class returns a TRIANGLE object 
+ * whose POINT property named A represents the same coordinate pair as the POINT property named A which belongs to the parameter TRIANGLE object,
+ * whose POINT property named B represents the same coordinate pair as the POINT property named B which belongs to the parameter TRIANGLE object, and
+ * whose POINT property named C represents the same coordinate pair as the POINT property named C which belongs to the parameter TRIANGLE object. 
+ */
+TRIANGLE::TRIANGLE(const TRIANGLE &amp; triangle)
+{
+    std::cout &lt;&lt; "\n\nCreating the TRIANGLE type object whose memory address is " &lt;&lt; this &lt;&lt; ".";
+    this -&gt; A = triangle.A;
+    this -&gt; B = triangle.B;
+    this -&gt; C = triangle.C;
+}
+
+/** 
+ * The getter method of the TRIANGLE class named get_A() returns the value of the caller TRIANGLE object's A property.
+ */
+POINT TRIANGLE::get_A()
+{
+    return A;
+}
+
+/** 
+ * The getter method of the TRIANGLE class named get_B() returns the value of the caller TRIANGLE object's B property.
+ */
+POINT TRIANGLE::get_B()
+{
+    return B;
+}
+
+/** 
+ * The getter method of the TRIANGLE class named get_C() returns the value of the caller TRIANGLE object's C property.
+ */
+POINT TRIANGLE::get_C()
+{
+    return C;
+}
+
+/** 
+ * The getter method of the TRIANGLE class named get_side_length_AB() returns the length of the shortest path between points A and B.
+ */
+double TRIANGLE::get_side_length_AB()
+{
+    return A.get_distance_from(B);
+}
+
+/** 
+ * The getter method of the TRIANGLE class named get_side_length_BC() returns the length of the shortest path between points B and C.
+ */
+double TRIANGLE::get_side_length_BC()
+{
+    return B.get_distance_from(C);
+}
+
+/** 
+ * The getter method of the TRIANGLE class named get_side_length_CA() returns the length of the shortest path between points C and A.
+ */
+double TRIANGLE::get_side_length_CA()
+{
+    return C.get_distance_from(A);
+}
+
+/**
+ * The getter method of the TRIANGLE class named get_interior_angle_ABC() returns the angle measurement in degrees of the angle
+ * formed by connecting points A, B, anc C in that order.
+ * 
+ * This function uses Law of Cosines to compute the angle measurement of an angle given that triangle's side lengths as function inputs.
+ */
+double TRIANGLE::get_interior_angle_ABC()
+{
+    double a = 0.0, b = 0.0, c = 0.0, angle_opposite_of_a = 0.0, angle_opposite_of_b = 0.0, angle_opposite_of_c = 0.0;
+    a = get_side_length_BC(); // a represents the length of the line segment whose endpoints are B and C.
+    b = get_side_length_CA(); // b represents the length of the line segment whose endpoints are C and A.
+    c = get_side_length_AB(); // c represents the length of the line segment whose endpoints are A and B.
+    angle_opposite_of_a = acos(((b * b) + (c * c) - (a * a)) / (2 * b * c)) * (180 / PI);
+    angle_opposite_of_b = acos(((a * a) + (c * c) - (b * b)) / (2 * a * c)) * (180 / PI);
+    angle_opposite_of_c = acos(((a * a) + (b * b) - (c * c)) / (2 * a * b)) * (180 / PI);
+    return angle_opposite_of_b;
+}
+
+/**
+ * The getter method of the TRIANGLE class named get_interior_angle_BCA() returns the angle measurement in degrees of the angle
+ * formed by connecting points B, C, and A in that order.
+ * 
+ * This function uses Law of Cosines to compute the angle measurement of an angle given that triangle's side lengths as function inputs.
+ */
+double TRIANGLE::get_interior_angle_BCA()
+{
+    double a = 0.0, b = 0.0, c = 0.0, angle_opposite_of_a = 0.0, angle_opposite_of_b = 0.0, angle_opposite_of_c = 0.0;
+    a = get_side_length_BC(); // a represents the length of the line segment whose endpoints are B and C.
+    b = get_side_length_CA(); // b represents the length of the line segment whose endpoints are C and A.
+    c = get_side_length_AB(); // c represents the length of the line segment whose endpoints are A and B.
+    angle_opposite_of_a = acos(((b * b) + (c * c) - (a * a)) / (2 * b * c)) * (180 / PI);
+    angle_opposite_of_b = acos(((a * a) + (c * c) - (b * b)) / (2 * a * c)) * (180 / PI);
+    angle_opposite_of_c = acos(((a * a) + (b * b) - (c * c)) / (2 * a * b)) * (180 / PI);
+    return angle_opposite_of_c;
+}
+
+/**
+ * The getter method of the TRIANGLE class named get_interior_angle_CAB() returns the angle measurement in degrees of the angle
+ * formed by connecting points C, A, and B in that order.
+ * 
+ * This function uses Law of Cosines to compute the angle measurement of an angle given that triangle's side lengths as function inputs.
+ */   
+double TRIANGLE::get_interior_angle_CAB()
+{
+    double a = 0.0, b = 0.0, c = 0.0, angle_opposite_of_a = 0.0, angle_opposite_of_b = 0.0, angle_opposite_of_c = 0.0;
+    a = get_side_length_BC(); // a represents the length of the line segment whose endpoints are B and C.
+    b = get_side_length_CA(); // b represents the length of the line segment whose endpoints are C and A.
+    c = get_side_length_AB(); // c represents the length of the line segment whose endpoints are A and B.
+    angle_opposite_of_a = acos(((b * b) + (c * c) - (a * a)) / (2 * b * c)) * (180 / PI);
+    angle_opposite_of_b = acos(((a * a) + (c * c) - (b * b)) / (2 * a * c)) * (180 / PI);
+    angle_opposite_of_c = acos(((a * a) + (b * b) - (c * c)) / (2 * a * b)) * (180 / PI);
+    return angle_opposite_of_a;
+}
+
+/** 
+ * The getter method of the TRIANGLE class named get_perimeter() returns the sum of the three side lengths which the caller TRIANGLE object represents.
+ */
+double TRIANGLE::get_perimeter()
+{
+    return get_side_length_AB() + get_side_length_BC() + get_side_length_CA();
+}
+
+/** 
+ * The getter method of the TRIANGLE class named get_area() returns the quantity of the two-dimensional space bound by the shortest 
+ * paths between points A, B, and C which the caller TRIANGLE object represents.
+ * 
+ * This function uses Heron's Formula to compute the area of any triangle given that triangle's side lengths as function inputs.
+ */
+double TRIANGLE::get_area()
+{
+    double s = 0.0, a = 0.0, b = 0.0, c = 0.0;
+    s = get_perimeter() / 2; // s is technically referred to as the semiperimter of the triangle represented by this (i.e. the TRIANGLE object which is calling this function).
+    a = get_side_length_BC(); // a represents the length of the line segment whose endpoints are B and C.
+    b = get_side_length_CA(); // b represents the length of the line segment whose endpoints are C and A.
+    c = get_side_length_AB(); // c represents the length of the line segment whose endpoints are A and B.
+    return sqrt(s * (s - a) * (s - b) * (s - c)); // Use Heron's Formula to compute the area of the triangle whose points are A, B, and C.
+}
+
+/**
+ * The print method of the TRIANGLE class prints a description of the caller TRIANGLE object to the output stream.
+ * 
+ * Note that the default value of the function input parameter is the standard command line output stream (std::cout).
+ * The default parameter is defined in the TRIANGLE class header file.
+ */
+void TRIANGLE::print(std::ostream &amp; output)
+{
+    output &lt;&lt; "\n\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nthis := " &lt;&lt; this &lt;&lt; ". // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.";
+    output &lt;&lt; "\n&amp;A = " &lt;&lt; &amp;A &lt;&lt; ". // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.";
+    output &lt;&lt; "\n&amp;B = " &lt;&lt; &amp;B &lt;&lt; ". // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.";
+    output &lt;&lt; "\n&amp;C = " &lt;&lt; &amp;C &lt;&lt; ". // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.";
+    output &lt;&lt; "\nsizeof(int) = " &lt;&lt; sizeof(int) &lt;&lt; ". // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.";
+    output &lt;&lt; "\nsizeof(POINT) = " &lt;&lt; sizeof(POINT) &lt;&lt; ". // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.";
+    output &lt;&lt; "\nsizeof(TRIANGLE) = " &lt;&lt; sizeof(TRIANGLE) &lt;&lt; ". // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.";
+    output &lt;&lt; "\nA := POINT(" &lt;&lt; A.get_X() &lt;&lt; ", " &lt;&lt; A.get_Y() &lt;&lt; "). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )";
+    output &lt;&lt; "\nB := POINT(" &lt;&lt; B.get_X() &lt;&lt; ", " &lt;&lt; B.get_Y() &lt;&lt; "). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )";
+    output &lt;&lt; "\nC := POINT(" &lt;&lt; C.get_X() &lt;&lt; ", " &lt;&lt; C.get_Y() &lt;&lt; "). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )";
+    output &lt;&lt; "\nget_side_length_BC() = " &lt;&lt; get_side_length_BC() &lt;&lt; ". // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.";
+    output &lt;&lt; "\nget_side_length_CA() = " &lt;&lt; get_side_length_CA() &lt;&lt; ". // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.";
+    output &lt;&lt; "\nget_side_length_AB() = " &lt;&lt; get_side_length_AB() &lt;&lt; ". // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.";
+    output &lt;&lt; "\nget_interior_angle_CAB() =  " &lt;&lt; get_interior_angle_CAB() &lt;&lt; ". // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.";
+    output &lt;&lt; "\nget_interior_angle_ABC() =  " &lt;&lt; get_interior_angle_ABC() &lt;&lt; ". // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.";
+    output &lt;&lt; "\nget_interior_angle_BCA() =  " &lt;&lt; get_interior_angle_BCA() &lt;&lt; ". // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.";
+    output &lt;&lt; "\nget_perimeter() = " &lt;&lt; get_perimeter() &lt;&lt; ". // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.";
+    output &lt;&lt; "\nget_area() = " &lt;&lt; get_area() &lt;&lt; ". // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.";
+    output &lt;&lt; "\n--------------------------------------------------------------------------------------------------";
+}
+
+/**
+ * The friend function is an alternative to the print method.
+ * The friend function overloads the ostream operator (&lt;&lt;).
+ * 
+ * Note that the default value of the leftmost function input parameter is the standard command line output stream (std::cout).
+ * The default parameter is defined in the TRIANGLE class header file.
+ * 
+ * The friend function is not a member of the TRIANGLE class, but the friend function has access to the private and protected members 
+ * of the TRIANGLE class and not just the public members of the TRIANGLE class.
+ * 
+ * The friend keyword only prefaces the function prototype for this function. 
+ * The friend keyword does not preface the definition for this function.
+ */
+std::ostream &amp; operator &lt;&lt; (std::ostream &amp; output, TRIANGLE &amp; triangle)
+{
+    triangle.print(output);
+    return output;
+}
+
+/**
+ * The destructor method of the TRIANGLE class de-allocates memory which was used to instantiate the TRIANGLE object which is calling this function.
+ * The destructor method of the TRIANGLE class is invoked as soon as the program scope in which the caller TRIANGLE object was instantiated terminates.
+ */
+TRIANGLE::~TRIANGLE()
+{
+    std::cout &lt;&lt; "\n\nDeleting the TRIANGLE type object whose memory address is " &lt;&lt; this &lt;&lt; "...";
+}
+</pre>
+<hr>
+<p><strong>Program Driver Source Code</strong></p>
+<hr>
+<p>C++ source file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_driver.cpp" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_driver.cpp</a></p>
+<hr>
+<pre>/**
+ * file: triangle_driver.cpp
+ * type: C++ (source file)
+ * date: 01_AUGUST_2022
+ * author: Karlina Ray Beringer
+ * license: PUBLIC_DOMAIN 
+ */
+
+#include "triangle.h" // Include the C++ header file which contains preprocessing directives, variable declarations, and function prototypes for the TRIANGLE class.
+
+/** Declare function prototypes (function declarations and not function definitions) which pertain to program unit tests. */
+void unit_test_0(std::ostream &amp; output);
+void unit_test_1(std::ostream &amp; output);
+void unit_test_2(std::ostream &amp; output);
+void unit_test_3(std::ostream &amp; output);
+
+// Unit Test # 0: TRIANGLE class default constructor, TRIANGLE class print method, and TRIANGLE class destructor.
+void unit_test_0(std::ostream &amp; output) 
+{
+    output &lt;&lt; "\n\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nUnit Test # 0: TRIANGLE class default constructor, TRIANGLE class print method, and TRIANGLE class destructor.";
+    output &lt;&lt; "\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nTRIANGLE triangle;";
+    output &lt;&lt; "\ntriangle.print(output);";
+    TRIANGLE triangle;
+    triangle.print(output);
+}
+
+// Unit Test # 1: TRIANGLE class default constructor, TRIANGLE class overloaded ostream operator method, TRIANGLE getter methods, and TRIANGLE class destructor.
+void unit_test_1(std::ostream &amp; output) 
+{
+    output &lt;&lt; "\n\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nUnit Test # 1: TRIANGLE class default constructor, TRIANGLE class overloaded ostream operator method, TRIANGLE getter methods, and TRIANGLE class destructor.";
+    output &lt;&lt; "\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nTRIANGLE triangle;";
+    output &lt;&lt; "\nPOINT copy_of_point_A = triangle.get_A();";
+    output &lt;&lt; "\nPOINT copy_of_point_B = triangle.get_B();";
+    output &lt;&lt; "\nPOINT copy_of_point_C = triangle.get_C();";
+    output &lt;&lt; "\noutput &lt;&lt; triangle;";
+    TRIANGLE triangle;
+    POINT copy_of_point_A = triangle.get_A();
+    POINT copy_of_point_B = triangle.get_B();
+    POINT copy_of_point_C = triangle.get_C();
+    output &lt;&lt; triangle;
+    output &lt;&lt; "\n\ncopy_of_point_A.print(output);";
+    copy_of_point_A.print(output);
+    output &lt;&lt; "\n\ncopy_of_point_B.print(output);";
+    copy_of_point_B.print(output);
+    output &lt;&lt; "\n\ncopy_of_point_C.print(output);";
+    copy_of_point_C.print(output);
+    output &lt;&lt; "\ntriangle.get_side_length_AB() := " &lt;&lt; triangle.get_side_length_AB() &lt;&lt; ".";
+    output &lt;&lt; "\ntriangle.get_side_length_BC() := " &lt;&lt; triangle.get_side_length_BC() &lt;&lt; ".";
+    output &lt;&lt; "\ntriangle.get_side_length_CA() := " &lt;&lt; triangle.get_side_length_CA() &lt;&lt; ".";
+    output &lt;&lt; "\ntriangle.get_interior_angle_ABC() := " &lt;&lt; triangle.get_interior_angle_ABC() &lt;&lt; ".";
+    output &lt;&lt; "\ntriangle.get_interior_angle_BCA() := " &lt;&lt; triangle.get_interior_angle_BCA() &lt;&lt; ".";
+    output &lt;&lt; "\ntriangle.get_interior_angle_CAB() := " &lt;&lt; triangle.get_interior_angle_CAB() &lt;&lt; ".";
+    output &lt;&lt; "\ntriangle.get_perimeter() := " &lt;&lt; triangle.get_perimeter() &lt;&lt; ".";
+    output &lt;&lt; "\ntriangle.get_area() := " &lt;&lt; triangle.get_area() &lt;&lt; ".";
+}
+
+// Unit Test # 2: TRIANGLE class normal constructors, TRIANGLE class copy constructor, TRIANGLE class print method, and TRIANGLE class destructor.
+void unit_test_2(std::ostream &amp; output) 
+{
+    output &lt;&lt; "\n\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nUnit Test # 2: TRIANGLE class normal constructors, TRIANGLE class copy constructor, TRIANGLE class print method, and TRIANGLE class destructor.";
+    output &lt;&lt; "\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nTRIANGLE triangle_0 = TRIANGLE(-1, -1, 0, 5, 2, -5); // normal constructor which takes exactly 6 int-type values as its only inputs";
+    output &lt;&lt; "\nTRIANGLE triangle_1 = TRIANGLE( POINT(-3,-3), POINT(-4,-8), POINT(0,1) ); // normal constructor which takes 3 POINT-type values as its only inputs";
+    output &lt;&lt; "\nTRIANGLE triangle_2 = TRIANGLE(triangle_0); // copy constructor which takes 1 TRIANGLE-type value as its only input";
+    output &lt;&lt; "\ntriangle_0.print(output);";
+    output &lt;&lt; "\ntriangle_1.print(output);";
+    output &lt;&lt; "\ntriangle_2.print(output);";
+    TRIANGLE triangle_0 = TRIANGLE(-1, -1, 0, 5, 2, -5); // normal constructor which takes exactly 6 int-type values as its only inputs
+    TRIANGLE triangle_1 = TRIANGLE( POINT(-3,-3), POINT(-4,-8), POINT(0,1) ); // normal constructor which takes 3 POINT-type values as its only inputs
+    TRIANGLE triangle_2 = TRIANGLE(triangle_0); // copy constructor which takes 1 TRIANGLE-type value as its only input
+    triangle_0.print(output);
+    triangle_1.print(output);
+    triangle_2.print(output);
+}
+
+// Unit Test # 3: degenerate triangle examples.
+void unit_test_3(std::ostream &amp; output) 
+{
+    output &lt;&lt; "\n\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nUnit Test # 3: degenerate triangle examples.";
+    output &lt;&lt; "\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nTRIANGLE triangle_0 = TRIANGLE( POINT(-1,-1), POINT(0,0), POINT(1,1) ); // Because these inputs would generate a degenerate triangle, default coordinate values are used for A, B, and C instead of the input value.";
+    output &lt;&lt; "\nTRIANGLE triangle_1 = TRIANGLE( POINT(-1,-1), POINT(0,0), POINT(-1,-1) ); // Because these inputs represent only 2 unique points instead of 3 unique points, default coordinate values are used for A, B, and C instead of the input values.";
+    output &lt;&lt; "\ntriangle_0.print(output);";
+    output &lt;&lt; "\ntriangle_1.print(output);";
+    TRIANGLE triangle_0 = TRIANGLE( POINT(-1,-1), POINT(0,0), POINT(1,1) ); // Because these inputs would generate a degenerate triangle, default coordinate values are used for A, B, and C instead of the input values.
+    TRIANGLE triangle_1 = TRIANGLE(-1, -1, 0, 0, -1, -1); // Because these inputs represent only 2 unique points instead of 3 unique points, default coordinate values are used for A, B, and C instead of the input values.
+    triangle_0.print(output);
+    triangle_1.print(output);
+}
+
+/** program entry point */
+int main()
+{
+    // Declare a file output stream object.
+    std::ofstream file;
+
+    /**
+     * Set the number of digits of floating point numbers which are printed to the command line to 50.
+     * Set the number of digits of floating point numbers which are printed to the file output stream to 50.
+     */
+    std::cout.precision(50);
+    file.precision(50);
+
+    /**
+     * If triangle_driver_output.txt does not already exist in the same directory as triangle_driver.cpp, 
+     * then create a new file named triangle_driver_output.txt.
+     * 
+     * Then open the plain-text file named point_driver_output.txt 
+     * and set that file to be overwritten with program data.
+     */
+    file.open("triangle_driver_output.txt");
+
+    // Print an opening message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nStart Of Program";
+    std::cout &lt;&lt; "\n--------------------------------";
+
+    // Print an opening message to the file output stream.
+    file &lt;&lt; "--------------------------------";
+    file &lt;&lt; "\nStart Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    /** 
+     * Run each one of the unit test functions for this program.
+     * 
+     * Call each unit test function twice such that the first function call prints text results to the command line terminal
+     * and the second function call prints text results to the output file stream.
+     */
+    unit_test_0(std::cout);
+    unit_test_0(file);
+    unit_test_1(std::cout);
+    unit_test_1(file);
+    unit_test_2(std::cout);
+    unit_test_2(file);
+    unit_test_3(std::cout);
+    unit_test_3(file);
+
+    // Print a closing message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nEnd Of Program";
+    std::cout &lt;&lt; "\n--------------------------------\n\n";
+
+    // Print a closing message to the file output stream.
+    file &lt;&lt; "\n\n--------------------------------";
+    file &lt;&lt; "\nEnd Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Close the file output stream.
+    file.close();
+
+    // Exit the program.
+    return 0;
+}
+</pre>
+<hr>
+<p><strong>Sample Program Output</strong></p>
+<hr>
+<p>plain-text file: <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_driver_output.txt" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/triangle_driver_output.txt</a></p>
+<hr>
+<pre>--------------------------------
+Start Of Program
+--------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 0: TRIANGLE class default constructor, TRIANGLE class print method, and TRIANGLE class destructor.
+--------------------------------------------------------------------------------------------------
+TRIANGLE triangle;
+triangle.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a10. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&amp;A = 0x7ffd70890a10. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&amp;B = 0x7ffd70890a18. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&amp;C = 0x7ffd70890a20. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(0, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(1, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 1.4142135623730951454746218587388284504413604736328. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  90.0000000000000142108547152020037174224853515625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 3.4142135623730949234300169337075203657150268554688. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 0.49999999999999977795539507496869191527366638183594. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 1: TRIANGLE class default constructor, TRIANGLE class overloaded ostream operator method, TRIANGLE getter methods, and TRIANGLE class destructor.
+--------------------------------------------------------------------------------------------------
+TRIANGLE triangle;
+POINT copy_of_point_A = triangle.get_A();
+POINT copy_of_point_B = triangle.get_B();
+POINT copy_of_point_C = triangle.get_C();
+output &lt;&lt; triangle;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a10. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&amp;A = 0x7ffd70890a10. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&amp;B = 0x7ffd70890a18. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&amp;C = 0x7ffd70890a20. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(0, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(1, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 1.4142135623730951454746218587388284504413604736328. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  90.0000000000000142108547152020037174224853515625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 3.4142135623730949234300169337075203657150268554688. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 0.49999999999999977795539507496869191527366638183594. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+copy_of_point_A.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd708909f8. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&amp;X = 0x7ffd708909f8. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&amp;Y = 0x7ffd708909fc. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 0. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 0. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+copy_of_point_B.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a00. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&amp;X = 0x7ffd70890a00. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&amp;Y = 0x7ffd70890a04. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 0. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 1. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+copy_of_point_C.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a08. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&amp;X = 0x7ffd70890a08. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&amp;Y = 0x7ffd70890a0c. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 1. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 0. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+triangle.get_side_length_AB() := 1.
+triangle.get_side_length_BC() := 1.4142135623730951454746218587388284504413604736328.
+triangle.get_side_length_CA() := 1.
+triangle.get_interior_angle_ABC() := 44.9999999999999857891452847979962825775146484375.
+triangle.get_interior_angle_BCA() := 44.9999999999999857891452847979962825775146484375.
+triangle.get_interior_angle_CAB() := 90.0000000000000142108547152020037174224853515625.
+triangle.get_perimeter() := 3.4142135623730949234300169337075203657150268554688.
+triangle.get_area() := 0.49999999999999977795539507496869191527366638183594.
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 2: TRIANGLE class normal constructors, TRIANGLE class copy constructor, TRIANGLE class print method, and TRIANGLE class destructor.
+--------------------------------------------------------------------------------------------------
+TRIANGLE triangle_0 = TRIANGLE(-1, -1, 0, 5, 2, -5); // normal constructor which takes exactly 6 int-type values as its only inputs
+TRIANGLE triangle_1 = TRIANGLE( POINT(-3,-3), POINT(-4,-8), POINT(0,1) ); // normal constructor which takes 3 POINT-type values as its only inputs
+TRIANGLE triangle_2 = TRIANGLE(triangle_0); // copy constructor which takes 1 TRIANGLE-type value as its only input
+triangle_0.print(output);
+triangle_1.print(output);
+triangle_2.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd708909d0. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&amp;A = 0x7ffd708909d0. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&amp;B = 0x7ffd708909d8. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&amp;C = 0x7ffd708909e0. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(-1, -1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 5). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(2, -5). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 10.198039027185568983213670435361564159393310546875. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 5. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 6.0827625302982193389311760256532579660415649414062. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  133.667780146130354523847927339375019073486328125. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  20.772254682045858231731472187675535678863525390625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  25.559965171823815666130030876956880092620849609375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 21.280801557483787433966426760889589786529541015625. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 10.999999999999994670929481799248605966567993164062. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd708909f0. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&amp;A = 0x7ffd708909f0. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&amp;B = 0x7ffd708909f8. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&amp;C = 0x7ffd70890a00. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(-3, -3). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(-4, -8). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(0, 1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 9.848857801796103927927106269635260105133056640625. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 5. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 5.0990195135927844916068352176807820796966552734375. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  154.440034828176152359446859918534755706787109375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  12.652556500557967211761933867819607257843017578125. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  12.90740867126584845436809700913727283477783203125. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 19.94787731538888664317710208706557750701904296875. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 5.4999999999999831246100256976205855607986450195312. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a10. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&amp;A = 0x7ffd70890a10. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&amp;B = 0x7ffd70890a18. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&amp;C = 0x7ffd70890a20. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(-1, -1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 5). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(2, -5). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 10.198039027185568983213670435361564159393310546875. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 5. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 6.0827625302982193389311760256532579660415649414062. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  133.667780146130354523847927339375019073486328125. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  20.772254682045858231731472187675535678863525390625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  25.559965171823815666130030876956880092620849609375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 21.280801557483787433966426760889589786529541015625. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 10.999999999999994670929481799248605966567993164062. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 3: degenerate triangle examples.
+--------------------------------------------------------------------------------------------------
+TRIANGLE triangle_0 = TRIANGLE( POINT(-1,-1), POINT(0,0), POINT(1,1) ); // Because these inputs would generate a degenerate triangle, default coordinate values are used for A, B, and C instead of the input value.
+TRIANGLE triangle_1 = TRIANGLE( POINT(-1,-1), POINT(0,0), POINT(-1,-1) ); // Because these inputs represent only 2 unique points instead of 3 unique points, default coordinate values are used for A, B, and C instead of the input values.
+triangle_0.print(output);
+triangle_1.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd708909f0. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&amp;A = 0x7ffd708909f0. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&amp;B = 0x7ffd708909f8. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&amp;C = 0x7ffd70890a00. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(0, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(1, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 1.4142135623730951454746218587388284504413604736328. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  90.0000000000000142108547152020037174224853515625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 3.4142135623730949234300169337075203657150268554688. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 0.49999999999999977795539507496869191527366638183594. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a10. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&amp;A = 0x7ffd70890a10. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&amp;B = 0x7ffd70890a18. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&amp;C = 0x7ffd70890a20. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(0, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(1, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 1.4142135623730951454746218587388284504413604736328. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  90.0000000000000142108547152020037174224853515625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 3.4142135623730949234300169337075203657150268554688. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 0.49999999999999977795539507496869191527366638183594. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 01_AUGUST_2022. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000;" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
+<p>* * *</p>
+<p>END OF WEB PAGE COPY</p>
+<p>* * *</p>
+<hr>
+<p>This web page was last updated on 15_NOVEMBER_2022. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000;" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
