@@ -1,0 +1,433 @@
+--------------------------------
+Start Of Program
+--------------------------------
+
+// Declare a pointer to an int-sized block of memory.
+int * A;
+
+// Declare a pointer to a pointer to an int-sized block of memory.
+int ** B;
+
+Enter a natural number value, S, which is no larger than 1000 (and which will be used as the number of elements to include in an array of random integers): 
+
+S := 100.
+
+Enter a natural number value, T, which is no larger than 1000 (and which will be used as the maximum number of unique states which each array element may represent): 
+
+T := 10.
+
+// Allocate S consecutive int-sized blocks of memory to the instantiation of array A.
+// A is a pointer which stores the address of the first memory cell of that chunk of S consecutive int-sized blocks of memory.
+A = new int[S];
+
+Display the Initial Contents of Array A:
+
+A[0] := 0. (memory address of A[0] is 0x55d856f758c0).
+A[1] := 0. (memory address of A[1] is 0x55d856f758c4).
+A[2] := 0. (memory address of A[2] is 0x55d856f758c8).
+A[3] := 0. (memory address of A[3] is 0x55d856f758cc).
+A[4] := 0. (memory address of A[4] is 0x55d856f758d0).
+A[5] := 0. (memory address of A[5] is 0x55d856f758d4).
+A[6] := 0. (memory address of A[6] is 0x55d856f758d8).
+A[7] := 0. (memory address of A[7] is 0x55d856f758dc).
+A[8] := 0. (memory address of A[8] is 0x55d856f758e0).
+A[9] := 0. (memory address of A[9] is 0x55d856f758e4).
+A[10] := 0. (memory address of A[10] is 0x55d856f758e8).
+A[11] := 0. (memory address of A[11] is 0x55d856f758ec).
+A[12] := 0. (memory address of A[12] is 0x55d856f758f0).
+A[13] := 0. (memory address of A[13] is 0x55d856f758f4).
+A[14] := 0. (memory address of A[14] is 0x55d856f758f8).
+A[15] := 0. (memory address of A[15] is 0x55d856f758fc).
+A[16] := 0. (memory address of A[16] is 0x55d856f75900).
+A[17] := 0. (memory address of A[17] is 0x55d856f75904).
+A[18] := 0. (memory address of A[18] is 0x55d856f75908).
+A[19] := 0. (memory address of A[19] is 0x55d856f7590c).
+A[20] := 0. (memory address of A[20] is 0x55d856f75910).
+A[21] := 0. (memory address of A[21] is 0x55d856f75914).
+A[22] := 0. (memory address of A[22] is 0x55d856f75918).
+A[23] := 0. (memory address of A[23] is 0x55d856f7591c).
+A[24] := 0. (memory address of A[24] is 0x55d856f75920).
+A[25] := 0. (memory address of A[25] is 0x55d856f75924).
+A[26] := 0. (memory address of A[26] is 0x55d856f75928).
+A[27] := 0. (memory address of A[27] is 0x55d856f7592c).
+A[28] := 0. (memory address of A[28] is 0x55d856f75930).
+A[29] := 0. (memory address of A[29] is 0x55d856f75934).
+A[30] := 0. (memory address of A[30] is 0x55d856f75938).
+A[31] := 0. (memory address of A[31] is 0x55d856f7593c).
+A[32] := 0. (memory address of A[32] is 0x55d856f75940).
+A[33] := 0. (memory address of A[33] is 0x55d856f75944).
+A[34] := 0. (memory address of A[34] is 0x55d856f75948).
+A[35] := 0. (memory address of A[35] is 0x55d856f7594c).
+A[36] := 0. (memory address of A[36] is 0x55d856f75950).
+A[37] := 0. (memory address of A[37] is 0x55d856f75954).
+A[38] := 0. (memory address of A[38] is 0x55d856f75958).
+A[39] := 0. (memory address of A[39] is 0x55d856f7595c).
+A[40] := 0. (memory address of A[40] is 0x55d856f75960).
+A[41] := 0. (memory address of A[41] is 0x55d856f75964).
+A[42] := 0. (memory address of A[42] is 0x55d856f75968).
+A[43] := 0. (memory address of A[43] is 0x55d856f7596c).
+A[44] := 0. (memory address of A[44] is 0x55d856f75970).
+A[45] := 0. (memory address of A[45] is 0x55d856f75974).
+A[46] := 0. (memory address of A[46] is 0x55d856f75978).
+A[47] := 0. (memory address of A[47] is 0x55d856f7597c).
+A[48] := 0. (memory address of A[48] is 0x55d856f75980).
+A[49] := 0. (memory address of A[49] is 0x55d856f75984).
+A[50] := 0. (memory address of A[50] is 0x55d856f75988).
+A[51] := 0. (memory address of A[51] is 0x55d856f7598c).
+A[52] := 0. (memory address of A[52] is 0x55d856f75990).
+A[53] := 0. (memory address of A[53] is 0x55d856f75994).
+A[54] := 0. (memory address of A[54] is 0x55d856f75998).
+A[55] := 0. (memory address of A[55] is 0x55d856f7599c).
+A[56] := 0. (memory address of A[56] is 0x55d856f759a0).
+A[57] := 0. (memory address of A[57] is 0x55d856f759a4).
+A[58] := 0. (memory address of A[58] is 0x55d856f759a8).
+A[59] := 0. (memory address of A[59] is 0x55d856f759ac).
+A[60] := 0. (memory address of A[60] is 0x55d856f759b0).
+A[61] := 0. (memory address of A[61] is 0x55d856f759b4).
+A[62] := 0. (memory address of A[62] is 0x55d856f759b8).
+A[63] := 0. (memory address of A[63] is 0x55d856f759bc).
+A[64] := 0. (memory address of A[64] is 0x55d856f759c0).
+A[65] := 0. (memory address of A[65] is 0x55d856f759c4).
+A[66] := 0. (memory address of A[66] is 0x55d856f759c8).
+A[67] := 0. (memory address of A[67] is 0x55d856f759cc).
+A[68] := 0. (memory address of A[68] is 0x55d856f759d0).
+A[69] := 0. (memory address of A[69] is 0x55d856f759d4).
+A[70] := 0. (memory address of A[70] is 0x55d856f759d8).
+A[71] := 0. (memory address of A[71] is 0x55d856f759dc).
+A[72] := 0. (memory address of A[72] is 0x55d856f759e0).
+A[73] := 0. (memory address of A[73] is 0x55d856f759e4).
+A[74] := 0. (memory address of A[74] is 0x55d856f759e8).
+A[75] := 0. (memory address of A[75] is 0x55d856f759ec).
+A[76] := 0. (memory address of A[76] is 0x55d856f759f0).
+A[77] := 0. (memory address of A[77] is 0x55d856f759f4).
+A[78] := 0. (memory address of A[78] is 0x55d856f759f8).
+A[79] := 0. (memory address of A[79] is 0x55d856f759fc).
+A[80] := 0. (memory address of A[80] is 0x55d856f75a00).
+A[81] := 0. (memory address of A[81] is 0x55d856f75a04).
+A[82] := 0. (memory address of A[82] is 0x55d856f75a08).
+A[83] := 0. (memory address of A[83] is 0x55d856f75a0c).
+A[84] := 0. (memory address of A[84] is 0x55d856f75a10).
+A[85] := 0. (memory address of A[85] is 0x55d856f75a14).
+A[86] := 0. (memory address of A[86] is 0x55d856f75a18).
+A[87] := 0. (memory address of A[87] is 0x55d856f75a1c).
+A[88] := 0. (memory address of A[88] is 0x55d856f75a20).
+A[89] := 0. (memory address of A[89] is 0x55d856f75a24).
+A[90] := 0. (memory address of A[90] is 0x55d856f75a28).
+A[91] := 0. (memory address of A[91] is 0x55d856f75a2c).
+A[92] := 0. (memory address of A[92] is 0x55d856f75a30).
+A[93] := 0. (memory address of A[93] is 0x55d856f75a34).
+A[94] := 0. (memory address of A[94] is 0x55d856f75a38).
+A[95] := 0. (memory address of A[95] is 0x55d856f75a3c).
+A[96] := 0. (memory address of A[96] is 0x55d856f75a40).
+A[97] := 0. (memory address of A[97] is 0x55d856f75a44).
+A[98] := 0. (memory address of A[98] is 0x55d856f75a48).
+A[99] := 0. (memory address of A[99] is 0x55d856f75a4c).
+
+// Seed the pseudo random number generator with the integer number of seconds which have elapsed since the Unix Epoch (i.e. midnight of 01_JANUARY_1970).
+srand(time(NULL));
+
+Set Each Element of Array A to a Random Nonnegative Integer No Larger Than T:
+
+A[0] := rand() % T := 1. (memory address of A[0] is 0x55d856f758c0).
+A[1] := rand() % T := 1. (memory address of A[1] is 0x55d856f758c4).
+A[2] := rand() % T := 6. (memory address of A[2] is 0x55d856f758c8).
+A[3] := rand() % T := 2. (memory address of A[3] is 0x55d856f758cc).
+A[4] := rand() % T := 0. (memory address of A[4] is 0x55d856f758d0).
+A[5] := rand() % T := 4. (memory address of A[5] is 0x55d856f758d4).
+A[6] := rand() % T := 4. (memory address of A[6] is 0x55d856f758d8).
+A[7] := rand() % T := 2. (memory address of A[7] is 0x55d856f758dc).
+A[8] := rand() % T := 7. (memory address of A[8] is 0x55d856f758e0).
+A[9] := rand() % T := 3. (memory address of A[9] is 0x55d856f758e4).
+A[10] := rand() % T := 1. (memory address of A[10] is 0x55d856f758e8).
+A[11] := rand() % T := 4. (memory address of A[11] is 0x55d856f758ec).
+A[12] := rand() % T := 0. (memory address of A[12] is 0x55d856f758f0).
+A[13] := rand() % T := 9. (memory address of A[13] is 0x55d856f758f4).
+A[14] := rand() % T := 0. (memory address of A[14] is 0x55d856f758f8).
+A[15] := rand() % T := 4. (memory address of A[15] is 0x55d856f758fc).
+A[16] := rand() % T := 8. (memory address of A[16] is 0x55d856f75900).
+A[17] := rand() % T := 7. (memory address of A[17] is 0x55d856f75904).
+A[18] := rand() % T := 7. (memory address of A[18] is 0x55d856f75908).
+A[19] := rand() % T := 0. (memory address of A[19] is 0x55d856f7590c).
+A[20] := rand() % T := 6. (memory address of A[20] is 0x55d856f75910).
+A[21] := rand() % T := 3. (memory address of A[21] is 0x55d856f75914).
+A[22] := rand() % T := 3. (memory address of A[22] is 0x55d856f75918).
+A[23] := rand() % T := 1. (memory address of A[23] is 0x55d856f7591c).
+A[24] := rand() % T := 6. (memory address of A[24] is 0x55d856f75920).
+A[25] := rand() % T := 8. (memory address of A[25] is 0x55d856f75924).
+A[26] := rand() % T := 7. (memory address of A[26] is 0x55d856f75928).
+A[27] := rand() % T := 6. (memory address of A[27] is 0x55d856f7592c).
+A[28] := rand() % T := 5. (memory address of A[28] is 0x55d856f75930).
+A[29] := rand() % T := 3. (memory address of A[29] is 0x55d856f75934).
+A[30] := rand() % T := 2. (memory address of A[30] is 0x55d856f75938).
+A[31] := rand() % T := 9. (memory address of A[31] is 0x55d856f7593c).
+A[32] := rand() % T := 6. (memory address of A[32] is 0x55d856f75940).
+A[33] := rand() % T := 9. (memory address of A[33] is 0x55d856f75944).
+A[34] := rand() % T := 3. (memory address of A[34] is 0x55d856f75948).
+A[35] := rand() % T := 6. (memory address of A[35] is 0x55d856f7594c).
+A[36] := rand() % T := 5. (memory address of A[36] is 0x55d856f75950).
+A[37] := rand() % T := 9. (memory address of A[37] is 0x55d856f75954).
+A[38] := rand() % T := 0. (memory address of A[38] is 0x55d856f75958).
+A[39] := rand() % T := 3. (memory address of A[39] is 0x55d856f7595c).
+A[40] := rand() % T := 2. (memory address of A[40] is 0x55d856f75960).
+A[41] := rand() % T := 2. (memory address of A[41] is 0x55d856f75964).
+A[42] := rand() % T := 7. (memory address of A[42] is 0x55d856f75968).
+A[43] := rand() % T := 2. (memory address of A[43] is 0x55d856f7596c).
+A[44] := rand() % T := 1. (memory address of A[44] is 0x55d856f75970).
+A[45] := rand() % T := 0. (memory address of A[45] is 0x55d856f75974).
+A[46] := rand() % T := 9. (memory address of A[46] is 0x55d856f75978).
+A[47] := rand() % T := 1. (memory address of A[47] is 0x55d856f7597c).
+A[48] := rand() % T := 7. (memory address of A[48] is 0x55d856f75980).
+A[49] := rand() % T := 6. (memory address of A[49] is 0x55d856f75984).
+A[50] := rand() % T := 3. (memory address of A[50] is 0x55d856f75988).
+A[51] := rand() % T := 5. (memory address of A[51] is 0x55d856f7598c).
+A[52] := rand() % T := 9. (memory address of A[52] is 0x55d856f75990).
+A[53] := rand() % T := 6. (memory address of A[53] is 0x55d856f75994).
+A[54] := rand() % T := 7. (memory address of A[54] is 0x55d856f75998).
+A[55] := rand() % T := 7. (memory address of A[55] is 0x55d856f7599c).
+A[56] := rand() % T := 6. (memory address of A[56] is 0x55d856f759a0).
+A[57] := rand() % T := 6. (memory address of A[57] is 0x55d856f759a4).
+A[58] := rand() % T := 4. (memory address of A[58] is 0x55d856f759a8).
+A[59] := rand() % T := 2. (memory address of A[59] is 0x55d856f759ac).
+A[60] := rand() % T := 1. (memory address of A[60] is 0x55d856f759b0).
+A[61] := rand() % T := 6. (memory address of A[61] is 0x55d856f759b4).
+A[62] := rand() % T := 3. (memory address of A[62] is 0x55d856f759b8).
+A[63] := rand() % T := 7. (memory address of A[63] is 0x55d856f759bc).
+A[64] := rand() % T := 5. (memory address of A[64] is 0x55d856f759c0).
+A[65] := rand() % T := 6. (memory address of A[65] is 0x55d856f759c4).
+A[66] := rand() % T := 6. (memory address of A[66] is 0x55d856f759c8).
+A[67] := rand() % T := 1. (memory address of A[67] is 0x55d856f759cc).
+A[68] := rand() % T := 5. (memory address of A[68] is 0x55d856f759d0).
+A[69] := rand() % T := 6. (memory address of A[69] is 0x55d856f759d4).
+A[70] := rand() % T := 6. (memory address of A[70] is 0x55d856f759d8).
+A[71] := rand() % T := 9. (memory address of A[71] is 0x55d856f759dc).
+A[72] := rand() % T := 0. (memory address of A[72] is 0x55d856f759e0).
+A[73] := rand() % T := 5. (memory address of A[73] is 0x55d856f759e4).
+A[74] := rand() % T := 4. (memory address of A[74] is 0x55d856f759e8).
+A[75] := rand() % T := 4. (memory address of A[75] is 0x55d856f759ec).
+A[76] := rand() % T := 5. (memory address of A[76] is 0x55d856f759f0).
+A[77] := rand() % T := 3. (memory address of A[77] is 0x55d856f759f4).
+A[78] := rand() % T := 7. (memory address of A[78] is 0x55d856f759f8).
+A[79] := rand() % T := 4. (memory address of A[79] is 0x55d856f759fc).
+A[80] := rand() % T := 9. (memory address of A[80] is 0x55d856f75a00).
+A[81] := rand() % T := 1. (memory address of A[81] is 0x55d856f75a04).
+A[82] := rand() % T := 0. (memory address of A[82] is 0x55d856f75a08).
+A[83] := rand() % T := 0. (memory address of A[83] is 0x55d856f75a0c).
+A[84] := rand() % T := 7. (memory address of A[84] is 0x55d856f75a10).
+A[85] := rand() % T := 9. (memory address of A[85] is 0x55d856f75a14).
+A[86] := rand() % T := 9. (memory address of A[86] is 0x55d856f75a18).
+A[87] := rand() % T := 6. (memory address of A[87] is 0x55d856f75a1c).
+A[88] := rand() % T := 5. (memory address of A[88] is 0x55d856f75a20).
+A[89] := rand() % T := 3. (memory address of A[89] is 0x55d856f75a24).
+A[90] := rand() % T := 0. (memory address of A[90] is 0x55d856f75a28).
+A[91] := rand() % T := 9. (memory address of A[91] is 0x55d856f75a2c).
+A[92] := rand() % T := 2. (memory address of A[92] is 0x55d856f75a30).
+A[93] := rand() % T := 3. (memory address of A[93] is 0x55d856f75a34).
+A[94] := rand() % T := 8. (memory address of A[94] is 0x55d856f75a38).
+A[95] := rand() % T := 7. (memory address of A[95] is 0x55d856f75a3c).
+A[96] := rand() % T := 1. (memory address of A[96] is 0x55d856f75a40).
+A[97] := rand() % T := 4. (memory address of A[97] is 0x55d856f75a44).
+A[98] := rand() % T := 0. (memory address of A[98] is 0x55d856f75a48).
+A[99] := rand() % T := 6. (memory address of A[99] is 0x55d856f75a4c).
+
+// Sort the integer values stored in array A in ascending order.
+bubble_sort(A, S);
+
+Display the Contents of Array A in Ascending Order:
+
+A[0] := 0. (memory address of A[0] is 0x55d856f758c0).
+A[1] := 0. (memory address of A[1] is 0x55d856f758c4).
+A[2] := 0. (memory address of A[2] is 0x55d856f758c8).
+A[3] := 0. (memory address of A[3] is 0x55d856f758cc).
+A[4] := 0. (memory address of A[4] is 0x55d856f758d0).
+A[5] := 0. (memory address of A[5] is 0x55d856f758d4).
+A[6] := 0. (memory address of A[6] is 0x55d856f758d8).
+A[7] := 0. (memory address of A[7] is 0x55d856f758dc).
+A[8] := 0. (memory address of A[8] is 0x55d856f758e0).
+A[9] := 0. (memory address of A[9] is 0x55d856f758e4).
+A[10] := 0. (memory address of A[10] is 0x55d856f758e8).
+A[11] := 1. (memory address of A[11] is 0x55d856f758ec).
+A[12] := 1. (memory address of A[12] is 0x55d856f758f0).
+A[13] := 1. (memory address of A[13] is 0x55d856f758f4).
+A[14] := 1. (memory address of A[14] is 0x55d856f758f8).
+A[15] := 1. (memory address of A[15] is 0x55d856f758fc).
+A[16] := 1. (memory address of A[16] is 0x55d856f75900).
+A[17] := 1. (memory address of A[17] is 0x55d856f75904).
+A[18] := 1. (memory address of A[18] is 0x55d856f75908).
+A[19] := 1. (memory address of A[19] is 0x55d856f7590c).
+A[20] := 1. (memory address of A[20] is 0x55d856f75910).
+A[21] := 2. (memory address of A[21] is 0x55d856f75914).
+A[22] := 2. (memory address of A[22] is 0x55d856f75918).
+A[23] := 2. (memory address of A[23] is 0x55d856f7591c).
+A[24] := 2. (memory address of A[24] is 0x55d856f75920).
+A[25] := 2. (memory address of A[25] is 0x55d856f75924).
+A[26] := 2. (memory address of A[26] is 0x55d856f75928).
+A[27] := 2. (memory address of A[27] is 0x55d856f7592c).
+A[28] := 2. (memory address of A[28] is 0x55d856f75930).
+A[29] := 3. (memory address of A[29] is 0x55d856f75934).
+A[30] := 3. (memory address of A[30] is 0x55d856f75938).
+A[31] := 3. (memory address of A[31] is 0x55d856f7593c).
+A[32] := 3. (memory address of A[32] is 0x55d856f75940).
+A[33] := 3. (memory address of A[33] is 0x55d856f75944).
+A[34] := 3. (memory address of A[34] is 0x55d856f75948).
+A[35] := 3. (memory address of A[35] is 0x55d856f7594c).
+A[36] := 3. (memory address of A[36] is 0x55d856f75950).
+A[37] := 3. (memory address of A[37] is 0x55d856f75954).
+A[38] := 3. (memory address of A[38] is 0x55d856f75958).
+A[39] := 3. (memory address of A[39] is 0x55d856f7595c).
+A[40] := 4. (memory address of A[40] is 0x55d856f75960).
+A[41] := 4. (memory address of A[41] is 0x55d856f75964).
+A[42] := 4. (memory address of A[42] is 0x55d856f75968).
+A[43] := 4. (memory address of A[43] is 0x55d856f7596c).
+A[44] := 4. (memory address of A[44] is 0x55d856f75970).
+A[45] := 4. (memory address of A[45] is 0x55d856f75974).
+A[46] := 4. (memory address of A[46] is 0x55d856f75978).
+A[47] := 4. (memory address of A[47] is 0x55d856f7597c).
+A[48] := 4. (memory address of A[48] is 0x55d856f75980).
+A[49] := 5. (memory address of A[49] is 0x55d856f75984).
+A[50] := 5. (memory address of A[50] is 0x55d856f75988).
+A[51] := 5. (memory address of A[51] is 0x55d856f7598c).
+A[52] := 5. (memory address of A[52] is 0x55d856f75990).
+A[53] := 5. (memory address of A[53] is 0x55d856f75994).
+A[54] := 5. (memory address of A[54] is 0x55d856f75998).
+A[55] := 5. (memory address of A[55] is 0x55d856f7599c).
+A[56] := 5. (memory address of A[56] is 0x55d856f759a0).
+A[57] := 6. (memory address of A[57] is 0x55d856f759a4).
+A[58] := 6. (memory address of A[58] is 0x55d856f759a8).
+A[59] := 6. (memory address of A[59] is 0x55d856f759ac).
+A[60] := 6. (memory address of A[60] is 0x55d856f759b0).
+A[61] := 6. (memory address of A[61] is 0x55d856f759b4).
+A[62] := 6. (memory address of A[62] is 0x55d856f759b8).
+A[63] := 6. (memory address of A[63] is 0x55d856f759bc).
+A[64] := 6. (memory address of A[64] is 0x55d856f759c0).
+A[65] := 6. (memory address of A[65] is 0x55d856f759c4).
+A[66] := 6. (memory address of A[66] is 0x55d856f759c8).
+A[67] := 6. (memory address of A[67] is 0x55d856f759cc).
+A[68] := 6. (memory address of A[68] is 0x55d856f759d0).
+A[69] := 6. (memory address of A[69] is 0x55d856f759d4).
+A[70] := 6. (memory address of A[70] is 0x55d856f759d8).
+A[71] := 6. (memory address of A[71] is 0x55d856f759dc).
+A[72] := 6. (memory address of A[72] is 0x55d856f759e0).
+A[73] := 6. (memory address of A[73] is 0x55d856f759e4).
+A[74] := 7. (memory address of A[74] is 0x55d856f759e8).
+A[75] := 7. (memory address of A[75] is 0x55d856f759ec).
+A[76] := 7. (memory address of A[76] is 0x55d856f759f0).
+A[77] := 7. (memory address of A[77] is 0x55d856f759f4).
+A[78] := 7. (memory address of A[78] is 0x55d856f759f8).
+A[79] := 7. (memory address of A[79] is 0x55d856f759fc).
+A[80] := 7. (memory address of A[80] is 0x55d856f75a00).
+A[81] := 7. (memory address of A[81] is 0x55d856f75a04).
+A[82] := 7. (memory address of A[82] is 0x55d856f75a08).
+A[83] := 7. (memory address of A[83] is 0x55d856f75a0c).
+A[84] := 7. (memory address of A[84] is 0x55d856f75a10).
+A[85] := 7. (memory address of A[85] is 0x55d856f75a14).
+A[86] := 8. (memory address of A[86] is 0x55d856f75a18).
+A[87] := 8. (memory address of A[87] is 0x55d856f75a1c).
+A[88] := 8. (memory address of A[88] is 0x55d856f75a20).
+A[89] := 9. (memory address of A[89] is 0x55d856f75a24).
+A[90] := 9. (memory address of A[90] is 0x55d856f75a28).
+A[91] := 9. (memory address of A[91] is 0x55d856f75a2c).
+A[92] := 9. (memory address of A[92] is 0x55d856f75a30).
+A[93] := 9. (memory address of A[93] is 0x55d856f75a34).
+A[94] := 9. (memory address of A[94] is 0x55d856f75a38).
+A[95] := 9. (memory address of A[95] is 0x55d856f75a3c).
+A[96] := 9. (memory address of A[96] is 0x55d856f75a40).
+A[97] := 9. (memory address of A[97] is 0x55d856f75a44).
+A[98] := 9. (memory address of A[98] is 0x55d856f75a48).
+A[99] := 9. (memory address of A[99] is 0x55d856f75a4c).
+
+// Assign double pointer B to address of the first memory cell constituting a two-dimensional array.
+// B represents a grid consisting of T rows and 2 columns.
+B = get_frequency_array(A, S, T);
+
+Display the Contents of Two-Dimensional Array B:
+
+------------------------------------------------
+Frequency of value 0 in array A is 11.
+------------------------------------------------
+B[0][0] := 0. (memory address of B[0][0] is 0x55d856f75ac0).
+B[0][1] := 11. (memory address of B[0][1] is 0x55d856f75ac4).
+------------------------------------------------
+Frequency of value 1 in array A is 10.
+------------------------------------------------
+B[1][0] := 1. (memory address of B[1][0] is 0x55d856f75ae0).
+B[1][1] := 10. (memory address of B[1][1] is 0x55d856f75ae4).
+------------------------------------------------
+Frequency of value 2 in array A is 8.
+------------------------------------------------
+B[2][0] := 2. (memory address of B[2][0] is 0x55d856f75b00).
+B[2][1] := 8. (memory address of B[2][1] is 0x55d856f75b04).
+------------------------------------------------
+Frequency of value 3 in array A is 11.
+------------------------------------------------
+B[3][0] := 3. (memory address of B[3][0] is 0x55d856f75b20).
+B[3][1] := 11. (memory address of B[3][1] is 0x55d856f75b24).
+------------------------------------------------
+Frequency of value 4 in array A is 9.
+------------------------------------------------
+B[4][0] := 4. (memory address of B[4][0] is 0x55d856f75b40).
+B[4][1] := 9. (memory address of B[4][1] is 0x55d856f75b44).
+------------------------------------------------
+Frequency of value 5 in array A is 8.
+------------------------------------------------
+B[5][0] := 5. (memory address of B[5][0] is 0x55d856f75b60).
+B[5][1] := 8. (memory address of B[5][1] is 0x55d856f75b64).
+------------------------------------------------
+Frequency of value 6 in array A is 17.
+------------------------------------------------
+B[6][0] := 6. (memory address of B[6][0] is 0x55d856f75b80).
+B[6][1] := 17. (memory address of B[6][1] is 0x55d856f75b84).
+------------------------------------------------
+Frequency of value 7 in array A is 12.
+------------------------------------------------
+B[7][0] := 7. (memory address of B[7][0] is 0x55d856f75ba0).
+B[7][1] := 12. (memory address of B[7][1] is 0x55d856f75ba4).
+------------------------------------------------
+Frequency of value 8 in array A is 3.
+------------------------------------------------
+B[8][0] := 8. (memory address of B[8][0] is 0x55d856f75bc0).
+B[8][1] := 3. (memory address of B[8][1] is 0x55d856f75bc4).
+------------------------------------------------
+Frequency of value 9 in array A is 11.
+------------------------------------------------
+B[9][0] := 9. (memory address of B[9][0] is 0x55d856f75be0).
+B[9][1] := 11. (memory address of B[9][1] is 0x55d856f75be4).
+
+// Verify that the sum of the frequencies of unique values in A is the same as the total number of elements in A.
+N = 0;
+for (i = 0; i < T; i += 1) N += B[i][1];
+N := 100. // which should be identical to S.
+
+get_average_array_value(A, S) := 4.
+
+get_smallest_array_value(A, S) := 0.
+
+get_largest_array_value(A, S) := 9.
+
+* * *
+sizeof(int) := 4 byte(s).
+The number of bytes of contiguous memory allocated to array A is: (sizeof(int) * S) = (4 * 100) = 400.
+The number of bytes of contiguous memory allocated to array B is: (sizeof(int) * T) = (4 * 10) = 40.
+* * *
+
+Histogram of Unique Array Value Frequencies:
+0: XXXXXXXXXXX (11)
+1: XXXXXXXXXX (10)
+2: XXXXXXXX (8)
+3: XXXXXXXXXXX (11)
+4: XXXXXXXXX (9)
+5: XXXXXXXX (8)
+6: XXXXXXXXXXXXXXXXX (17)
+7: XXXXXXXXXXXX (12)
+8: XXX (3)
+9: XXXXXXXXXXX (11)
+
+// Deallocate memory which was assigned to the instantiation of array A during program runtime.
+delete [] A;
+
+// Deallocate memory which was assigned to the instantiation of array B during program runtime.
+for (int i = 0; i < T; i += 1) delete [] B[i];
+delete [] B;
+
+--------------------------------
+End Of Program
+--------------------------------
