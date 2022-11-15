@@ -1,0 +1,57 @@
+/**
+ * file: karbytes_aesthetic.css
+ * type: Cascading-Style-Sheet
+ * date: 14_AUGUST_2022
+ * author: Karlina Ray Beringer
+ * license: PUBLIC_DOMAIN
+ */
+
+/** Make the page background BLACK, the text orange and monospace, and the page content width 800 pixels or less. */
+body {
+ 	background: #000000;
+ 	color: #ff9000;
+ 	font-family: monospace;
+ 	font-size: 16px;
+ 	padding: 10px;
+ 	width: 800px;
+}
+
+/** Make input elements and select elements have an orange rounded border, a BLACK background, and orange monospace text. */
+input, select {
+	background: #000000;
+	color: #ff9000;
+	border-color: #ff9000;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 10px;
+	appearance: none;  
+ 	font-family: monospace;
+ 	font-size: 16px;
+}
+
+/** Invert the text color and background color of INPUT and SELECT elements when the cursor (i.e. mouse) hovers over them. */
+input:hover, select:hover {
+	background: #ff9000;
+	color: #000000;
+}
+
+/** Make table data borders one pixel thick and CYAN. Give table data content 10 pixels in padding on all four sides. */
+td {
+	color: #00ffff;
+	border-color: #00ffff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 10px;
+}
+
+/** Set the text color of elements whose identifier (id) is "output" to CYAN. */
+#output {
+	color: #00ffff;
+}
+
+/** Set the text color of elements whose class is "console" to GREEN. Make the text background BLACK. */
+.console {
+	color: #00ff00;
+	background: #000000;
+}
