@@ -1,0 +1,399 @@
+--------------------------------
+Start Of Program
+--------------------------------
+
+The value which was entered for N is 10.
+
+N := 10.
+
+--------------------------------
+
+Computing the Nth term of the Fibonacci Sequence using recursion:
+
+fibonacci(10) = fibonacci(8) + fibonacci(9). // recursive case
+
+fibonacci(8) = fibonacci(6) + fibonacci(7). // recursive case
+
+fibonacci(6) = fibonacci(4) + fibonacci(5). // recursive case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(5) = fibonacci(3) + fibonacci(4). // recursive case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(7) = fibonacci(5) + fibonacci(6). // recursive case
+
+fibonacci(5) = fibonacci(3) + fibonacci(4). // recursive case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(6) = fibonacci(4) + fibonacci(5). // recursive case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(5) = fibonacci(3) + fibonacci(4). // recursive case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(9) = fibonacci(7) + fibonacci(8). // recursive case
+
+fibonacci(7) = fibonacci(5) + fibonacci(6). // recursive case
+
+fibonacci(5) = fibonacci(3) + fibonacci(4). // recursive case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(6) = fibonacci(4) + fibonacci(5). // recursive case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(5) = fibonacci(3) + fibonacci(4). // recursive case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(8) = fibonacci(6) + fibonacci(7). // recursive case
+
+fibonacci(6) = fibonacci(4) + fibonacci(5). // recursive case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(5) = fibonacci(3) + fibonacci(4). // recursive case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(7) = fibonacci(5) + fibonacci(6). // recursive case
+
+fibonacci(5) = fibonacci(3) + fibonacci(4). // recursive case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(6) = fibonacci(4) + fibonacci(5). // recursive case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(5) = fibonacci(3) + fibonacci(4). // recursive case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(4) = fibonacci(2) + fibonacci(3). // recursive case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(3) = fibonacci(1) + fibonacci(2). // recursive case
+
+fibonacci(1) = 1. // base case
+
+fibonacci(2) = fibonacci(0) + fibonacci(1). // recursive case
+
+fibonacci(0) = 1. // base case
+
+fibonacci(1) = 1. // base case
+
+A := fibonacci(10) = 89.
+
+The number of times which the recursive Fibonacci Sequence term function was called during this program runtime instance is 177.
+
+--------------------------------
+
+Computing the Nth term of the Fibonacci Sequence using iteration:
+
+fibonacci(0) = 1 = fibonacci(-2) + fibonacci(-1) = 1 + 0. // i := 0.
+
+fibonacci(1) = 2 = fibonacci(-1) + fibonacci(0) = 1 + 1. // i := 1.
+
+fibonacci(2) = 3 = fibonacci(0) + fibonacci(1) = 2 + 1. // i := 2.
+
+fibonacci(3) = 5 = fibonacci(1) + fibonacci(2) = 3 + 2. // i := 3.
+
+fibonacci(4) = 8 = fibonacci(2) + fibonacci(3) = 5 + 3. // i := 4.
+
+fibonacci(5) = 13 = fibonacci(3) + fibonacci(4) = 8 + 5. // i := 5.
+
+fibonacci(6) = 21 = fibonacci(4) + fibonacci(5) = 13 + 8. // i := 6.
+
+fibonacci(7) = 34 = fibonacci(5) + fibonacci(6) = 21 + 13. // i := 7.
+
+fibonacci(8) = 55 = fibonacci(6) + fibonacci(7) = 34 + 21. // i := 8.
+
+fibonacci(9) = 89 = fibonacci(7) + fibonacci(8) = 55 + 34. // i := 9.
+
+B := fibonacci(10) = 89.
+
+--------------------------------
+End Of Program
+--------------------------------
