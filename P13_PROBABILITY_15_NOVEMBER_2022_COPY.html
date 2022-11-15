@@ -1,0 +1,1705 @@
+<hr>
+<p><strong>PROBABILITY_15_NOVEMBER_2022_COPY</strong></p>
+<hr>
+<p>* * *</p>
+<p>START OF WEB PAGE COPY</p>
+<p>* * *</p>
+<hr>
+<p><strong>PROBABILITY</strong></p>
+<hr>
+<p><span style="background:#ffff00;">The C++ program featured in this tutorial web page generates a dynamically-allocated one-dimensional array of int-type values named A and a dynamically-allocated two-dimensional array of int type values named B. A represents a contiguous block of memory consisting of exactly S int-sized contiguous chunks of memory (and S is a natural number). B represents a contiguous block of memory consisting of exactly T int-sized contiguous chunks of memory (and T is natural number). Each of the S int-sized chunks of memory comprising array A is assigned some random nonnegative integer value which is less than T. The elements of array B are each a one-dimensional array for storing exactly two int-type values.</span></p>
+<p>The first int-type value of the ith subarray i of B (i.e. B[i][0]) represents a possible value occurring as an element of array A (such that int-sized memory chunk represented by B[i][0] stores the value i (and i is a nonnegative integer less than T)).</p>
+<p>The second int-type value of the ith subarray of B (i.e. B[i][1]) represents the frequency at which i occurs as an element of array A (such that the int-sized memory chunk represented by B[i][1] stores the frequency at which i occurs as an element of array A (and B[i][1] is a nonnegative integer less than or equal to S)).</p>
+<p>A histogram visually depicting the frequency array is printed to the command line and as write-only file output (along with statistics about such as the average value in A, the largest value in A, and the smallest value in A).</p>
+<p><strong><em>To view hidden text inside of the preformatted text boxes below, scroll horizontally.</em></strong></p>
+<p><span style="background:#00ff00;">Theoretically speaking, each of the T possible unique integer values which <a style="background:#ff9000;color:#000000;" href="https://en.wikipedia.org/wiki/Randomness" target="_blank" rel="noopener">randomly</a> occur in A have the same probability of occurring (and that <strong>probability</strong> is the rational number (1/T)).</span></p>
+<hr>
+<p><strong>Software Application Files</strong></p>
+<hr>
+<p>C++ source file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability.cpp" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability.cpp</a></p>
+<p>plain-text file: <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output.txt" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output.txt</a></p>
+<p>plain-text file: <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output_(large_S_small_T).txt" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output_(large_S_small_T).txt</a></p>
+<p>plain-text file: <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output_(small_S_large_T).txt" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output_(small_S_large_T).txt</a></p>
+<hr>
+<p><strong>Program Compilation &amp; Execution</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the C++ <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability.cpp" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>probability.cpp</pre>
+<p>STEP_1: Open a Unix command line terminal application and set the current directory to wherever the C++ is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Compile the C++ file into machine-executable instructions (i.e. object file) and then into an executable piece of software named <strong>app</strong> using the following command:</p>
+<pre>g++ probability.cpp -o app</pre>
+<p>STEP_3: If the program compilation command does not work, then use the following command to install the C++ compiler:</p>
+<pre>sudo apt install build-essential</pre>
+<p>STEP_4: After running the <strong>g++</strong> command, run the executable file using the following command:</p>
+<pre>./app</pre>
+<p>STEP_5: Once the application is running, the following prompt will appear:</p>
+<pre>Enter a natural number value, S, which is no larger than 1000 (and which will be used as the number of elements to include in an array of random integers):</pre>
+<p>STEP_6: Enter a value for S using the using the keyboard.</p>
+<p>STEP_7: After a valid input value for S is entered, the following prompt will appear:</p>
+<pre>Enter a natural number value, T, which is no larger than 1000 (and which will be used as the maximum number of unique states which each array element may represent):</pre>
+<p>STEP_8: Enter a value for T using the using the keyboard.</p>
+<p>STEP_9: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>Program Source Code</strong></p>
+<hr>
+<p>C++ source file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability.cpp" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability.cpp</a></p>
+<p><strong><em>When copy-pasting the source code from the preformatted text box below into a text editor document, remove the spaces between the angle brackets and the library names in the preprocessing directives code block.</em></strong></p>
+<hr>
+<pre>/**
+ * file: probability.cpp
+ * type: C++ (source file)
+ * date: 10_OCTOBER_2022
+ * author: Karlina Ray Beringer
+ * license: PUBLIC_DOMAIN 
+ */
+
+/**
+ * Preprocessing Directives
+ */
+#include &lt; iostream &gt; // standard input and output operations (command line terminal and keyboard)
+#include &lt; fstream &gt; // file input and output operations (text file generation)
+#include &lt; stdio.h &gt; // library which contains NULL macro
+#include &lt; stdlib.h &gt; // library for srand() and rand() functions
+#include &lt; time.h &gt; // library for time() function
+#define MAXIMUM_S 1000 // upper limit constant for values of S
+#define MAXIMUM_T 1000 // upper limit constant for values of T 
+
+/**
+ * Function Prototypes
+ */
+void bubble_sort(int * A, int S);
+int ** get_frequency_array(int * A, int S, int T);
+double get_average_array_value(int * A, int S);
+int get_smallest_array_value(int * A, int S);
+int get_largest_array_value(int * A, int S);
+void print_histogram(int * A, int S, int T, std::ostream &amp; output);
+
+/**
+ * Use the Bubble Sort sorting algorithm to arrange the elements of array A in ascending order.
+ * 
+ * Note that, even though this function returns no value, the array which the pointer variable points to is updated.
+ * 
+ * Assume that there are at least S consecutive int-sized chunks of memory allocated to array A
+ * (and that S is a natural number no larger than MAXIMUM_S).
+ */
+void bubble_sort(int * A, int S)
+{
+    int i = 0, placeholder = 0; 
+    bool array_is_sorted = false, adjacent_elements_were_swapped = false;
+    while (!array_is_sorted)
+    {
+        adjacent_elements_were_swapped = false;
+        for (i = 1; i &lt; S; i += 1)
+        {
+            if (A[i] &lt; A[i - 1])
+            {
+                placeholder = A[i];
+                A[i] = A[i - 1];
+                A[i - 1] = placeholder;
+                adjacent_elements_were_swapped = true;
+            }
+        }
+        if (!adjacent_elements_were_swapped) array_is_sorted = true;
+    }
+}
+
+/**
+ * Return a pointer to a two-dimensional array which represents the number of times each unique 
+ * int-type value of array A occurs inside of array A.
+ * 
+ * (The maximum number of times a unique integer value may occur as a data element of array A is S).
+ * 
+ * (The minimum number of times a unique integer value may occur as a data element of array A is 0).
+ * 
+ * (The maximum number of times a unique integer value may occur as a data element of array B is T).
+ * 
+ * (The minimum number of times a unique integer value may occur as a data element of array B is 0).
+ * 
+ * The returned array is a dynamically allocated variable (i.e. a variable which is 
+ * instantiated during program runtime instead of during program compile time 
+ * (which means that the amount of memory to allocate to array A (and, hence, to array B) is unknown
+ * until the program user inputs the total number of elements to include in array A during program runtime)).
+ * 
+ * Assume that there are at least S consecutive int-sized chunks of memory allocated to array A
+ * (and that S is a natural number no larger than MAXIMUM_S).
+ * 
+ * Assume that T is a natural number no larger than MAXIMUM_T.
+ * 
+ * Each element of the output array is an int-type array consisting of 2 elements:
+ * 
+ * The lefthand element of the ith element of the output array, B[i][0], 
+ * stores a unique nonnegative integer no larger than (T - 1).
+ * 
+ * The righthand element of the ith element of the output array,
+ * B[i][1], stores the nonnegative number of times 
+ * each unique nonnegative integer no larger than T occurs in A.
+ * 
+ * The returned array, B, will have a total of T elements.
+ * 
+ * The returned array will logically resemble a two-dimensional grid 
+ * whose left-column values are each nonnegative integers no larger than T
+ * which are arranged in ascending order starting at the first element of B (i.e. B[0])
+ * and ending at the last element of B (i.e. B[T - 1])
+ * and whose right-column values are each nonnegative integers no larger than S.
+ */
+int ** get_frequency_array(int * A, int S, int T)
+{
+    int i = 0, k = 0;
+    int ** B = new int * [T];
+    for (i = 0; i &lt; T; i += 1) B[i] = new int[2];
+    for (i = 0; i &lt; T; i += 1) B[i][0] = i;
+    for (i = 0; i &lt; T; i += 1)
+    {
+        for (k = 0; k &lt; S; k += 1) if (A[k] == B[i][0]) B[i][1] += 1;
+    }
+    return B;
+}
+
+/**
+ * Return the sum of each of the S int-type values which are stored in the array named A divided by S.
+ * 
+ * Assume that there are at least S consecutive int-sized chunks of memory allocated to array A
+ * (and that S is a natural number no larger than MAXIMUM_S).
+ */
+double get_average_array_value(int * A, int S) 
+{
+    int i = 0, sum_of_values = 0;
+    for (i = 0; i &lt; S; i += 1) sum_of_values += A[i];
+    return sum_of_values / S;
+}
+
+/**
+ * Return the smallest integer value occurring inside of the array named A.
+ * 
+ * Assume that there are at least S consecutive int-sized chunks of memory allocated to array A
+ * (and that S is a natural number no larger than MAXIMUM_S).
+ */
+int get_smallest_array_value(int * A, int S) 
+{
+    int i = 0, smallest_value = 0;
+    int * A_copy = new int[S];
+    for (i = 0; i &lt; S; i += 1) A_copy[i] = A[i];
+    bubble_sort(A_copy, S);
+    smallest_value = A_copy[0];
+    delete [] A_copy;
+    return smallest_value;
+}
+
+/**
+ * Return the largest integer value occurring inside of the array named A.
+ * 
+ * Assume that there are at least S consecutive int-sized chunks of memory allocated to array A
+ * (and that S is a natural number no larger than MAXIMUM_S).
+ */
+int get_largest_array_value(int * A, int S) 
+{
+    int i = 0, largest_value = 0;
+    int * A_copy = new int[S];
+    for (i = 0; i &lt; S; i += 1) A_copy[i] = A[i];
+    bubble_sort(A_copy, S);
+    largest_value = A_copy[S - 1];
+    delete [] A_copy;
+    return largest_value;
+}
+
+/**
+ * Print a histogram which displays the number of times each unique integer value occurs inside of the array named A.
+ * 
+ * Assume that there are at least S consecutive int-sized chunks of memory allocated to array A
+ * (and that S is a natural number no larger than MAXIMUM_S).
+ * 
+ * Assume that T is a natural number no larger than MAXIMUM_T 
+ * (and that each of the values of A is no smaller than 0 and no larger than (T - 1)).
+ * 
+ * The maximum number of histogram rows to print is T (i.e. the number unique states which each element of A may represent).
+ * If T histogram rows are printed by the time this function terminates, then each element of A stores a unique int-type value.
+ * 
+ * The minimum number of histogram rows to print is 1.
+ * If 1 histogram row is printed by the time this function terminates, then each element of A stores the same int-type value.
+ */
+void print_histogram(int * A, int S, int T, std::ostream &amp; output)
+{
+    int i = 0, k = 0;
+    int * A_copy = new int [S];
+    int ** B = new int * [T];
+    for (i = 0; i &lt; S; i += 1) A_copy[i] = A[i];
+    bubble_sort(A_copy, S);
+    B = get_frequency_array(A, S, T);
+    output &lt;&lt; "\n\nHistogram of Unique Array Value Frequencies:";
+    for (i = 0; i &lt; T; i += 1)
+    {
+        output &lt;&lt; "\n" &lt;&lt; B[i][0] &lt;&lt; ": ";
+        for (k = 0; k &lt; B[i][1]; k += 1) output &lt;&lt; "X";
+        output &lt;&lt; " (" &lt;&lt; B[i][1] &lt;&lt; ")";
+    }
+    delete [] A_copy;
+    for (int i = 0; i &lt; T; i += 1) delete [] B[i];
+    delete [] B;
+}
+
+/**
+ * Program Entry Point
+ */
+int main()
+{
+    // Declare a write-only file stream object.
+    std::ofstream fout;
+
+    // Declare a pointer to an int-sized block of memory.
+    int * A;
+
+    // Declare a pointer to a pointer to an int-sized block of memory.
+    int ** B;
+
+    // Declare and initialize 4 int type variables.
+    int i = 0, S = 1, T = 1, N = 0;
+
+    // Set the number of digits of floating point numbers which are printed to the command line to 50.
+    // Set the number of digits of floating point numbers which are printed to the output file stream to 50.
+    std::cout.precision(50);
+    fout.precision(50);
+
+    /**
+     * If the plain-text file named probability_output.txt exists in the same file directory as probability.cpp, 
+     * then set probability_output.txt to be overwritten with program data. 
+     * 
+     * Otherwise, create a plain-text file named probability_output.txt in the same file directory as probability.cpp
+     * and set probability_output.txt to be overwritten with program data. 
+     */
+    fout.open("probability_output.txt");
+
+    // Print an opening message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nStart Of Program";
+    std::cout &lt;&lt; "\n--------------------------------";
+
+    // Print an opening message to the file output stream.
+    fout &lt;&lt; "--------------------------------";
+    fout &lt;&lt; "\nStart Of Program";
+    fout &lt;&lt; "\n--------------------------------";
+
+    // Print the declare the int pointer named A to the command line terminal.
+    // Print the declare the int pointer named A to the file output stream.
+    std::cout &lt;&lt; "\n\n// Declare a pointer to an int-sized block of memory.";
+    std::cout &lt;&lt; "\nint * A;";
+    fout &lt;&lt; "\n\n// Declare a pointer to an int-sized block of memory.";
+    fout &lt;&lt; "\nint * A;";
+
+    // Print the declare the double int pointer named B to the command line terminal.
+    // Print the declare the doubke int ointer named B to the file output stream.
+    std::cout &lt;&lt; "\n\n// Declare a pointer to a pointer to an int-sized block of memory.";
+    std::cout &lt;&lt; "\nint ** B;";
+    fout &lt;&lt; "\n\n// Declare a pointer to a pointer to an int-sized block of memory.";
+    fout &lt;&lt; "\nint ** B;";
+
+    // Print a message to the command line terminal which asks the user to enter a natural number value for S.
+    // Print a message to the command line terminal which asks the user to enter a natural number value for S.
+    std::cout &lt;&lt; "\n\nEnter a natural number value, S, which is no larger than " &lt;&lt; MAXIMUM_S &lt;&lt; " (and which will be used as the number of elements to include in an array of random integers): ";
+    fout &lt;&lt; "\n\nEnter a natural number value, S, which is no larger than " &lt;&lt; MAXIMUM_S &lt;&lt; " (and which will be used as the number of elements to include in an array of random integers): ";
+
+    // Scan the command line for keyboard input and store that value inside the int type variable named S.
+    std::cin &gt;&gt; S;
+
+    // If S is smaller than 1 or if S is larger than MAXIMUM_S, then set S to 1.
+    S = ((S &lt; 1) || (S &gt; MAXIMUM_S)) ? 1 : S;
+
+    // Print a message describing the value of the variable named S to the command line terminal.
+    // Print a message describing the value of the variable named S to to the output file stream.
+    std::cout &lt;&lt; "\n\nS := " &lt;&lt; S &lt;&lt; ".";
+    fout &lt;&lt; "\n\nS := " &lt;&lt; S &lt;&lt; ".";
+
+    // Print a message to the command line terminal which asks the user to enter a natural number value for T.
+    // Print a message to the command line terminal which asks the user to enter a natural number value for S.
+    std::cout &lt;&lt; "\n\nEnter a natural number value, T, which is no larger than " &lt;&lt; MAXIMUM_T &lt;&lt; " (and which will be used as the maximum number of unique states which each array element may represent): ";
+    fout &lt;&lt; "\n\nEnter a natural number value, T, which is no larger than " &lt;&lt; MAXIMUM_T &lt;&lt; " (and which will be used as the maximum number of unique states which each array element may represent): ";
+
+    // Scan the command line for keyboard input and store that value inside the int type variable named T.
+    std::cin &gt;&gt; T;
+
+    // If T is smaller than 1 or if S is larger than MAXIMUM_T, then set T to 1.
+    T = ((T &lt; 1) || (T &gt; MAXIMUM_T)) ? 1 : T;
+
+    // Print a message describing the value of the variable named T to the command line terminal.
+    // Print a message describing the value of the variable named T to to the output file stream.
+    std::cout &lt;&lt; "\n\nT := " &lt;&lt; T &lt;&lt; ".";
+    fout &lt;&lt; "\n\nT := " &lt;&lt; T &lt;&lt; ".";
+
+    // Allocate S consecutive int-sized blocks of memory to the instantiation of array A.
+    // A is a pointer which stores the address of the first memory cell of that chunk of S consecutive int-sized blocks of memory.
+    A = new int[S];
+
+    // Print the command to instatiate dynamic array A to the command line terminal.
+    // Print the command to instatiate dynamic array A to the file output stream.
+    std::cout &lt;&lt; "\n\n// Allocate S consecutive int-sized blocks of memory to the instantiation of array A.";
+    std::cout &lt;&lt; "\n// A is a pointer which stores the address of the first memory cell of that chunk of S consecutive int-sized blocks of memory.";
+    std::cout &lt;&lt; "\nA = new int[S];";
+    fout &lt;&lt; "\n\n// Allocate S consecutive int-sized blocks of memory to the instantiation of array A.";
+    fout &lt;&lt; "\n// A is a pointer which stores the address of the first memory cell of that chunk of S consecutive int-sized blocks of memory.";
+    fout &lt;&lt; "\nA = new int[S];";
+
+    // Print "Display the Initial Contents of Array A:" to the command line terminal.
+    // Print "Display the Initial Contents of Array A:" to the file output stream.
+    std::cout &lt;&lt; "\n\nDisplay the Initial Contents of Array A:\n";
+    fout &lt;&lt; "\n\nDisplay the Initial Contents of Array A:\n";
+
+    // For each element A[i] of array A (whose length is S),
+    // increment i by one
+    // starting at i = 0 
+    // and ending at i = (S - 1)...
+    for (i = 0; i &lt; S; i += 1)
+    {
+        // Print a description of the ith element of array A to the command line terminal.
+        // Print a description of the ith element of array A to the file output stream.
+        // (The default value of each array element should be 0).
+        std::cout &lt;&lt; "\nA[" &lt;&lt; i &lt;&lt; "] := " &lt;&lt; A[i] &lt;&lt; ". (memory address of A[" &lt;&lt; i &lt;&lt; "] is " &lt;&lt; &amp;A[i] &lt;&lt; ").";
+        fout &lt;&lt; "\nA[" &lt;&lt; i &lt;&lt; "] := " &lt;&lt; A[i] &lt;&lt; ". (memory address of A[" &lt;&lt; i &lt;&lt; "] is " &lt;&lt; &amp;A[i] &lt;&lt; ").";
+    }
+
+    // Seed the pseudo random number generator with the integer number of seconds which have elapsed since the Unix Epoch (i.e. midnight of 01_JANUARY_1970).
+    srand(time(NULL));
+
+    // Print the command to seed the pseudo random number generator to the command line.
+    // Print the command to seed the pseudo random number generator to the file output stream.
+    std::cout &lt;&lt; "\n\n// Seed the pseudo random number generator with the integer number of seconds which have elapsed since the Unix Epoch (i.e. midnight of 01_JANUARY_1970).";
+    std::cout &lt;&lt; "\nsrand(time(NULL));";
+    fout &lt;&lt; "\n\n// Seed the pseudo random number generator with the integer number of seconds which have elapsed since the Unix Epoch (i.e. midnight of 01_JANUARY_1970).";
+    fout &lt;&lt; "\nsrand(time(NULL));";
+
+    // Print "Set Each Element of Array A to a Random Nonnegative Integer No Larger Than T:" to the command line terminal.
+    // Print "Set Each Element of Array A to a Random Nonnegative Integer No Larger Than T:" to the file output stream.
+    std::cout &lt;&lt; "\n\nSet Each Element of Array A to a Random Nonnegative Integer No Larger Than T:\n";
+    fout &lt;&lt; "\n\nSet Each Element of Array A to a Random Nonnegative Integer No Larger Than T:\n";
+
+    // For each element A[i] of array A (whose length is S),
+    // increment i by one
+    // starting at i = 0 
+    // and ending at i = (S - 1)...
+    for (i = 0; i &lt; S; i += 1)
+    {
+        // Randomly select one of T possible states from a set of T unique states (i.e. the first T nonnegative integers). 
+        // Store that value inside of variable the int type variable named N.
+        // The modulo operator (%) is used to compute the remainder of dividing the lefthand operand (rand()) by the righthand operand (T). That remainder is an integer value.
+        N = rand() % T;
+
+        // Set the value of the ith element of A to N.
+        A[i] = N;
+
+        // Print a description of the ith element of array A to the command line terminal.
+        // Print a description of the ith element of array A to the file output stream.
+        std::cout &lt;&lt; "\nA[" &lt;&lt; i &lt;&lt; "] := rand() % T := " &lt;&lt; A[i] &lt;&lt; ". (memory address of A[" &lt;&lt; i &lt;&lt; "] is " &lt;&lt; &amp;A[i] &lt;&lt; ").";
+        fout &lt;&lt; "\nA[" &lt;&lt; i &lt;&lt; "] := rand() % T := " &lt;&lt; A[i] &lt;&lt; ". (memory address of A[" &lt;&lt; i &lt;&lt; "] is " &lt;&lt; &amp;A[i] &lt;&lt; ").";
+    }
+
+    // Sort the integer values stored in array A in ascending order.
+    bubble_sort(A, S);
+
+    // Print the command to sort the integer values stored in array A in ascending order to the command line.
+    // Print the command to sort the integer values stored in array A in ascending order to the file output stream.
+    std::cout &lt;&lt; "\n\n// Sort the integer values stored in array A in ascending order.";
+    std::cout &lt;&lt; "\nbubble_sort(A, S);";
+    fout &lt;&lt; "\n\n// Sort the integer values stored in array A in ascending order.";
+    fout &lt;&lt; "\nbubble_sort(A, S);";
+
+    // Print "Display the Contents of Array A in Ascending Order:" to the command line terminal.
+    // Print "Display the Contents of Array A in Ascending Order:" to the file output stream.
+    std::cout &lt;&lt; "\n\nDisplay the Contents of Array A in Ascending Order:\n";
+    fout &lt;&lt; "\n\nDisplay the Contents of Array A in Ascending Order:\n";
+
+    // For each element A[i] of array A (whose length is S),
+    // increment i by one
+    // starting at i = 0 
+    // and ending at i = (S - 1)...
+    for (i = 0; i &lt; S; i += 1)
+    {
+        // Print a description of the ith element of array A to the command line terminal.
+        // Print a description of the ith element of array A to the file output stream.
+        std::cout &lt;&lt; "\nA[" &lt;&lt; i &lt;&lt; "] := " &lt;&lt; A[i] &lt;&lt; ". (memory address of A[" &lt;&lt; i &lt;&lt; "] is " &lt;&lt; &amp;A[i] &lt;&lt; ").";
+        fout &lt;&lt; "\nA[" &lt;&lt; i &lt;&lt; "] := " &lt;&lt; A[i] &lt;&lt; ". (memory address of A[" &lt;&lt; i &lt;&lt; "] is " &lt;&lt; &amp;A[i] &lt;&lt; ").";
+    }
+
+    // Assign double pointer B to address of the first memory cell constituting a two-dimensional array.
+    // B represents a grid consisting of T rows and 2 columns.
+    B = get_frequency_array(A, S, T);
+
+    // Print the command to instantiate a two-dimensional array and store its address in B to the command line.
+    // Print the command to instantiate a two-dimensional array and store its address in B to the file output stream.
+    std::cout &lt;&lt; "\n\n// Assign double pointer B to address of the first memory cell constituting a two-dimensional array.";
+    std::cout &lt;&lt; "\n// B represents a grid consisting of T rows and 2 columns.";
+    std::cout &lt;&lt; "\nB = get_frequency_array(A, S, T);";
+    fout &lt;&lt; "\n\n// Assign double pointer B to address of the first memory cell constituting a two-dimensional array.";
+    fout &lt;&lt; "\n// B represents a grid consisting of T rows and 2 columns.";
+    fout &lt;&lt; "\nB = get_frequency_array(A, S, T);";
+
+    // Print "Display the Contents of Two-Dimensional Array B:" to the command line terminal.
+    // Print "Display the Contents of Two-Dimensional Array B:" to the file output stream.
+    std::cout &lt;&lt; "\n\nDisplay the Contents of Two-Dimensional Array B:\n";
+    fout &lt;&lt; "\n\nDisplay the Contents of Two-Dimensional Array B:\n";
+
+    // For each element B[i] of array B (whose length is T),
+    // increment i by one
+    // starting at i = 0 
+    // and ending at i = (T - 1)...
+    for (i = 0; i &lt; T; i += 1)
+    {
+        // Print a description of the ith element of array B to the command line terminal.
+        // Print a description of the ith element of array B to the file output stream.
+        std::cout &lt;&lt; "\n------------------------------------------------";
+        std::cout &lt;&lt; "\nFrequency of value " &lt;&lt; B[i][0] &lt;&lt; " in array A is " &lt;&lt; B[i][1] &lt;&lt; ".";
+        std::cout &lt;&lt; "\n------------------------------------------------";
+        std::cout &lt;&lt; "\nB[" &lt;&lt; i &lt;&lt; "][0] := " &lt;&lt; B[i][0] &lt;&lt; ". (memory address of B[" &lt;&lt; i &lt;&lt; "][0] is " &lt;&lt; &amp;B[i][0] &lt;&lt; ").";
+        std::cout &lt;&lt; "\nB[" &lt;&lt; i &lt;&lt; "][1] := " &lt;&lt; B[i][1] &lt;&lt; ". (memory address of B[" &lt;&lt; i &lt;&lt; "][1] is " &lt;&lt; &amp;B[i][1] &lt;&lt; ").";
+        fout &lt;&lt; "\n------------------------------------------------";
+        fout &lt;&lt; "\nFrequency of value " &lt;&lt; B[i][0] &lt;&lt; " in array A is " &lt;&lt; B[i][1] &lt;&lt; ".";
+        fout &lt;&lt; "\n------------------------------------------------";
+        fout &lt;&lt; "\nB[" &lt;&lt; i &lt;&lt; "][0] := " &lt;&lt; B[i][0] &lt;&lt; ". (memory address of B[" &lt;&lt; i &lt;&lt; "][0] is " &lt;&lt; &amp;B[i][0] &lt;&lt; ").";
+        fout &lt;&lt; "\nB[" &lt;&lt; i &lt;&lt; "][1] := " &lt;&lt; B[i][1] &lt;&lt; ". (memory address of B[" &lt;&lt; i &lt;&lt; "][1] is " &lt;&lt; &amp;B[i][1] &lt;&lt; ").";
+    }
+
+    // Verify that the sum of the frequencies of unique values in A is the same as the total number of elements in A.
+    N = 0;
+    for (i = 0; i &lt; T; i += 1) N += B[i][1];
+
+    // Print the sum of the counts of each unique value which is stored in array B to the command line.
+    // Print the sum of the counts of each unique value which is stored in array B to the file output stream.
+    std::cout &lt;&lt; "\n\n// Verify that the sum of the frequencies of unique values in A is the same as the total number of elements in A.";
+    std::cout &lt;&lt; "\nN = 0;";
+    std::cout &lt;&lt; "\nfor (i = 0; i &lt; T; i += 1) N += B[i][1];";
+    std::cout &lt;&lt; "\nN := " &lt;&lt; N &lt;&lt; ". // which should be identical to S.";
+    fout &lt;&lt; "\n\n// Verify that the sum of the frequencies of unique values in A is the same as the total number of elements in A.";
+    fout &lt;&lt; "\nN = 0;";
+    fout &lt;&lt; "\nfor (i = 0; i &lt; T; i += 1) N += B[i][1];";
+    fout &lt;&lt; "\nN := " &lt;&lt; N &lt;&lt; ". // which should be identical to S.";
+
+    // Print the average value of A to the command line terminal.
+    // Print the average value of A to the file output steam.
+    std::cout &lt;&lt; "\n\nget_average_array_value(A, S) := " &lt;&lt; get_average_array_value(A, S) &lt;&lt; ".";
+    fout &lt;&lt; "\n\nget_average_array_value(A, S) := " &lt;&lt; get_average_array_value(A, S) &lt;&lt; ".";
+
+    // Print the smallest value of A to the command line terminal.
+    // Print the smallest value of A to the file output steam.
+    std::cout &lt;&lt; "\n\nget_smallest_array_value(A, S) := " &lt;&lt; get_smallest_array_value(A, S) &lt;&lt; ".";
+    fout &lt;&lt; "\n\nget_smallest_array_value(A, S) := " &lt;&lt; get_smallest_array_value(A, S) &lt;&lt; ".";
+
+    // Print the largest value of A to the command line terminal.
+    // Print the largest value of A to the file output steam.
+    std::cout &lt;&lt; "\n\nget_largest_array_value(A, S) := " &lt;&lt; get_largest_array_value(A, S) &lt;&lt; ".";
+    fout &lt;&lt; "\n\nget_largest_array_value(A, S) := " &lt;&lt; get_largest_array_value(A, S) &lt;&lt; ".";
+
+    // Print a description about how much data each of the dynamocally allocated arrays represents to the command line terminal.
+    std::cout &lt;&lt; "\n\n* * *";
+    std::cout &lt;&lt; "\nsizeof(int) := " &lt;&lt; sizeof(int) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; "\nThe number of bytes of contiguous memory allocated to array A is: (sizeof(int) * S) = (" &lt;&lt; sizeof(int) &lt;&lt; " * " &lt;&lt; S &lt;&lt; ") = " &lt;&lt; sizeof(int) * S &lt;&lt; ".";
+    std::cout &lt;&lt; "\nThe number of bytes of contiguous memory allocated to array B is: (sizeof(int) * T) = (" &lt;&lt; sizeof(int) &lt;&lt; " * " &lt;&lt; T &lt;&lt; ") = " &lt;&lt; sizeof(int) * T &lt;&lt; ".";
+    std::cout &lt;&lt; "\n* * *";
+
+    // Print a description about how much data each of the dynamocally allocated arrays represents to the file output stream.
+    fout &lt;&lt; "\n\n* * *";
+    fout &lt;&lt; "\nsizeof(int) := " &lt;&lt; sizeof(int) &lt;&lt; " byte(s).";
+    fout &lt;&lt; "\nThe number of bytes of contiguous memory allocated to array A is: (sizeof(int) * S) = (" &lt;&lt; sizeof(int) &lt;&lt; " * " &lt;&lt; S &lt;&lt; ") = " &lt;&lt; sizeof(int) * S &lt;&lt; ".";
+    fout &lt;&lt; "\nThe number of bytes of contiguous memory allocated to array B is: (sizeof(int) * T) = (" &lt;&lt; sizeof(int) &lt;&lt; " * " &lt;&lt; T &lt;&lt; ") = " &lt;&lt; sizeof(int) * T &lt;&lt; ".";
+    fout &lt;&lt; "\n* * *";
+
+    // Print a histogram which visually depicts the frequency distribution of unique integer values in A to the command line terminal.
+    // Print a histogram which visually depicts the frequency distribution of unique integer values in A to the file output stream.
+    // print_histogram(A, S, T, std::cout); // WARNING: Calling the print_histogram function twice in a row using different ostream operators tends to cause the second ostream stream to be populated with garbage data. For that reason, the print_hisogram function call which uses std::cout as the ostream parameter is commented out so that the file output is not polluted. 
+    std::cout &lt;&lt; "\n\nCheck the output file to see a histogram of frequencies for each of the unique integer values stored in array A.";
+    print_histogram(A, S, T, fout);
+
+    // Deallocate memory which was assigned to the instantiation of array A during program runtime.
+    delete [] A;
+
+    // Print the command to de-allocate memory which was assigned to the dynamically-allocated array of S int type values to the command line terminal.
+    // Print the command to de-allocate memory which was assigned to the dynamically-allocated array of S int type values to the file output stream.
+    std::cout &lt;&lt; "\n\n// Deallocate memory which was assigned to the instantiation of array A during program runtime.";
+    std::cout &lt;&lt; "\ndelete [] A;";
+    fout &lt;&lt; "\n\n// Deallocate memory which was assigned to the instantiation of array A during program runtime.";
+    fout &lt;&lt; "\ndelete [] A;";
+
+    // Deallocate memory which was assigned to the instantiation of array B during program runtime.
+    for (int i = 0; i &lt; T; i += 1) delete [] B[i];
+    delete [] B;
+
+    // Print the command to de-allocate memory which was assigned to the dynamically-allocated two-dimensional array named B to the command line terminal.
+    // Print the command to de-allocate memory which was assigned to the dynamically-allocated two-dimensional array named B to the file output stream.
+    std::cout &lt;&lt; "\n\n// Deallocate memory which was assigned to the instantiation of array B during program runtime.";
+    std::cout &lt;&lt; "\nfor (int i = 0; i &lt; T; i += 1) delete [] B[i];";
+    std::cout &lt;&lt; "\ndelete [] B;\n";
+    fout &lt;&lt; "\n\n// Deallocate memory which was assigned to the instantiation of array B during program runtime.";
+    fout &lt;&lt; "\nfor (int i = 0; i &lt; T; i += 1) delete [] B[i];";
+    fout &lt;&lt; "\ndelete [] B;\n";
+
+    // Print a closing message to the command line terminal.
+    std::cout &lt;&lt; "\n--------------------------------";
+    std::cout &lt;&lt; "\nEnd Of Program";
+    std::cout &lt;&lt; "\n--------------------------------\n\n";
+
+    // Print a closing message to the file output stream.
+    fout &lt;&lt; "\n--------------------------------";
+    fout &lt;&lt; "\nEnd Of Program";
+    fout &lt;&lt; "\n--------------------------------";
+
+    // Terminate the file output stream. Close the file so that program data is saved as lines of plain text in that file.
+    fout.close();
+
+    // program exit point
+    return 0;
+}
+</pre>
+<hr>
+<p><strong>Sample Program Output (Large S, Small T)</strong></p>
+<hr>
+<p>plain-text file: <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output_(large_S_small_T).txt" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output_(large_S_small_T).txt</a></p>
+<hr>
+<pre>--------------------------------
+Start Of Program
+--------------------------------
+
+// Declare a pointer to an int-sized block of memory.
+int * A;
+
+// Declare a pointer to a pointer to an int-sized block of memory.
+int ** B;
+
+Enter a natural number value, S, which is no larger than 1000 (and which will be used as the number of elements to include in an array of random integers): 
+
+S := 100.
+
+Enter a natural number value, T, which is no larger than 1000 (and which will be used as the maximum number of unique states which each array element may represent): 
+
+T := 10.
+
+// Allocate S consecutive int-sized blocks of memory to the instantiation of array A.
+// A is a pointer which stores the address of the first memory cell of that chunk of S consecutive int-sized blocks of memory.
+A = new int[S];
+
+Display the Initial Contents of Array A:
+
+A[0] := 0. (memory address of A[0] is 0x55d856f758c0).
+A[1] := 0. (memory address of A[1] is 0x55d856f758c4).
+A[2] := 0. (memory address of A[2] is 0x55d856f758c8).
+A[3] := 0. (memory address of A[3] is 0x55d856f758cc).
+A[4] := 0. (memory address of A[4] is 0x55d856f758d0).
+A[5] := 0. (memory address of A[5] is 0x55d856f758d4).
+A[6] := 0. (memory address of A[6] is 0x55d856f758d8).
+A[7] := 0. (memory address of A[7] is 0x55d856f758dc).
+A[8] := 0. (memory address of A[8] is 0x55d856f758e0).
+A[9] := 0. (memory address of A[9] is 0x55d856f758e4).
+A[10] := 0. (memory address of A[10] is 0x55d856f758e8).
+A[11] := 0. (memory address of A[11] is 0x55d856f758ec).
+A[12] := 0. (memory address of A[12] is 0x55d856f758f0).
+A[13] := 0. (memory address of A[13] is 0x55d856f758f4).
+A[14] := 0. (memory address of A[14] is 0x55d856f758f8).
+A[15] := 0. (memory address of A[15] is 0x55d856f758fc).
+A[16] := 0. (memory address of A[16] is 0x55d856f75900).
+A[17] := 0. (memory address of A[17] is 0x55d856f75904).
+A[18] := 0. (memory address of A[18] is 0x55d856f75908).
+A[19] := 0. (memory address of A[19] is 0x55d856f7590c).
+A[20] := 0. (memory address of A[20] is 0x55d856f75910).
+A[21] := 0. (memory address of A[21] is 0x55d856f75914).
+A[22] := 0. (memory address of A[22] is 0x55d856f75918).
+A[23] := 0. (memory address of A[23] is 0x55d856f7591c).
+A[24] := 0. (memory address of A[24] is 0x55d856f75920).
+A[25] := 0. (memory address of A[25] is 0x55d856f75924).
+A[26] := 0. (memory address of A[26] is 0x55d856f75928).
+A[27] := 0. (memory address of A[27] is 0x55d856f7592c).
+A[28] := 0. (memory address of A[28] is 0x55d856f75930).
+A[29] := 0. (memory address of A[29] is 0x55d856f75934).
+A[30] := 0. (memory address of A[30] is 0x55d856f75938).
+A[31] := 0. (memory address of A[31] is 0x55d856f7593c).
+A[32] := 0. (memory address of A[32] is 0x55d856f75940).
+A[33] := 0. (memory address of A[33] is 0x55d856f75944).
+A[34] := 0. (memory address of A[34] is 0x55d856f75948).
+A[35] := 0. (memory address of A[35] is 0x55d856f7594c).
+A[36] := 0. (memory address of A[36] is 0x55d856f75950).
+A[37] := 0. (memory address of A[37] is 0x55d856f75954).
+A[38] := 0. (memory address of A[38] is 0x55d856f75958).
+A[39] := 0. (memory address of A[39] is 0x55d856f7595c).
+A[40] := 0. (memory address of A[40] is 0x55d856f75960).
+A[41] := 0. (memory address of A[41] is 0x55d856f75964).
+A[42] := 0. (memory address of A[42] is 0x55d856f75968).
+A[43] := 0. (memory address of A[43] is 0x55d856f7596c).
+A[44] := 0. (memory address of A[44] is 0x55d856f75970).
+A[45] := 0. (memory address of A[45] is 0x55d856f75974).
+A[46] := 0. (memory address of A[46] is 0x55d856f75978).
+A[47] := 0. (memory address of A[47] is 0x55d856f7597c).
+A[48] := 0. (memory address of A[48] is 0x55d856f75980).
+A[49] := 0. (memory address of A[49] is 0x55d856f75984).
+A[50] := 0. (memory address of A[50] is 0x55d856f75988).
+A[51] := 0. (memory address of A[51] is 0x55d856f7598c).
+A[52] := 0. (memory address of A[52] is 0x55d856f75990).
+A[53] := 0. (memory address of A[53] is 0x55d856f75994).
+A[54] := 0. (memory address of A[54] is 0x55d856f75998).
+A[55] := 0. (memory address of A[55] is 0x55d856f7599c).
+A[56] := 0. (memory address of A[56] is 0x55d856f759a0).
+A[57] := 0. (memory address of A[57] is 0x55d856f759a4).
+A[58] := 0. (memory address of A[58] is 0x55d856f759a8).
+A[59] := 0. (memory address of A[59] is 0x55d856f759ac).
+A[60] := 0. (memory address of A[60] is 0x55d856f759b0).
+A[61] := 0. (memory address of A[61] is 0x55d856f759b4).
+A[62] := 0. (memory address of A[62] is 0x55d856f759b8).
+A[63] := 0. (memory address of A[63] is 0x55d856f759bc).
+A[64] := 0. (memory address of A[64] is 0x55d856f759c0).
+A[65] := 0. (memory address of A[65] is 0x55d856f759c4).
+A[66] := 0. (memory address of A[66] is 0x55d856f759c8).
+A[67] := 0. (memory address of A[67] is 0x55d856f759cc).
+A[68] := 0. (memory address of A[68] is 0x55d856f759d0).
+A[69] := 0. (memory address of A[69] is 0x55d856f759d4).
+A[70] := 0. (memory address of A[70] is 0x55d856f759d8).
+A[71] := 0. (memory address of A[71] is 0x55d856f759dc).
+A[72] := 0. (memory address of A[72] is 0x55d856f759e0).
+A[73] := 0. (memory address of A[73] is 0x55d856f759e4).
+A[74] := 0. (memory address of A[74] is 0x55d856f759e8).
+A[75] := 0. (memory address of A[75] is 0x55d856f759ec).
+A[76] := 0. (memory address of A[76] is 0x55d856f759f0).
+A[77] := 0. (memory address of A[77] is 0x55d856f759f4).
+A[78] := 0. (memory address of A[78] is 0x55d856f759f8).
+A[79] := 0. (memory address of A[79] is 0x55d856f759fc).
+A[80] := 0. (memory address of A[80] is 0x55d856f75a00).
+A[81] := 0. (memory address of A[81] is 0x55d856f75a04).
+A[82] := 0. (memory address of A[82] is 0x55d856f75a08).
+A[83] := 0. (memory address of A[83] is 0x55d856f75a0c).
+A[84] := 0. (memory address of A[84] is 0x55d856f75a10).
+A[85] := 0. (memory address of A[85] is 0x55d856f75a14).
+A[86] := 0. (memory address of A[86] is 0x55d856f75a18).
+A[87] := 0. (memory address of A[87] is 0x55d856f75a1c).
+A[88] := 0. (memory address of A[88] is 0x55d856f75a20).
+A[89] := 0. (memory address of A[89] is 0x55d856f75a24).
+A[90] := 0. (memory address of A[90] is 0x55d856f75a28).
+A[91] := 0. (memory address of A[91] is 0x55d856f75a2c).
+A[92] := 0. (memory address of A[92] is 0x55d856f75a30).
+A[93] := 0. (memory address of A[93] is 0x55d856f75a34).
+A[94] := 0. (memory address of A[94] is 0x55d856f75a38).
+A[95] := 0. (memory address of A[95] is 0x55d856f75a3c).
+A[96] := 0. (memory address of A[96] is 0x55d856f75a40).
+A[97] := 0. (memory address of A[97] is 0x55d856f75a44).
+A[98] := 0. (memory address of A[98] is 0x55d856f75a48).
+A[99] := 0. (memory address of A[99] is 0x55d856f75a4c).
+
+// Seed the pseudo random number generator with the integer number of seconds which have elapsed since the Unix Epoch (i.e. midnight of 01_JANUARY_1970).
+srand(time(NULL));
+
+Set Each Element of Array A to a Random Nonnegative Integer No Larger Than T:
+
+A[0] := rand() % T := 1. (memory address of A[0] is 0x55d856f758c0).
+A[1] := rand() % T := 1. (memory address of A[1] is 0x55d856f758c4).
+A[2] := rand() % T := 6. (memory address of A[2] is 0x55d856f758c8).
+A[3] := rand() % T := 2. (memory address of A[3] is 0x55d856f758cc).
+A[4] := rand() % T := 0. (memory address of A[4] is 0x55d856f758d0).
+A[5] := rand() % T := 4. (memory address of A[5] is 0x55d856f758d4).
+A[6] := rand() % T := 4. (memory address of A[6] is 0x55d856f758d8).
+A[7] := rand() % T := 2. (memory address of A[7] is 0x55d856f758dc).
+A[8] := rand() % T := 7. (memory address of A[8] is 0x55d856f758e0).
+A[9] := rand() % T := 3. (memory address of A[9] is 0x55d856f758e4).
+A[10] := rand() % T := 1. (memory address of A[10] is 0x55d856f758e8).
+A[11] := rand() % T := 4. (memory address of A[11] is 0x55d856f758ec).
+A[12] := rand() % T := 0. (memory address of A[12] is 0x55d856f758f0).
+A[13] := rand() % T := 9. (memory address of A[13] is 0x55d856f758f4).
+A[14] := rand() % T := 0. (memory address of A[14] is 0x55d856f758f8).
+A[15] := rand() % T := 4. (memory address of A[15] is 0x55d856f758fc).
+A[16] := rand() % T := 8. (memory address of A[16] is 0x55d856f75900).
+A[17] := rand() % T := 7. (memory address of A[17] is 0x55d856f75904).
+A[18] := rand() % T := 7. (memory address of A[18] is 0x55d856f75908).
+A[19] := rand() % T := 0. (memory address of A[19] is 0x55d856f7590c).
+A[20] := rand() % T := 6. (memory address of A[20] is 0x55d856f75910).
+A[21] := rand() % T := 3. (memory address of A[21] is 0x55d856f75914).
+A[22] := rand() % T := 3. (memory address of A[22] is 0x55d856f75918).
+A[23] := rand() % T := 1. (memory address of A[23] is 0x55d856f7591c).
+A[24] := rand() % T := 6. (memory address of A[24] is 0x55d856f75920).
+A[25] := rand() % T := 8. (memory address of A[25] is 0x55d856f75924).
+A[26] := rand() % T := 7. (memory address of A[26] is 0x55d856f75928).
+A[27] := rand() % T := 6. (memory address of A[27] is 0x55d856f7592c).
+A[28] := rand() % T := 5. (memory address of A[28] is 0x55d856f75930).
+A[29] := rand() % T := 3. (memory address of A[29] is 0x55d856f75934).
+A[30] := rand() % T := 2. (memory address of A[30] is 0x55d856f75938).
+A[31] := rand() % T := 9. (memory address of A[31] is 0x55d856f7593c).
+A[32] := rand() % T := 6. (memory address of A[32] is 0x55d856f75940).
+A[33] := rand() % T := 9. (memory address of A[33] is 0x55d856f75944).
+A[34] := rand() % T := 3. (memory address of A[34] is 0x55d856f75948).
+A[35] := rand() % T := 6. (memory address of A[35] is 0x55d856f7594c).
+A[36] := rand() % T := 5. (memory address of A[36] is 0x55d856f75950).
+A[37] := rand() % T := 9. (memory address of A[37] is 0x55d856f75954).
+A[38] := rand() % T := 0. (memory address of A[38] is 0x55d856f75958).
+A[39] := rand() % T := 3. (memory address of A[39] is 0x55d856f7595c).
+A[40] := rand() % T := 2. (memory address of A[40] is 0x55d856f75960).
+A[41] := rand() % T := 2. (memory address of A[41] is 0x55d856f75964).
+A[42] := rand() % T := 7. (memory address of A[42] is 0x55d856f75968).
+A[43] := rand() % T := 2. (memory address of A[43] is 0x55d856f7596c).
+A[44] := rand() % T := 1. (memory address of A[44] is 0x55d856f75970).
+A[45] := rand() % T := 0. (memory address of A[45] is 0x55d856f75974).
+A[46] := rand() % T := 9. (memory address of A[46] is 0x55d856f75978).
+A[47] := rand() % T := 1. (memory address of A[47] is 0x55d856f7597c).
+A[48] := rand() % T := 7. (memory address of A[48] is 0x55d856f75980).
+A[49] := rand() % T := 6. (memory address of A[49] is 0x55d856f75984).
+A[50] := rand() % T := 3. (memory address of A[50] is 0x55d856f75988).
+A[51] := rand() % T := 5. (memory address of A[51] is 0x55d856f7598c).
+A[52] := rand() % T := 9. (memory address of A[52] is 0x55d856f75990).
+A[53] := rand() % T := 6. (memory address of A[53] is 0x55d856f75994).
+A[54] := rand() % T := 7. (memory address of A[54] is 0x55d856f75998).
+A[55] := rand() % T := 7. (memory address of A[55] is 0x55d856f7599c).
+A[56] := rand() % T := 6. (memory address of A[56] is 0x55d856f759a0).
+A[57] := rand() % T := 6. (memory address of A[57] is 0x55d856f759a4).
+A[58] := rand() % T := 4. (memory address of A[58] is 0x55d856f759a8).
+A[59] := rand() % T := 2. (memory address of A[59] is 0x55d856f759ac).
+A[60] := rand() % T := 1. (memory address of A[60] is 0x55d856f759b0).
+A[61] := rand() % T := 6. (memory address of A[61] is 0x55d856f759b4).
+A[62] := rand() % T := 3. (memory address of A[62] is 0x55d856f759b8).
+A[63] := rand() % T := 7. (memory address of A[63] is 0x55d856f759bc).
+A[64] := rand() % T := 5. (memory address of A[64] is 0x55d856f759c0).
+A[65] := rand() % T := 6. (memory address of A[65] is 0x55d856f759c4).
+A[66] := rand() % T := 6. (memory address of A[66] is 0x55d856f759c8).
+A[67] := rand() % T := 1. (memory address of A[67] is 0x55d856f759cc).
+A[68] := rand() % T := 5. (memory address of A[68] is 0x55d856f759d0).
+A[69] := rand() % T := 6. (memory address of A[69] is 0x55d856f759d4).
+A[70] := rand() % T := 6. (memory address of A[70] is 0x55d856f759d8).
+A[71] := rand() % T := 9. (memory address of A[71] is 0x55d856f759dc).
+A[72] := rand() % T := 0. (memory address of A[72] is 0x55d856f759e0).
+A[73] := rand() % T := 5. (memory address of A[73] is 0x55d856f759e4).
+A[74] := rand() % T := 4. (memory address of A[74] is 0x55d856f759e8).
+A[75] := rand() % T := 4. (memory address of A[75] is 0x55d856f759ec).
+A[76] := rand() % T := 5. (memory address of A[76] is 0x55d856f759f0).
+A[77] := rand() % T := 3. (memory address of A[77] is 0x55d856f759f4).
+A[78] := rand() % T := 7. (memory address of A[78] is 0x55d856f759f8).
+A[79] := rand() % T := 4. (memory address of A[79] is 0x55d856f759fc).
+A[80] := rand() % T := 9. (memory address of A[80] is 0x55d856f75a00).
+A[81] := rand() % T := 1. (memory address of A[81] is 0x55d856f75a04).
+A[82] := rand() % T := 0. (memory address of A[82] is 0x55d856f75a08).
+A[83] := rand() % T := 0. (memory address of A[83] is 0x55d856f75a0c).
+A[84] := rand() % T := 7. (memory address of A[84] is 0x55d856f75a10).
+A[85] := rand() % T := 9. (memory address of A[85] is 0x55d856f75a14).
+A[86] := rand() % T := 9. (memory address of A[86] is 0x55d856f75a18).
+A[87] := rand() % T := 6. (memory address of A[87] is 0x55d856f75a1c).
+A[88] := rand() % T := 5. (memory address of A[88] is 0x55d856f75a20).
+A[89] := rand() % T := 3. (memory address of A[89] is 0x55d856f75a24).
+A[90] := rand() % T := 0. (memory address of A[90] is 0x55d856f75a28).
+A[91] := rand() % T := 9. (memory address of A[91] is 0x55d856f75a2c).
+A[92] := rand() % T := 2. (memory address of A[92] is 0x55d856f75a30).
+A[93] := rand() % T := 3. (memory address of A[93] is 0x55d856f75a34).
+A[94] := rand() % T := 8. (memory address of A[94] is 0x55d856f75a38).
+A[95] := rand() % T := 7. (memory address of A[95] is 0x55d856f75a3c).
+A[96] := rand() % T := 1. (memory address of A[96] is 0x55d856f75a40).
+A[97] := rand() % T := 4. (memory address of A[97] is 0x55d856f75a44).
+A[98] := rand() % T := 0. (memory address of A[98] is 0x55d856f75a48).
+A[99] := rand() % T := 6. (memory address of A[99] is 0x55d856f75a4c).
+
+// Sort the integer values stored in array A in ascending order.
+bubble_sort(A, S);
+
+Display the Contents of Array A in Ascending Order:
+
+A[0] := 0. (memory address of A[0] is 0x55d856f758c0).
+A[1] := 0. (memory address of A[1] is 0x55d856f758c4).
+A[2] := 0. (memory address of A[2] is 0x55d856f758c8).
+A[3] := 0. (memory address of A[3] is 0x55d856f758cc).
+A[4] := 0. (memory address of A[4] is 0x55d856f758d0).
+A[5] := 0. (memory address of A[5] is 0x55d856f758d4).
+A[6] := 0. (memory address of A[6] is 0x55d856f758d8).
+A[7] := 0. (memory address of A[7] is 0x55d856f758dc).
+A[8] := 0. (memory address of A[8] is 0x55d856f758e0).
+A[9] := 0. (memory address of A[9] is 0x55d856f758e4).
+A[10] := 0. (memory address of A[10] is 0x55d856f758e8).
+A[11] := 1. (memory address of A[11] is 0x55d856f758ec).
+A[12] := 1. (memory address of A[12] is 0x55d856f758f0).
+A[13] := 1. (memory address of A[13] is 0x55d856f758f4).
+A[14] := 1. (memory address of A[14] is 0x55d856f758f8).
+A[15] := 1. (memory address of A[15] is 0x55d856f758fc).
+A[16] := 1. (memory address of A[16] is 0x55d856f75900).
+A[17] := 1. (memory address of A[17] is 0x55d856f75904).
+A[18] := 1. (memory address of A[18] is 0x55d856f75908).
+A[19] := 1. (memory address of A[19] is 0x55d856f7590c).
+A[20] := 1. (memory address of A[20] is 0x55d856f75910).
+A[21] := 2. (memory address of A[21] is 0x55d856f75914).
+A[22] := 2. (memory address of A[22] is 0x55d856f75918).
+A[23] := 2. (memory address of A[23] is 0x55d856f7591c).
+A[24] := 2. (memory address of A[24] is 0x55d856f75920).
+A[25] := 2. (memory address of A[25] is 0x55d856f75924).
+A[26] := 2. (memory address of A[26] is 0x55d856f75928).
+A[27] := 2. (memory address of A[27] is 0x55d856f7592c).
+A[28] := 2. (memory address of A[28] is 0x55d856f75930).
+A[29] := 3. (memory address of A[29] is 0x55d856f75934).
+A[30] := 3. (memory address of A[30] is 0x55d856f75938).
+A[31] := 3. (memory address of A[31] is 0x55d856f7593c).
+A[32] := 3. (memory address of A[32] is 0x55d856f75940).
+A[33] := 3. (memory address of A[33] is 0x55d856f75944).
+A[34] := 3. (memory address of A[34] is 0x55d856f75948).
+A[35] := 3. (memory address of A[35] is 0x55d856f7594c).
+A[36] := 3. (memory address of A[36] is 0x55d856f75950).
+A[37] := 3. (memory address of A[37] is 0x55d856f75954).
+A[38] := 3. (memory address of A[38] is 0x55d856f75958).
+A[39] := 3. (memory address of A[39] is 0x55d856f7595c).
+A[40] := 4. (memory address of A[40] is 0x55d856f75960).
+A[41] := 4. (memory address of A[41] is 0x55d856f75964).
+A[42] := 4. (memory address of A[42] is 0x55d856f75968).
+A[43] := 4. (memory address of A[43] is 0x55d856f7596c).
+A[44] := 4. (memory address of A[44] is 0x55d856f75970).
+A[45] := 4. (memory address of A[45] is 0x55d856f75974).
+A[46] := 4. (memory address of A[46] is 0x55d856f75978).
+A[47] := 4. (memory address of A[47] is 0x55d856f7597c).
+A[48] := 4. (memory address of A[48] is 0x55d856f75980).
+A[49] := 5. (memory address of A[49] is 0x55d856f75984).
+A[50] := 5. (memory address of A[50] is 0x55d856f75988).
+A[51] := 5. (memory address of A[51] is 0x55d856f7598c).
+A[52] := 5. (memory address of A[52] is 0x55d856f75990).
+A[53] := 5. (memory address of A[53] is 0x55d856f75994).
+A[54] := 5. (memory address of A[54] is 0x55d856f75998).
+A[55] := 5. (memory address of A[55] is 0x55d856f7599c).
+A[56] := 5. (memory address of A[56] is 0x55d856f759a0).
+A[57] := 6. (memory address of A[57] is 0x55d856f759a4).
+A[58] := 6. (memory address of A[58] is 0x55d856f759a8).
+A[59] := 6. (memory address of A[59] is 0x55d856f759ac).
+A[60] := 6. (memory address of A[60] is 0x55d856f759b0).
+A[61] := 6. (memory address of A[61] is 0x55d856f759b4).
+A[62] := 6. (memory address of A[62] is 0x55d856f759b8).
+A[63] := 6. (memory address of A[63] is 0x55d856f759bc).
+A[64] := 6. (memory address of A[64] is 0x55d856f759c0).
+A[65] := 6. (memory address of A[65] is 0x55d856f759c4).
+A[66] := 6. (memory address of A[66] is 0x55d856f759c8).
+A[67] := 6. (memory address of A[67] is 0x55d856f759cc).
+A[68] := 6. (memory address of A[68] is 0x55d856f759d0).
+A[69] := 6. (memory address of A[69] is 0x55d856f759d4).
+A[70] := 6. (memory address of A[70] is 0x55d856f759d8).
+A[71] := 6. (memory address of A[71] is 0x55d856f759dc).
+A[72] := 6. (memory address of A[72] is 0x55d856f759e0).
+A[73] := 6. (memory address of A[73] is 0x55d856f759e4).
+A[74] := 7. (memory address of A[74] is 0x55d856f759e8).
+A[75] := 7. (memory address of A[75] is 0x55d856f759ec).
+A[76] := 7. (memory address of A[76] is 0x55d856f759f0).
+A[77] := 7. (memory address of A[77] is 0x55d856f759f4).
+A[78] := 7. (memory address of A[78] is 0x55d856f759f8).
+A[79] := 7. (memory address of A[79] is 0x55d856f759fc).
+A[80] := 7. (memory address of A[80] is 0x55d856f75a00).
+A[81] := 7. (memory address of A[81] is 0x55d856f75a04).
+A[82] := 7. (memory address of A[82] is 0x55d856f75a08).
+A[83] := 7. (memory address of A[83] is 0x55d856f75a0c).
+A[84] := 7. (memory address of A[84] is 0x55d856f75a10).
+A[85] := 7. (memory address of A[85] is 0x55d856f75a14).
+A[86] := 8. (memory address of A[86] is 0x55d856f75a18).
+A[87] := 8. (memory address of A[87] is 0x55d856f75a1c).
+A[88] := 8. (memory address of A[88] is 0x55d856f75a20).
+A[89] := 9. (memory address of A[89] is 0x55d856f75a24).
+A[90] := 9. (memory address of A[90] is 0x55d856f75a28).
+A[91] := 9. (memory address of A[91] is 0x55d856f75a2c).
+A[92] := 9. (memory address of A[92] is 0x55d856f75a30).
+A[93] := 9. (memory address of A[93] is 0x55d856f75a34).
+A[94] := 9. (memory address of A[94] is 0x55d856f75a38).
+A[95] := 9. (memory address of A[95] is 0x55d856f75a3c).
+A[96] := 9. (memory address of A[96] is 0x55d856f75a40).
+A[97] := 9. (memory address of A[97] is 0x55d856f75a44).
+A[98] := 9. (memory address of A[98] is 0x55d856f75a48).
+A[99] := 9. (memory address of A[99] is 0x55d856f75a4c).
+
+// Assign double pointer B to address of the first memory cell constituting a two-dimensional array.
+// B represents a grid consisting of T rows and 2 columns.
+B = get_frequency_array(A, S, T);
+
+Display the Contents of Two-Dimensional Array B:
+
+------------------------------------------------
+Frequency of value 0 in array A is 11.
+------------------------------------------------
+B[0][0] := 0. (memory address of B[0][0] is 0x55d856f75ac0).
+B[0][1] := 11. (memory address of B[0][1] is 0x55d856f75ac4).
+------------------------------------------------
+Frequency of value 1 in array A is 10.
+------------------------------------------------
+B[1][0] := 1. (memory address of B[1][0] is 0x55d856f75ae0).
+B[1][1] := 10. (memory address of B[1][1] is 0x55d856f75ae4).
+------------------------------------------------
+Frequency of value 2 in array A is 8.
+------------------------------------------------
+B[2][0] := 2. (memory address of B[2][0] is 0x55d856f75b00).
+B[2][1] := 8. (memory address of B[2][1] is 0x55d856f75b04).
+------------------------------------------------
+Frequency of value 3 in array A is 11.
+------------------------------------------------
+B[3][0] := 3. (memory address of B[3][0] is 0x55d856f75b20).
+B[3][1] := 11. (memory address of B[3][1] is 0x55d856f75b24).
+------------------------------------------------
+Frequency of value 4 in array A is 9.
+------------------------------------------------
+B[4][0] := 4. (memory address of B[4][0] is 0x55d856f75b40).
+B[4][1] := 9. (memory address of B[4][1] is 0x55d856f75b44).
+------------------------------------------------
+Frequency of value 5 in array A is 8.
+------------------------------------------------
+B[5][0] := 5. (memory address of B[5][0] is 0x55d856f75b60).
+B[5][1] := 8. (memory address of B[5][1] is 0x55d856f75b64).
+------------------------------------------------
+Frequency of value 6 in array A is 17.
+------------------------------------------------
+B[6][0] := 6. (memory address of B[6][0] is 0x55d856f75b80).
+B[6][1] := 17. (memory address of B[6][1] is 0x55d856f75b84).
+------------------------------------------------
+Frequency of value 7 in array A is 12.
+------------------------------------------------
+B[7][0] := 7. (memory address of B[7][0] is 0x55d856f75ba0).
+B[7][1] := 12. (memory address of B[7][1] is 0x55d856f75ba4).
+------------------------------------------------
+Frequency of value 8 in array A is 3.
+------------------------------------------------
+B[8][0] := 8. (memory address of B[8][0] is 0x55d856f75bc0).
+B[8][1] := 3. (memory address of B[8][1] is 0x55d856f75bc4).
+------------------------------------------------
+Frequency of value 9 in array A is 11.
+------------------------------------------------
+B[9][0] := 9. (memory address of B[9][0] is 0x55d856f75be0).
+B[9][1] := 11. (memory address of B[9][1] is 0x55d856f75be4).
+
+// Verify that the sum of the frequencies of unique values in A is the same as the total number of elements in A.
+N = 0;
+for (i = 0; i &lt; T; i += 1) N += B[i][1];
+N := 100. // which should be identical to S.
+
+get_average_array_value(A, S) := 4.
+
+get_smallest_array_value(A, S) := 0.
+
+get_largest_array_value(A, S) := 9.
+
+* * *
+sizeof(int) := 4 byte(s).
+The number of bytes of contiguous memory allocated to array A is: (sizeof(int) * S) = (4 * 100) = 400.
+The number of bytes of contiguous memory allocated to array B is: (sizeof(int) * T) = (4 * 10) = 40.
+* * *
+
+Histogram of Unique Array Value Frequencies:
+0: XXXXXXXXXXX (11)
+1: XXXXXXXXXX (10)
+2: XXXXXXXX (8)
+3: XXXXXXXXXXX (11)
+4: XXXXXXXXX (9)
+5: XXXXXXXX (8)
+6: XXXXXXXXXXXXXXXXX (17)
+7: XXXXXXXXXXXX (12)
+8: XXX (3)
+9: XXXXXXXXXXX (11)
+
+// Deallocate memory which was assigned to the instantiation of array A during program runtime.
+delete [] A;
+
+// Deallocate memory which was assigned to the instantiation of array B during program runtime.
+for (int i = 0; i &lt; T; i += 1) delete [] B[i];
+delete [] B;
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p><strong>Sample Program Output (Small S, Large T)</strong></p>
+<hr>
+<p>plain-text file: <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output_(small_S_large_T).txt" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/probability_output_(small_S_large_T).txt</a></p>
+<hr>
+<pre>--------------------------------
+Start Of Program
+--------------------------------
+
+// Declare a pointer to an int-sized block of memory.
+int * A;
+
+// Declare a pointer to a pointer to an int-sized block of memory.
+int ** B;
+
+Enter a natural number value, S, which is no larger than 1000 (and which will be used as the number of elements to include in an array of random integers): 
+
+S := 10.
+
+Enter a natural number value, T, which is no larger than 1000 (and which will be used as the maximum number of unique states which each array element may represent): 
+
+T := 100.
+
+// Allocate S consecutive int-sized blocks of memory to the instantiation of array A.
+// A is a pointer which stores the address of the first memory cell of that chunk of S consecutive int-sized blocks of memory.
+A = new int[S];
+
+Display the Initial Contents of Array A:
+
+A[0] := 0. (memory address of A[0] is 0x55a46ac438c0).
+A[1] := 0. (memory address of A[1] is 0x55a46ac438c4).
+A[2] := 0. (memory address of A[2] is 0x55a46ac438c8).
+A[3] := 0. (memory address of A[3] is 0x55a46ac438cc).
+A[4] := 0. (memory address of A[4] is 0x55a46ac438d0).
+A[5] := 0. (memory address of A[5] is 0x55a46ac438d4).
+A[6] := 0. (memory address of A[6] is 0x55a46ac438d8).
+A[7] := 0. (memory address of A[7] is 0x55a46ac438dc).
+A[8] := 0. (memory address of A[8] is 0x55a46ac438e0).
+A[9] := 0. (memory address of A[9] is 0x55a46ac438e4).
+
+// Seed the pseudo random number generator with the integer number of seconds which have elapsed since the Unix Epoch (i.e. midnight of 01_JANUARY_1970).
+srand(time(NULL));
+
+Set Each Element of Array A to a Random Nonnegative Integer No Larger Than T:
+
+A[0] := rand() % T := 12. (memory address of A[0] is 0x55a46ac438c0).
+A[1] := rand() % T := 25. (memory address of A[1] is 0x55a46ac438c4).
+A[2] := rand() % T := 46. (memory address of A[2] is 0x55a46ac438c8).
+A[3] := rand() % T := 92. (memory address of A[3] is 0x55a46ac438cc).
+A[4] := rand() % T := 31. (memory address of A[4] is 0x55a46ac438d0).
+A[5] := rand() % T := 98. (memory address of A[5] is 0x55a46ac438d4).
+A[6] := rand() % T := 46. (memory address of A[6] is 0x55a46ac438d8).
+A[7] := rand() % T := 42. (memory address of A[7] is 0x55a46ac438dc).
+A[8] := rand() % T := 17. (memory address of A[8] is 0x55a46ac438e0).
+A[9] := rand() % T := 53. (memory address of A[9] is 0x55a46ac438e4).
+
+// Sort the integer values stored in array A in ascending order.
+bubble_sort(A, S);
+
+Display the Contents of Array A in Ascending Order:
+
+A[0] := 12. (memory address of A[0] is 0x55a46ac438c0).
+A[1] := 17. (memory address of A[1] is 0x55a46ac438c4).
+A[2] := 25. (memory address of A[2] is 0x55a46ac438c8).
+A[3] := 31. (memory address of A[3] is 0x55a46ac438cc).
+A[4] := 42. (memory address of A[4] is 0x55a46ac438d0).
+A[5] := 46. (memory address of A[5] is 0x55a46ac438d4).
+A[6] := 46. (memory address of A[6] is 0x55a46ac438d8).
+A[7] := 53. (memory address of A[7] is 0x55a46ac438dc).
+A[8] := 92. (memory address of A[8] is 0x55a46ac438e0).
+A[9] := 98. (memory address of A[9] is 0x55a46ac438e4).
+
+// Assign double pointer B to address of the first memory cell constituting a two-dimensional array.
+// B represents a grid consisting of T rows and 2 columns.
+B = get_frequency_array(A, S, T);
+
+Display the Contents of Two-Dimensional Array B:
+
+------------------------------------------------
+Frequency of value 0 in array A is 0.
+------------------------------------------------
+B[0][0] := 0. (memory address of B[0][0] is 0x55a46ac43c20).
+B[0][1] := 0. (memory address of B[0][1] is 0x55a46ac43c24).
+------------------------------------------------
+Frequency of value 1 in array A is 0.
+------------------------------------------------
+B[1][0] := 1. (memory address of B[1][0] is 0x55a46ac43c40).
+B[1][1] := 0. (memory address of B[1][1] is 0x55a46ac43c44).
+------------------------------------------------
+Frequency of value 2 in array A is 0.
+------------------------------------------------
+B[2][0] := 2. (memory address of B[2][0] is 0x55a46ac43c60).
+B[2][1] := 0. (memory address of B[2][1] is 0x55a46ac43c64).
+------------------------------------------------
+Frequency of value 3 in array A is 0.
+------------------------------------------------
+B[3][0] := 3. (memory address of B[3][0] is 0x55a46ac43c80).
+B[3][1] := 0. (memory address of B[3][1] is 0x55a46ac43c84).
+------------------------------------------------
+Frequency of value 4 in array A is 0.
+------------------------------------------------
+B[4][0] := 4. (memory address of B[4][0] is 0x55a46ac43ca0).
+B[4][1] := 0. (memory address of B[4][1] is 0x55a46ac43ca4).
+------------------------------------------------
+Frequency of value 5 in array A is 0.
+------------------------------------------------
+B[5][0] := 5. (memory address of B[5][0] is 0x55a46ac43cc0).
+B[5][1] := 0. (memory address of B[5][1] is 0x55a46ac43cc4).
+------------------------------------------------
+Frequency of value 6 in array A is 0.
+------------------------------------------------
+B[6][0] := 6. (memory address of B[6][0] is 0x55a46ac43ce0).
+B[6][1] := 0. (memory address of B[6][1] is 0x55a46ac43ce4).
+------------------------------------------------
+Frequency of value 7 in array A is 0.
+------------------------------------------------
+B[7][0] := 7. (memory address of B[7][0] is 0x55a46ac43d00).
+B[7][1] := 0. (memory address of B[7][1] is 0x55a46ac43d04).
+------------------------------------------------
+Frequency of value 8 in array A is 0.
+------------------------------------------------
+B[8][0] := 8. (memory address of B[8][0] is 0x55a46ac43d20).
+B[8][1] := 0. (memory address of B[8][1] is 0x55a46ac43d24).
+------------------------------------------------
+Frequency of value 9 in array A is 0.
+------------------------------------------------
+B[9][0] := 9. (memory address of B[9][0] is 0x55a46ac43d40).
+B[9][1] := 0. (memory address of B[9][1] is 0x55a46ac43d44).
+------------------------------------------------
+Frequency of value 10 in array A is 0.
+------------------------------------------------
+B[10][0] := 10. (memory address of B[10][0] is 0x55a46ac43d60).
+B[10][1] := 0. (memory address of B[10][1] is 0x55a46ac43d64).
+------------------------------------------------
+Frequency of value 11 in array A is 0.
+------------------------------------------------
+B[11][0] := 11. (memory address of B[11][0] is 0x55a46ac43d80).
+B[11][1] := 0. (memory address of B[11][1] is 0x55a46ac43d84).
+------------------------------------------------
+Frequency of value 12 in array A is 1.
+------------------------------------------------
+B[12][0] := 12. (memory address of B[12][0] is 0x55a46ac43da0).
+B[12][1] := 1. (memory address of B[12][1] is 0x55a46ac43da4).
+------------------------------------------------
+Frequency of value 13 in array A is 0.
+------------------------------------------------
+B[13][0] := 13. (memory address of B[13][0] is 0x55a46ac43dc0).
+B[13][1] := 0. (memory address of B[13][1] is 0x55a46ac43dc4).
+------------------------------------------------
+Frequency of value 14 in array A is 0.
+------------------------------------------------
+B[14][0] := 14. (memory address of B[14][0] is 0x55a46ac43de0).
+B[14][1] := 0. (memory address of B[14][1] is 0x55a46ac43de4).
+------------------------------------------------
+Frequency of value 15 in array A is 0.
+------------------------------------------------
+B[15][0] := 15. (memory address of B[15][0] is 0x55a46ac43e00).
+B[15][1] := 0. (memory address of B[15][1] is 0x55a46ac43e04).
+------------------------------------------------
+Frequency of value 16 in array A is 0.
+------------------------------------------------
+B[16][0] := 16. (memory address of B[16][0] is 0x55a46ac43e20).
+B[16][1] := 0. (memory address of B[16][1] is 0x55a46ac43e24).
+------------------------------------------------
+Frequency of value 17 in array A is 1.
+------------------------------------------------
+B[17][0] := 17. (memory address of B[17][0] is 0x55a46ac43e40).
+B[17][1] := 1. (memory address of B[17][1] is 0x55a46ac43e44).
+------------------------------------------------
+Frequency of value 18 in array A is 0.
+------------------------------------------------
+B[18][0] := 18. (memory address of B[18][0] is 0x55a46ac43e60).
+B[18][1] := 0. (memory address of B[18][1] is 0x55a46ac43e64).
+------------------------------------------------
+Frequency of value 19 in array A is 0.
+------------------------------------------------
+B[19][0] := 19. (memory address of B[19][0] is 0x55a46ac43e80).
+B[19][1] := 0. (memory address of B[19][1] is 0x55a46ac43e84).
+------------------------------------------------
+Frequency of value 20 in array A is 0.
+------------------------------------------------
+B[20][0] := 20. (memory address of B[20][0] is 0x55a46ac43ea0).
+B[20][1] := 0. (memory address of B[20][1] is 0x55a46ac43ea4).
+------------------------------------------------
+Frequency of value 21 in array A is 0.
+------------------------------------------------
+B[21][0] := 21. (memory address of B[21][0] is 0x55a46ac43ec0).
+B[21][1] := 0. (memory address of B[21][1] is 0x55a46ac43ec4).
+------------------------------------------------
+Frequency of value 22 in array A is 0.
+------------------------------------------------
+B[22][0] := 22. (memory address of B[22][0] is 0x55a46ac43ee0).
+B[22][1] := 0. (memory address of B[22][1] is 0x55a46ac43ee4).
+------------------------------------------------
+Frequency of value 23 in array A is 0.
+------------------------------------------------
+B[23][0] := 23. (memory address of B[23][0] is 0x55a46ac43f00).
+B[23][1] := 0. (memory address of B[23][1] is 0x55a46ac43f04).
+------------------------------------------------
+Frequency of value 24 in array A is 0.
+------------------------------------------------
+B[24][0] := 24. (memory address of B[24][0] is 0x55a46ac43f20).
+B[24][1] := 0. (memory address of B[24][1] is 0x55a46ac43f24).
+------------------------------------------------
+Frequency of value 25 in array A is 1.
+------------------------------------------------
+B[25][0] := 25. (memory address of B[25][0] is 0x55a46ac43f40).
+B[25][1] := 1. (memory address of B[25][1] is 0x55a46ac43f44).
+------------------------------------------------
+Frequency of value 26 in array A is 0.
+------------------------------------------------
+B[26][0] := 26. (memory address of B[26][0] is 0x55a46ac43f60).
+B[26][1] := 0. (memory address of B[26][1] is 0x55a46ac43f64).
+------------------------------------------------
+Frequency of value 27 in array A is 0.
+------------------------------------------------
+B[27][0] := 27. (memory address of B[27][0] is 0x55a46ac43f80).
+B[27][1] := 0. (memory address of B[27][1] is 0x55a46ac43f84).
+------------------------------------------------
+Frequency of value 28 in array A is 0.
+------------------------------------------------
+B[28][0] := 28. (memory address of B[28][0] is 0x55a46ac43fa0).
+B[28][1] := 0. (memory address of B[28][1] is 0x55a46ac43fa4).
+------------------------------------------------
+Frequency of value 29 in array A is 0.
+------------------------------------------------
+B[29][0] := 29. (memory address of B[29][0] is 0x55a46ac43fc0).
+B[29][1] := 0. (memory address of B[29][1] is 0x55a46ac43fc4).
+------------------------------------------------
+Frequency of value 30 in array A is 0.
+------------------------------------------------
+B[30][0] := 30. (memory address of B[30][0] is 0x55a46ac43fe0).
+B[30][1] := 0. (memory address of B[30][1] is 0x55a46ac43fe4).
+------------------------------------------------
+Frequency of value 31 in array A is 1.
+------------------------------------------------
+B[31][0] := 31. (memory address of B[31][0] is 0x55a46ac44000).
+B[31][1] := 1. (memory address of B[31][1] is 0x55a46ac44004).
+------------------------------------------------
+Frequency of value 32 in array A is 0.
+------------------------------------------------
+B[32][0] := 32. (memory address of B[32][0] is 0x55a46ac44020).
+B[32][1] := 0. (memory address of B[32][1] is 0x55a46ac44024).
+------------------------------------------------
+Frequency of value 33 in array A is 0.
+------------------------------------------------
+B[33][0] := 33. (memory address of B[33][0] is 0x55a46ac44040).
+B[33][1] := 0. (memory address of B[33][1] is 0x55a46ac44044).
+------------------------------------------------
+Frequency of value 34 in array A is 0.
+------------------------------------------------
+B[34][0] := 34. (memory address of B[34][0] is 0x55a46ac44060).
+B[34][1] := 0. (memory address of B[34][1] is 0x55a46ac44064).
+------------------------------------------------
+Frequency of value 35 in array A is 0.
+------------------------------------------------
+B[35][0] := 35. (memory address of B[35][0] is 0x55a46ac44080).
+B[35][1] := 0. (memory address of B[35][1] is 0x55a46ac44084).
+------------------------------------------------
+Frequency of value 36 in array A is 0.
+------------------------------------------------
+B[36][0] := 36. (memory address of B[36][0] is 0x55a46ac440a0).
+B[36][1] := 0. (memory address of B[36][1] is 0x55a46ac440a4).
+------------------------------------------------
+Frequency of value 37 in array A is 0.
+------------------------------------------------
+B[37][0] := 37. (memory address of B[37][0] is 0x55a46ac440c0).
+B[37][1] := 0. (memory address of B[37][1] is 0x55a46ac440c4).
+------------------------------------------------
+Frequency of value 38 in array A is 0.
+------------------------------------------------
+B[38][0] := 38. (memory address of B[38][0] is 0x55a46ac440e0).
+B[38][1] := 0. (memory address of B[38][1] is 0x55a46ac440e4).
+------------------------------------------------
+Frequency of value 39 in array A is 0.
+------------------------------------------------
+B[39][0] := 39. (memory address of B[39][0] is 0x55a46ac44100).
+B[39][1] := 0. (memory address of B[39][1] is 0x55a46ac44104).
+------------------------------------------------
+Frequency of value 40 in array A is 0.
+------------------------------------------------
+B[40][0] := 40. (memory address of B[40][0] is 0x55a46ac44120).
+B[40][1] := 0. (memory address of B[40][1] is 0x55a46ac44124).
+------------------------------------------------
+Frequency of value 41 in array A is 0.
+------------------------------------------------
+B[41][0] := 41. (memory address of B[41][0] is 0x55a46ac44140).
+B[41][1] := 0. (memory address of B[41][1] is 0x55a46ac44144).
+------------------------------------------------
+Frequency of value 42 in array A is 1.
+------------------------------------------------
+B[42][0] := 42. (memory address of B[42][0] is 0x55a46ac44160).
+B[42][1] := 1. (memory address of B[42][1] is 0x55a46ac44164).
+------------------------------------------------
+Frequency of value 43 in array A is 0.
+------------------------------------------------
+B[43][0] := 43. (memory address of B[43][0] is 0x55a46ac44180).
+B[43][1] := 0. (memory address of B[43][1] is 0x55a46ac44184).
+------------------------------------------------
+Frequency of value 44 in array A is 0.
+------------------------------------------------
+B[44][0] := 44. (memory address of B[44][0] is 0x55a46ac441a0).
+B[44][1] := 0. (memory address of B[44][1] is 0x55a46ac441a4).
+------------------------------------------------
+Frequency of value 45 in array A is 0.
+------------------------------------------------
+B[45][0] := 45. (memory address of B[45][0] is 0x55a46ac441c0).
+B[45][1] := 0. (memory address of B[45][1] is 0x55a46ac441c4).
+------------------------------------------------
+Frequency of value 46 in array A is 2.
+------------------------------------------------
+B[46][0] := 46. (memory address of B[46][0] is 0x55a46ac441e0).
+B[46][1] := 2. (memory address of B[46][1] is 0x55a46ac441e4).
+------------------------------------------------
+Frequency of value 47 in array A is 0.
+------------------------------------------------
+B[47][0] := 47. (memory address of B[47][0] is 0x55a46ac44200).
+B[47][1] := 0. (memory address of B[47][1] is 0x55a46ac44204).
+------------------------------------------------
+Frequency of value 48 in array A is 0.
+------------------------------------------------
+B[48][0] := 48. (memory address of B[48][0] is 0x55a46ac44220).
+B[48][1] := 0. (memory address of B[48][1] is 0x55a46ac44224).
+------------------------------------------------
+Frequency of value 49 in array A is 0.
+------------------------------------------------
+B[49][0] := 49. (memory address of B[49][0] is 0x55a46ac44240).
+B[49][1] := 0. (memory address of B[49][1] is 0x55a46ac44244).
+------------------------------------------------
+Frequency of value 50 in array A is 0.
+------------------------------------------------
+B[50][0] := 50. (memory address of B[50][0] is 0x55a46ac44260).
+B[50][1] := 0. (memory address of B[50][1] is 0x55a46ac44264).
+------------------------------------------------
+Frequency of value 51 in array A is 0.
+------------------------------------------------
+B[51][0] := 51. (memory address of B[51][0] is 0x55a46ac44280).
+B[51][1] := 0. (memory address of B[51][1] is 0x55a46ac44284).
+------------------------------------------------
+Frequency of value 52 in array A is 0.
+------------------------------------------------
+B[52][0] := 52. (memory address of B[52][0] is 0x55a46ac442a0).
+B[52][1] := 0. (memory address of B[52][1] is 0x55a46ac442a4).
+------------------------------------------------
+Frequency of value 53 in array A is 1.
+------------------------------------------------
+B[53][0] := 53. (memory address of B[53][0] is 0x55a46ac442c0).
+B[53][1] := 1. (memory address of B[53][1] is 0x55a46ac442c4).
+------------------------------------------------
+Frequency of value 54 in array A is 0.
+------------------------------------------------
+B[54][0] := 54. (memory address of B[54][0] is 0x55a46ac442e0).
+B[54][1] := 0. (memory address of B[54][1] is 0x55a46ac442e4).
+------------------------------------------------
+Frequency of value 55 in array A is 0.
+------------------------------------------------
+B[55][0] := 55. (memory address of B[55][0] is 0x55a46ac44300).
+B[55][1] := 0. (memory address of B[55][1] is 0x55a46ac44304).
+------------------------------------------------
+Frequency of value 56 in array A is 0.
+------------------------------------------------
+B[56][0] := 56. (memory address of B[56][0] is 0x55a46ac44320).
+B[56][1] := 0. (memory address of B[56][1] is 0x55a46ac44324).
+------------------------------------------------
+Frequency of value 57 in array A is 0.
+------------------------------------------------
+B[57][0] := 57. (memory address of B[57][0] is 0x55a46ac44340).
+B[57][1] := 0. (memory address of B[57][1] is 0x55a46ac44344).
+------------------------------------------------
+Frequency of value 58 in array A is 0.
+------------------------------------------------
+B[58][0] := 58. (memory address of B[58][0] is 0x55a46ac44360).
+B[58][1] := 0. (memory address of B[58][1] is 0x55a46ac44364).
+------------------------------------------------
+Frequency of value 59 in array A is 0.
+------------------------------------------------
+B[59][0] := 59. (memory address of B[59][0] is 0x55a46ac44380).
+B[59][1] := 0. (memory address of B[59][1] is 0x55a46ac44384).
+------------------------------------------------
+Frequency of value 60 in array A is 0.
+------------------------------------------------
+B[60][0] := 60. (memory address of B[60][0] is 0x55a46ac443a0).
+B[60][1] := 0. (memory address of B[60][1] is 0x55a46ac443a4).
+------------------------------------------------
+Frequency of value 61 in array A is 0.
+------------------------------------------------
+B[61][0] := 61. (memory address of B[61][0] is 0x55a46ac443c0).
+B[61][1] := 0. (memory address of B[61][1] is 0x55a46ac443c4).
+------------------------------------------------
+Frequency of value 62 in array A is 0.
+------------------------------------------------
+B[62][0] := 62. (memory address of B[62][0] is 0x55a46ac443e0).
+B[62][1] := 0. (memory address of B[62][1] is 0x55a46ac443e4).
+------------------------------------------------
+Frequency of value 63 in array A is 0.
+------------------------------------------------
+B[63][0] := 63. (memory address of B[63][0] is 0x55a46ac44400).
+B[63][1] := 0. (memory address of B[63][1] is 0x55a46ac44404).
+------------------------------------------------
+Frequency of value 64 in array A is 0.
+------------------------------------------------
+B[64][0] := 64. (memory address of B[64][0] is 0x55a46ac44420).
+B[64][1] := 0. (memory address of B[64][1] is 0x55a46ac44424).
+------------------------------------------------
+Frequency of value 65 in array A is 0.
+------------------------------------------------
+B[65][0] := 65. (memory address of B[65][0] is 0x55a46ac44440).
+B[65][1] := 0. (memory address of B[65][1] is 0x55a46ac44444).
+------------------------------------------------
+Frequency of value 66 in array A is 0.
+------------------------------------------------
+B[66][0] := 66. (memory address of B[66][0] is 0x55a46ac44460).
+B[66][1] := 0. (memory address of B[66][1] is 0x55a46ac44464).
+------------------------------------------------
+Frequency of value 67 in array A is 0.
+------------------------------------------------
+B[67][0] := 67. (memory address of B[67][0] is 0x55a46ac44480).
+B[67][1] := 0. (memory address of B[67][1] is 0x55a46ac44484).
+------------------------------------------------
+Frequency of value 68 in array A is 0.
+------------------------------------------------
+B[68][0] := 68. (memory address of B[68][0] is 0x55a46ac444a0).
+B[68][1] := 0. (memory address of B[68][1] is 0x55a46ac444a4).
+------------------------------------------------
+Frequency of value 69 in array A is 0.
+------------------------------------------------
+B[69][0] := 69. (memory address of B[69][0] is 0x55a46ac444c0).
+B[69][1] := 0. (memory address of B[69][1] is 0x55a46ac444c4).
+------------------------------------------------
+Frequency of value 70 in array A is 0.
+------------------------------------------------
+B[70][0] := 70. (memory address of B[70][0] is 0x55a46ac444e0).
+B[70][1] := 0. (memory address of B[70][1] is 0x55a46ac444e4).
+------------------------------------------------
+Frequency of value 71 in array A is 0.
+------------------------------------------------
+B[71][0] := 71. (memory address of B[71][0] is 0x55a46ac44500).
+B[71][1] := 0. (memory address of B[71][1] is 0x55a46ac44504).
+------------------------------------------------
+Frequency of value 72 in array A is 0.
+------------------------------------------------
+B[72][0] := 72. (memory address of B[72][0] is 0x55a46ac44520).
+B[72][1] := 0. (memory address of B[72][1] is 0x55a46ac44524).
+------------------------------------------------
+Frequency of value 73 in array A is 0.
+------------------------------------------------
+B[73][0] := 73. (memory address of B[73][0] is 0x55a46ac44540).
+B[73][1] := 0. (memory address of B[73][1] is 0x55a46ac44544).
+------------------------------------------------
+Frequency of value 74 in array A is 0.
+------------------------------------------------
+B[74][0] := 74. (memory address of B[74][0] is 0x55a46ac44560).
+B[74][1] := 0. (memory address of B[74][1] is 0x55a46ac44564).
+------------------------------------------------
+Frequency of value 75 in array A is 0.
+------------------------------------------------
+B[75][0] := 75. (memory address of B[75][0] is 0x55a46ac44580).
+B[75][1] := 0. (memory address of B[75][1] is 0x55a46ac44584).
+------------------------------------------------
+Frequency of value 76 in array A is 0.
+------------------------------------------------
+B[76][0] := 76. (memory address of B[76][0] is 0x55a46ac445a0).
+B[76][1] := 0. (memory address of B[76][1] is 0x55a46ac445a4).
+------------------------------------------------
+Frequency of value 77 in array A is 0.
+------------------------------------------------
+B[77][0] := 77. (memory address of B[77][0] is 0x55a46ac445c0).
+B[77][1] := 0. (memory address of B[77][1] is 0x55a46ac445c4).
+------------------------------------------------
+Frequency of value 78 in array A is 0.
+------------------------------------------------
+B[78][0] := 78. (memory address of B[78][0] is 0x55a46ac445e0).
+B[78][1] := 0. (memory address of B[78][1] is 0x55a46ac445e4).
+------------------------------------------------
+Frequency of value 79 in array A is 0.
+------------------------------------------------
+B[79][0] := 79. (memory address of B[79][0] is 0x55a46ac44600).
+B[79][1] := 0. (memory address of B[79][1] is 0x55a46ac44604).
+------------------------------------------------
+Frequency of value 80 in array A is 0.
+------------------------------------------------
+B[80][0] := 80. (memory address of B[80][0] is 0x55a46ac44620).
+B[80][1] := 0. (memory address of B[80][1] is 0x55a46ac44624).
+------------------------------------------------
+Frequency of value 81 in array A is 0.
+------------------------------------------------
+B[81][0] := 81. (memory address of B[81][0] is 0x55a46ac44640).
+B[81][1] := 0. (memory address of B[81][1] is 0x55a46ac44644).
+------------------------------------------------
+Frequency of value 82 in array A is 0.
+------------------------------------------------
+B[82][0] := 82. (memory address of B[82][0] is 0x55a46ac44660).
+B[82][1] := 0. (memory address of B[82][1] is 0x55a46ac44664).
+------------------------------------------------
+Frequency of value 83 in array A is 0.
+------------------------------------------------
+B[83][0] := 83. (memory address of B[83][0] is 0x55a46ac44680).
+B[83][1] := 0. (memory address of B[83][1] is 0x55a46ac44684).
+------------------------------------------------
+Frequency of value 84 in array A is 0.
+------------------------------------------------
+B[84][0] := 84. (memory address of B[84][0] is 0x55a46ac446a0).
+B[84][1] := 0. (memory address of B[84][1] is 0x55a46ac446a4).
+------------------------------------------------
+Frequency of value 85 in array A is 0.
+------------------------------------------------
+B[85][0] := 85. (memory address of B[85][0] is 0x55a46ac446c0).
+B[85][1] := 0. (memory address of B[85][1] is 0x55a46ac446c4).
+------------------------------------------------
+Frequency of value 86 in array A is 0.
+------------------------------------------------
+B[86][0] := 86. (memory address of B[86][0] is 0x55a46ac446e0).
+B[86][1] := 0. (memory address of B[86][1] is 0x55a46ac446e4).
+------------------------------------------------
+Frequency of value 87 in array A is 0.
+------------------------------------------------
+B[87][0] := 87. (memory address of B[87][0] is 0x55a46ac44700).
+B[87][1] := 0. (memory address of B[87][1] is 0x55a46ac44704).
+------------------------------------------------
+Frequency of value 88 in array A is 0.
+------------------------------------------------
+B[88][0] := 88. (memory address of B[88][0] is 0x55a46ac44720).
+B[88][1] := 0. (memory address of B[88][1] is 0x55a46ac44724).
+------------------------------------------------
+Frequency of value 89 in array A is 0.
+------------------------------------------------
+B[89][0] := 89. (memory address of B[89][0] is 0x55a46ac44740).
+B[89][1] := 0. (memory address of B[89][1] is 0x55a46ac44744).
+------------------------------------------------
+Frequency of value 90 in array A is 0.
+------------------------------------------------
+B[90][0] := 90. (memory address of B[90][0] is 0x55a46ac44760).
+B[90][1] := 0. (memory address of B[90][1] is 0x55a46ac44764).
+------------------------------------------------
+Frequency of value 91 in array A is 0.
+------------------------------------------------
+B[91][0] := 91. (memory address of B[91][0] is 0x55a46ac44780).
+B[91][1] := 0. (memory address of B[91][1] is 0x55a46ac44784).
+------------------------------------------------
+Frequency of value 92 in array A is 1.
+------------------------------------------------
+B[92][0] := 92. (memory address of B[92][0] is 0x55a46ac447a0).
+B[92][1] := 1. (memory address of B[92][1] is 0x55a46ac447a4).
+------------------------------------------------
+Frequency of value 93 in array A is 0.
+------------------------------------------------
+B[93][0] := 93. (memory address of B[93][0] is 0x55a46ac447c0).
+B[93][1] := 0. (memory address of B[93][1] is 0x55a46ac447c4).
+------------------------------------------------
+Frequency of value 94 in array A is 0.
+------------------------------------------------
+B[94][0] := 94. (memory address of B[94][0] is 0x55a46ac447e0).
+B[94][1] := 0. (memory address of B[94][1] is 0x55a46ac447e4).
+------------------------------------------------
+Frequency of value 95 in array A is 0.
+------------------------------------------------
+B[95][0] := 95. (memory address of B[95][0] is 0x55a46ac44800).
+B[95][1] := 0. (memory address of B[95][1] is 0x55a46ac44804).
+------------------------------------------------
+Frequency of value 96 in array A is 0.
+------------------------------------------------
+B[96][0] := 96. (memory address of B[96][0] is 0x55a46ac44820).
+B[96][1] := 0. (memory address of B[96][1] is 0x55a46ac44824).
+------------------------------------------------
+Frequency of value 97 in array A is 0.
+------------------------------------------------
+B[97][0] := 97. (memory address of B[97][0] is 0x55a46ac44840).
+B[97][1] := 0. (memory address of B[97][1] is 0x55a46ac44844).
+------------------------------------------------
+Frequency of value 98 in array A is 1.
+------------------------------------------------
+B[98][0] := 98. (memory address of B[98][0] is 0x55a46ac44860).
+B[98][1] := 1. (memory address of B[98][1] is 0x55a46ac44864).
+------------------------------------------------
+Frequency of value 99 in array A is 0.
+------------------------------------------------
+B[99][0] := 99. (memory address of B[99][0] is 0x55a46ac44880).
+B[99][1] := 0. (memory address of B[99][1] is 0x55a46ac44884).
+
+// Verify that the sum of the frequencies of unique values in A is the same as the total number of elements in A.
+N = 0;
+for (i = 0; i &lt; T; i += 1) N += B[i][1];
+N := 10. // which should be identical to S.
+
+get_average_array_value(A, S) := 46.
+
+get_smallest_array_value(A, S) := 12.
+
+get_largest_array_value(A, S) := 98.
+
+* * *
+sizeof(int) := 4 byte(s).
+The number of bytes of contiguous memory allocated to array A is: (sizeof(int) * S) = (4 * 10) = 40.
+The number of bytes of contiguous memory allocated to array B is: (sizeof(int) * T) = (4 * 100) = 400.
+* * *
+
+Histogram of Unique Array Value Frequencies:
+0:  (0)
+1:  (0)
+2:  (0)
+3:  (0)
+4:  (0)
+5:  (0)
+6:  (0)
+7:  (0)
+8:  (0)
+9:  (0)
+10:  (0)
+11:  (0)
+12: X (1)
+13:  (0)
+14:  (0)
+15:  (0)
+16:  (0)
+17: X (1)
+18:  (0)
+19:  (0)
+20:  (0)
+21:  (0)
+22:  (0)
+23:  (0)
+24:  (0)
+25: X (1)
+26:  (0)
+27:  (0)
+28:  (0)
+29:  (0)
+30:  (0)
+31: X (1)
+32:  (0)
+33:  (0)
+34:  (0)
+35:  (0)
+36:  (0)
+37:  (0)
+38:  (0)
+39:  (0)
+40:  (0)
+41:  (0)
+42: X (1)
+43:  (0)
+44:  (0)
+45:  (0)
+46: XX (2)
+47:  (0)
+48:  (0)
+49:  (0)
+50:  (0)
+51:  (0)
+52:  (0)
+53: X (1)
+54:  (0)
+55:  (0)
+56:  (0)
+57:  (0)
+58:  (0)
+59:  (0)
+60:  (0)
+61:  (0)
+62:  (0)
+63:  (0)
+64:  (0)
+65:  (0)
+66:  (0)
+67:  (0)
+68:  (0)
+69:  (0)
+70:  (0)
+71:  (0)
+72:  (0)
+73:  (0)
+74:  (0)
+75:  (0)
+76:  (0)
+77:  (0)
+78:  (0)
+79:  (0)
+80:  (0)
+81:  (0)
+82:  (0)
+83:  (0)
+84:  (0)
+85:  (0)
+86:  (0)
+87:  (0)
+88:  (0)
+89:  (0)
+90:  (0)
+91:  (0)
+92: X (1)
+93:  (0)
+94:  (0)
+95:  (0)
+96:  (0)
+97:  (0)
+98: X (1)
+99:  (0)
+
+// Deallocate memory which was assigned to the instantiation of array A during program runtime.
+delete [] A;
+
+// Deallocate memory which was assigned to the instantiation of array B during program runtime.
+for (int i = 0; i &lt; T; i += 1) delete [] B[i];
+delete [] B;
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 10_OCTOBER_2022. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000;" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
+<p>* * *</p>
+<p>END OF WEB PAGE COPY</p>
+<p>* * *</p>
+<hr>
+<p>This web page was last updated on 15_NOVEMBER_2022. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000;" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
