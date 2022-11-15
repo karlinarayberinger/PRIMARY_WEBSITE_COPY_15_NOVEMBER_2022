@@ -1,0 +1,425 @@
+--------------------------------
+Start Of Program
+--------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 0: POINT class default constructor, POINT class print method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point;
+point.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 0. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 0. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 1: POINT class default constructor, POINT class print method (with default parameter), and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point;
+point.print(); // Standard command line output (std::cout) is the default parameter for the POINT print method.
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 2: POINT class default constructor, POINT class overloaded ostream operator method (which is functionally the same as POINT class print method), and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point;
+output << point; // functionally equivalent to: point.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 0. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 0. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 3: POINT class default constructor (using that function explicity rather than implicitly), POINT class overloaded ostream operator method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point = POINT(); // functionally equivalent to: POINT point;
+output << point;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 0. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 0. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 4: POINT class normal constructor (using only valid function inputs), POINT class overloaded ostream operator method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point = POINT(-503,404);
+output << point;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := -503. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 404. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 5: POINT class normal constructor (using only valid function inputs), POINT class overloaded ostream operator method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point_0 = POINT(-999,-999);
+POINT point_1 = POINT(999, 999);
+POINT point_2 = POINT(-999, 999);
+POINT point_3 = POINT(999, -999);
+output << point_0;
+output << point_1;
+output << point_2;
+output << point_3;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e818. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e818. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e81c. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := -999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := -999. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e820. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e820. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e824. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 999. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e828. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e828. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e82c. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := -999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 999. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := -999. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 6: POINT class normal constructor (using both valid and invalid function inputs), POINT class overloaded ostream operator method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point_0 = POINT(-1000, -999);
+POINT point_1 = POINT(999, 1000);
+output << point_0;
+output << point_1;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e828. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e828. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e82c. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 0. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := -999. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 0. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 7: POINT class normal constructor, POINT class copy constructor, POINT class overloaded ostream operator method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point_0 = POINT(333, -666);
+POINT point_1 = POINT(point_0);
+output << point_0;
+output << point_1;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e828. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e828. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e82c. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 333. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := -666. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 333. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := -666. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 8: POINT class normal constructor, POINT class distance getter method, POINT class overloaded ostream operator method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point_0 = POINT(1, 1);
+POINT point_1 = POINT(-1, -1);
+output << point_0;
+output << point_1;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e828. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e828. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e82c. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 1. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 1. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := -1. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := -1. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+point_0.get_distance_from(point_1) = 2.8284271247461902909492437174776569008827209472656.
+point_1.get_distance_from(point_0) = 2.8284271247461902909492437174776569008827209472656.
+point_0.get_distance_from(point_0) = 0.
+point_1.get_distance_from(point_1) = 0.
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 9: POINT class normal constructor, POINT class distance getter method, POINT class slope getter method, POINT class overloaded ostream operator method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point_0 = POINT(0, 4);
+POINT point_1 = POINT(3, 0);
+POINT point_2 = POINT(0, 0);
+output << point_0;
+output << point_1;
+output << point_2;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e820. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e820. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e824. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 0. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 4. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e828. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e828. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e82c. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 3. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 0. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+point_0.get_distance_from(point_1) = 5.
+point_1.get_distance_from(point_2) = 3.
+point_2.get_distance_from(point_0) = 4.
+point_0.get_slope_of_line_to(point_1) = -1.3333333333333332593184650249895639717578887939453.
+point_1.get_slope_of_line_to(point_2) = 0.
+point_2.get_slope_of_line_to(point_0) = inf.
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 10: POINT class normal constructor, POINT class data attribute getter methods, POINT class overloaded ostream operator method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point = POINT(33.3, 88.8);
+output << point;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 33. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 88. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+point.get_X() = 33.
+point.get_Y() = 88.
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 11: POINT class normal constructor, POINT class distance getter method, POINT class slope getter method, POINT class overloaded ostream operator method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point = POINT(-1, 1);
+output << point;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := -1. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 1. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+point.get_distance_from(point) = 0. // point refers to exactly one object
+point.get_slope_of_line_to(point) = -nan. // point refers to exactly one object
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 12: POINT class normal constructor, POINT class setter methods, POINT class overloaded ostream operator method, and POINT class destructor.
+--------------------------------------------------------------------------------------------------
+POINT point = POINT(3, 3);
+output << point;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 3. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 3. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+bool status = point.set_X(-1000);
+output << std::endl << status << std::endl;
+output << point;
+0
+
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 3. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 3. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+status = point.set_X(-999);
+output << std::endl << status << std::endl;
+output << point;
+1
+
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := -999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 3. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+status = point.set_Y(-1000);
+output << std::endl << status << std::endl;
+output << point;
+0
+
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := -999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 3. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+status = point.set_Y(-999);
+output << std::endl << status << std::endl;
+output << point;
+1
+
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := -999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := -999. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+status = point.set_X(1000);
+output << std::endl << status << std::endl;
+output << point;
+0
+
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := -999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := -999. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+status = point.set_X(999);
+output << std::endl << status << std::endl;
+output << point;
+1
+
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := -999. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+status = point.set_Y(1000);
+output << std::endl << status << std::endl;
+output << point;
+0
+
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := -999. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+status = point.set_Y(999);
+output << std::endl << status << std::endl;
+output << point;
+1
+
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffea033e830. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffea033e830. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffea033e834. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 999. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 999. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------
+End Of Program
+--------------------------------
