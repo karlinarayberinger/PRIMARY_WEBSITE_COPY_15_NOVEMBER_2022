@@ -1,0 +1,291 @@
+<hr>
+<p><strong>FACTORIAL_15_NOVEMBER_2022_COPY</strong></p>
+<hr>
+<p>* * *</p>
+<p>START OF WEB PAGE COPY</p>
+<p>* * *</p>
+<hr>
+<p><strong>FACTORIAL</strong></p>
+<hr>
+<p><span style="background:#ffff00;">The C++ program featured in this tutorial web page computes N factorial (<strong>N!</strong>) using recursion and using iteration. If N is a natural number, then N! is the product of exactly one instance of each unique natural number which is less than or equal to N. If N is zero, then N! is one.</span></p>
+<p><strong><em>To view hidden text inside of the preformatted text boxes below, scroll horizontally.</em></strong></p>
+<pre>0! := 1. // base case: when N is zero
+N! := N * (N - 1)! // recursive case: when N is a natural number
+</pre>
+<hr>
+<p><strong>Software Application Files</strong></p>
+<hr>
+<p>C++ source file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/factorial.cpp" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/factorial.cpp</a></p>
+<p>plain-text file: <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/factorial_output.txt" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/factorial_output.txt</a></p>
+<hr>
+<p><strong>Program Compilation &amp; Execution</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the C++ <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/factorial.cpp" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>factorial.cpp</pre>
+<p>STEP_1: Open a Unix command line terminal application and set the current directory to wherever the C++ is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Compile the C++ file into machine-executable instructions (i.e. object file) and then into an executable piece of software named <strong>app</strong> using the following command:</p>
+<pre>g++ factorial.cpp -o app</pre>
+<p>STEP_3: If the program compilation command does not work, then use the following command to install the C++ compiler:</p>
+<pre>sudo apt install build-essential</pre>
+<p>STEP_4: After running the <strong>g++</strong> command, run the executable file using the following command:</p>
+<pre>./app</pre>
+<p>STEP_5: Once the application is running, the following prompt will appear:</p>
+<pre>Enter a natural number which is no larger than 12:</pre>
+<p>STEP_6: Enter a value for N using the using the keyboard.</p>
+<p>STEP_7: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/factorial_output.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr>
+<p><strong>Program Source Code</strong></p>
+<hr>
+<p>C++ source file: <a style="background:#000000;color:#00ff00;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/factorial.cpp" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/factorial.cpp</a></p>
+<p><strong><em>When copy-pasting the source code from the preformatted text box below into a text editor document, remove the spaces between the angle brackets and the library names in the preprocessing directives code block.</em></strong></p>
+<hr>
+<pre>/**
+ * file: factorial.cpp
+ * type: C++ (source file)
+ * date: 22_JULY_2022
+ * author: Karlina Ray Beringer
+ * license: PUBLIC_DOMAIN
+ */
+
+/* preprocessing directives */
+#include &lt; iostream &gt; // command line input and output
+#include &lt; fstream &gt; // file input and output
+#define MAXIMUM_N 12 // constant which represents maximum N value
+
+/* function prototypes */
+int compute_factorial_of_N_using_recursion(int N, std::ostream &amp; output);
+int compute_factorial_of_N_using_iteration(int N, std::ostream &amp; output);
+
+/**
+ * Compute N factorial using a recursive algorithm.
+ * Assume that N is an integer value and that output is an output stream object.
+ * For each function call, print an algebriac expression which represents N factorial.
+ * 
+ * 0! := 1. // base case: when N is smaller than 1 or when N is larger than MAXIMUM_N.
+ * N! := N * (N - 1)! // recursive case: when N is no smaller than 1 and when N is no larger than MAXIMUM_N.
+ */
+int compute_factorial_of_N_using_recursion(int N, std::ostream &amp; output)
+{
+	// base case: if N is less than 1 or if N is greater than MAXIMUM_N, then return 1.
+	if ((N &lt; 1) || (N &gt; MAXIMUM_N))
+	{
+		output &lt;&lt; "\n\nfactorial(" &lt;&lt; N &lt;&lt; ") = 1. // base case";
+		return 1;
+	}
+	// recursive case: if N is not less than 1 and if N is not greater than MAXIMUM_N, then return N multiplied by (N - 1) factorial.
+	else
+	{
+		output &lt;&lt; "\n\nfactorial(" &lt;&lt; N &lt;&lt; ") = " &lt;&lt; N &lt;&lt; " * factorial(" &lt;&lt; N - 1 &lt;&lt; "). // recursive case" ;
+		return N * compute_factorial_of_N_using_recursion(N - 1, output);
+	}
+}
+
+/**
+ * Compute N factorial using an iterative algorithm.
+ * Assume that N is an integer value and that output is an output stream object.
+ * For each while loop iteration, i,  print the ith multiplicative term of N factorial.
+ * 
+ * If N is a natural number, then N! is the product of exactly one instance 
+ * of each unique natural number which is less than or equal to N. 
+ * N! := N * (N - 1) * (N - 2) * (N - 3) * ... * 3 * 2 * 1. 
+ * 
+ * If N is zero, then N! is one.
+ * 0! := 1.
+ */
+int compute_factorial_of_N_using_iteration(int N, std::ostream &amp; output)
+{
+	int i = 0, F = 0; 
+	i = ((N &gt; 0) &amp;&amp; (N &lt;= MAXIMUM_N)) ? N : 0; 
+	F = (N &gt; 0) ? N : 1; 
+	output &lt;&lt; "\n\nfactorial(" &lt;&lt; i &lt;&lt; ") = ";
+	while (i &gt; 0) // Execute the code block encapsulated by the while loop while the condition "i &gt; 0" is true.
+	{
+		output &lt;&lt; i &lt;&lt; " * "; // Print " * " to the output stream.
+		if (i &gt; 1) F *= i - 1; // If i is larger than 1, then multiply F by (i - 1).
+		i -= 1; // Decrement i by 1.
+	}
+	output &lt;&lt; "1.";
+	return F;
+}
+
+/* program entry point */
+int main()
+{
+	// Declare three int type variables and set each of their initial values to 0.
+	int N = 0, A = 0, B = 0;
+
+	// Declare a file output stream object.
+	std::ofstream file;
+
+	/**
+	 * If factorial_output.txt does not already exist in the same directory as factorial.cpp, 
+	 * then create a new file named factorial_output.txt.
+	 * 
+	 * Then open the plain-text file named factorial_output.txt 
+	 * and set that file to be overwritten with program data.
+	 */
+	file.open("factorial_output.txt");
+
+	// Print an opening message to the command line terminal.
+	std::cout &lt;&lt; "\n\n--------------------------------";
+	std::cout &lt;&lt; "\nStart Of Program";
+	std::cout &lt;&lt; "\n--------------------------------";
+
+	// Print an opening message to the file output stream.
+	file &lt;&lt; "--------------------------------";
+	file &lt;&lt; "\nStart Of Program";
+	file &lt;&lt; "\n--------------------------------";
+
+	// Print "Enter a nonnegative integer which is no larger than {MAXIMUM_N}: " to the command line terminal.
+	std::cout &lt;&lt; "\n\nEnter a nonnegative integer which is no larger than " &lt;&lt; MAXIMUM_N &lt;&lt; ": ";
+
+	// Scan the command line terminal for the most recent keyboard input value.
+	std::cin &gt;&gt; N;
+
+	// Print "The value which was entered for N is {N}." to the command line terminal.
+	std::cout &lt;&lt; "\nThe value which was entered for N is " &lt;&lt; N &lt;&lt; ".";
+
+	// Print "The value which was entered for N is {N}." to the file output stream.
+	file &lt;&lt; "\n\nThe value which was entered for N is " &lt;&lt; N &lt;&lt; ".";
+
+	// If N is less than 0 or larger than MAXIMUM_N, then set N to 0.
+	N = ((N &lt; 0) || (N &gt; MAXIMUM_N)) ? 0 : N;
+
+	// Print "N := {N}." to the command line terminal.
+	std::cout &lt;&lt; "\n\nN := " &lt;&lt; N &lt;&lt; ".";
+
+	// Print "N := {N}." to the file output stream.
+	file &lt;&lt; "\n\nN := " &lt;&lt; N &lt;&lt; ".";
+
+	// Print a horizontal line to the command line terminal.
+	std::cout &lt;&lt; "\n\n--------------------------------";
+
+	// Print a horizontal line to the command line terminal.
+	file &lt;&lt; "\n\n--------------------------------";
+
+	// Print "Computing factorial N using recursion:" to the command line terminal.
+	std::cout &lt;&lt; "\n\nComputing factorial N using recursion:";
+
+	// Print "Computing factorial N using recursion:" to the file output stream.
+	file &lt;&lt; "\n\nComputing factorial N using recursion:";
+
+	// Compute N factorial using recursion, store the result in A, and print each function call in the recursive function call chain to the command line terminal.
+	A = compute_factorial_of_N_using_recursion(N, std::cout);
+
+	// Compute N factorial using recursion and print each function call in the recursive function call chain to the file output stream.
+	compute_factorial_of_N_using_recursion(N, file);
+
+	// Print the value of A to the command line terminal.
+	std::cout &lt;&lt; "\n\nA := factorial(" &lt;&lt; N &lt;&lt; ") = " &lt;&lt; A &lt;&lt; ". // " &lt;&lt; N &lt;&lt; "! := " &lt;&lt; A &lt;&lt; ".";
+
+	// Print the value of A to the file output stream.
+	file &lt;&lt; "\n\nA := factorial(" &lt;&lt; N &lt;&lt; ") = " &lt;&lt; A &lt;&lt; ". // " &lt;&lt; N &lt;&lt; "! := " &lt;&lt; A &lt;&lt; ".";
+
+	// Print a horizontal line to the command line terminal.
+	std::cout &lt;&lt; "\n\n--------------------------------";
+
+	// Print a horizontal line to the command line terminal.
+	file &lt;&lt; "\n\n--------------------------------";
+
+	// Print "Computing factorial N using iteration:" to the command line terminal.
+	std::cout &lt;&lt; "\n\nComputing factorial N using iteration:";
+
+	// Print "Computing factorial N using iteration:" to the file output stream.
+	file &lt;&lt; "\n\nComputing factorial N using iteration:";
+
+	// Compute N factorial using iteration and print each multiplicative term of N! to the command line terminal.
+	B = compute_factorial_of_N_using_iteration(N, std::cout);
+
+	// Compute N factorial using iteration and print each multiplicative term of N! to the file output stream.
+	compute_factorial_of_N_using_iteration(N, file);
+
+	// Print the value of B to the command line terminal.
+	std::cout &lt;&lt; "\n\nB := factorial(" &lt;&lt; N &lt;&lt; ") = " &lt;&lt; B &lt;&lt; ". // " &lt;&lt; N &lt;&lt; "! := " &lt;&lt; B &lt;&lt; ".";
+
+	// Print the value of B to the file output stream.
+	file &lt;&lt; "\n\nB := factorial(" &lt;&lt; N &lt;&lt; ") = " &lt;&lt; B &lt;&lt; ". // " &lt;&lt; N &lt;&lt; "! := " &lt;&lt; B &lt;&lt; ".";
+
+	// Print a closing message to the command line terminal.
+	std::cout &lt;&lt; "\n\n--------------------------------";
+	std::cout &lt;&lt; "\nEnd Of Program";
+	std::cout &lt;&lt; "\n--------------------------------\n\n";
+
+	// Print a closing message to the file output stream.
+	file &lt;&lt; "\n\n--------------------------------";
+	file &lt;&lt; "\nEnd Of Program";
+	file &lt;&lt; "\n--------------------------------";
+
+	// Close the file output stream.
+	file.close();
+
+	// Exit the program.
+	return 0;
+}
+</pre>
+<hr>
+<p><strong>Sample Program Output</strong></p>
+<hr>
+<p>plain-text file: <a style="background:#000000;color:#ff9000;" href="https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/factorial_output.txt" target="_blank" rel="noopener">https://github.com/karlinarayberinger/karlina_object_ultimate_starter_pack/blob/main/factorial_output.txt</a></p>
+<hr>
+<pre>--------------------------------
+Start Of Program
+--------------------------------
+
+The value which was entered for N is 12.
+
+N := 12.
+
+--------------------------------
+
+Computing factorial N using recursion:
+
+factorial(12) = 12 * factorial(11). // recursive case
+
+factorial(11) = 11 * factorial(10). // recursive case
+
+factorial(10) = 10 * factorial(9). // recursive case
+
+factorial(9) = 9 * factorial(8). // recursive case
+
+factorial(8) = 8 * factorial(7). // recursive case
+
+factorial(7) = 7 * factorial(6). // recursive case
+
+factorial(6) = 6 * factorial(5). // recursive case
+
+factorial(5) = 5 * factorial(4). // recursive case
+
+factorial(4) = 4 * factorial(3). // recursive case
+
+factorial(3) = 3 * factorial(2). // recursive case
+
+factorial(2) = 2 * factorial(1). // recursive case
+
+factorial(1) = 1 * factorial(0). // recursive case
+
+factorial(0) = 1. // base case
+
+A := factorial(12) = 479001600. // 12! := 479001600.
+
+--------------------------------
+
+Computing factorial N using iteration:
+
+factorial(12) = 12 * 11 * 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 * 1.
+
+B := factorial(12) = 479001600. // 12! := 479001600.
+
+--------------------------------
+End Of Program
+--------------------------------
+</pre>
+<hr>
+<p>This web page was last updated on 22_JULY_2022. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000;" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
+<p>* * *</p>
+<p>END OF WEB PAGE COPY</p>
+<p>* * *</p>
+<hr>
+<p>This web page was last updated on 15_NOVEMBER_2022. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000;" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
