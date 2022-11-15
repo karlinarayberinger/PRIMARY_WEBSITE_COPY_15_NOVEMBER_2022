@@ -1,0 +1,480 @@
+--------------------------------
+Start Of Program
+--------------------------------
+
+The value which was entered for N is 93.
+
+N := 93.
+
+--------------------------------
+
+Approximating the Golden Ratio by dividing the Nth term of the Fibonacci Sequence by the (N - 1)th term of the Fibonacci Sequence:
+
+golden_ratio_approximation(0) = fibonacci(0) / fibonacci(-1).
+golden_ratio_approximation(0) = 1 / 1.
+golden_ratio_approximation(0) = 1.
+G := golden_ratio_approximation(0) = 1.
+
+golden_ratio_approximation(1) = fibonacci(1) / fibonacci(0).
+golden_ratio_approximation(1) = 1 / 1.
+golden_ratio_approximation(1) = 1.
+G := golden_ratio_approximation(1) = 1.
+
+golden_ratio_approximation(2) = fibonacci(2) / fibonacci(1).
+golden_ratio_approximation(2) = 2 / 1.
+golden_ratio_approximation(2) = 2.
+G := golden_ratio_approximation(2) = 2.
+
+golden_ratio_approximation(3) = fibonacci(3) / fibonacci(2).
+golden_ratio_approximation(3) = 3 / 2.
+golden_ratio_approximation(3) = 1.5.
+G := golden_ratio_approximation(3) = 1.5.
+
+golden_ratio_approximation(4) = fibonacci(4) / fibonacci(3).
+golden_ratio_approximation(4) = 5 / 3.
+golden_ratio_approximation(4) = 1.6666666666666667406815349750104360282421112060546875.
+G := golden_ratio_approximation(4) = 1.6666666666666667406815349750104360282421112060546875.
+
+golden_ratio_approximation(5) = fibonacci(5) / fibonacci(4).
+golden_ratio_approximation(5) = 8 / 5.
+golden_ratio_approximation(5) = 1.600000000000000088817841970012523233890533447265625.
+G := golden_ratio_approximation(5) = 1.600000000000000088817841970012523233890533447265625.
+
+golden_ratio_approximation(6) = fibonacci(6) / fibonacci(5).
+golden_ratio_approximation(6) = 13 / 8.
+golden_ratio_approximation(6) = 1.625.
+G := golden_ratio_approximation(6) = 1.625.
+
+golden_ratio_approximation(7) = fibonacci(7) / fibonacci(6).
+golden_ratio_approximation(7) = 21 / 13.
+golden_ratio_approximation(7) = 1.615384615384615418776093065389432013034820556640625.
+G := golden_ratio_approximation(7) = 1.615384615384615418776093065389432013034820556640625.
+
+golden_ratio_approximation(8) = fibonacci(8) / fibonacci(7).
+golden_ratio_approximation(8) = 34 / 21.
+golden_ratio_approximation(8) = 1.619047619047619068766152850002981722354888916015625.
+G := golden_ratio_approximation(8) = 1.619047619047619068766152850002981722354888916015625.
+
+golden_ratio_approximation(9) = fibonacci(9) / fibonacci(8).
+golden_ratio_approximation(9) = 55 / 34.
+golden_ratio_approximation(9) = 1.617647058823529437887600579415448009967803955078125.
+G := golden_ratio_approximation(9) = 1.617647058823529437887600579415448009967803955078125.
+
+golden_ratio_approximation(10) = fibonacci(10) / fibonacci(9).
+golden_ratio_approximation(10) = 89 / 55.
+golden_ratio_approximation(10) = 1.61818181818181816566948327817954123020172119140625.
+G := golden_ratio_approximation(10) = 1.61818181818181816566948327817954123020172119140625.
+
+golden_ratio_approximation(11) = fibonacci(11) / fibonacci(10).
+golden_ratio_approximation(11) = 144 / 89.
+golden_ratio_approximation(11) = 1.617977528089887595541540576959960162639617919921875.
+G := golden_ratio_approximation(11) = 1.617977528089887595541540576959960162639617919921875.
+
+golden_ratio_approximation(12) = fibonacci(12) / fibonacci(11).
+golden_ratio_approximation(12) = 233 / 144.
+golden_ratio_approximation(12) = 1.6180555555555555802271783250034786760807037353515625.
+G := golden_ratio_approximation(12) = 1.6180555555555555802271783250034786760807037353515625.
+
+golden_ratio_approximation(13) = fibonacci(13) / fibonacci(12).
+golden_ratio_approximation(13) = 377 / 233.
+golden_ratio_approximation(13) = 1.6180257510729614267575016128830611705780029296875.
+G := golden_ratio_approximation(13) = 1.6180257510729614267575016128830611705780029296875.
+
+golden_ratio_approximation(14) = fibonacci(14) / fibonacci(13).
+golden_ratio_approximation(14) = 610 / 377.
+golden_ratio_approximation(14) = 1.6180371352785145599995075826882384717464447021484375.
+G := golden_ratio_approximation(14) = 1.6180371352785145599995075826882384717464447021484375.
+
+golden_ratio_approximation(15) = fibonacci(15) / fibonacci(14).
+golden_ratio_approximation(15) = 987 / 610.
+golden_ratio_approximation(15) = 1.6180327868852459882731409379630349576473236083984375.
+G := golden_ratio_approximation(15) = 1.6180327868852459882731409379630349576473236083984375.
+
+golden_ratio_approximation(16) = fibonacci(16) / fibonacci(15).
+golden_ratio_approximation(16) = 1597 / 987.
+golden_ratio_approximation(16) = 1.6180344478216819315008478952222503721714019775390625.
+G := golden_ratio_approximation(16) = 1.6180344478216819315008478952222503721714019775390625.
+
+golden_ratio_approximation(17) = fibonacci(17) / fibonacci(16).
+golden_ratio_approximation(17) = 2584 / 1597.
+golden_ratio_approximation(17) = 1.6180338134001253092009164902265183627605438232421875.
+G := golden_ratio_approximation(17) = 1.6180338134001253092009164902265183627605438232421875.
+
+golden_ratio_approximation(18) = fibonacci(18) / fibonacci(17).
+golden_ratio_approximation(18) = 4181 / 2584.
+golden_ratio_approximation(18) = 1.6180340557275540991355455844313837587833404541015625.
+G := golden_ratio_approximation(18) = 1.6180340557275540991355455844313837587833404541015625.
+
+golden_ratio_approximation(19) = fibonacci(19) / fibonacci(18).
+golden_ratio_approximation(19) = 6765 / 4181.
+golden_ratio_approximation(19) = 1.618033963166706445946374515187926590442657470703125.
+G := golden_ratio_approximation(19) = 1.618033963166706445946374515187926590442657470703125.
+
+golden_ratio_approximation(20) = fibonacci(20) / fibonacci(19).
+golden_ratio_approximation(20) = 10946 / 6765.
+golden_ratio_approximation(20) = 1.6180339985218032961000744762714020907878875732421875.
+G := golden_ratio_approximation(20) = 1.6180339985218032961000744762714020907878875732421875.
+
+golden_ratio_approximation(21) = fibonacci(21) / fibonacci(20).
+golden_ratio_approximation(21) = 17711 / 10946.
+golden_ratio_approximation(21) = 1.61803398501735795633749148692004382610321044921875.
+G := golden_ratio_approximation(21) = 1.61803398501735795633749148692004382610321044921875.
+
+golden_ratio_approximation(22) = fibonacci(22) / fibonacci(21).
+golden_ratio_approximation(22) = 28657 / 17711.
+golden_ratio_approximation(22) = 1.61803399017559712547154049389064311981201171875.
+G := golden_ratio_approximation(22) = 1.61803399017559712547154049389064311981201171875.
+
+golden_ratio_approximation(23) = fibonacci(23) / fibonacci(22).
+golden_ratio_approximation(23) = 46368 / 28657.
+golden_ratio_approximation(23) = 1.6180339882053249578319764623302035033702850341796875.
+G := golden_ratio_approximation(23) = 1.6180339882053249578319764623302035033702850341796875.
+
+golden_ratio_approximation(24) = fibonacci(24) / fibonacci(23).
+golden_ratio_approximation(24) = 75025 / 46368.
+golden_ratio_approximation(24) = 1.6180339889579020695720146250096149742603302001953125.
+G := golden_ratio_approximation(24) = 1.6180339889579020695720146250096149742603302001953125.
+
+golden_ratio_approximation(25) = fibonacci(25) / fibonacci(24).
+golden_ratio_approximation(25) = 121393 / 75025.
+golden_ratio_approximation(25) = 1.6180339886704431240360690935631282627582550048828125.
+G := golden_ratio_approximation(25) = 1.6180339886704431240360690935631282627582550048828125.
+
+golden_ratio_approximation(26) = fibonacci(26) / fibonacci(25).
+golden_ratio_approximation(26) = 196418 / 121393.
+golden_ratio_approximation(26) = 1.618033988780242626859262600191868841648101806640625.
+G := golden_ratio_approximation(26) = 1.618033988780242626859262600191868841648101806640625.
+
+golden_ratio_approximation(27) = fibonacci(27) / fibonacci(26).
+golden_ratio_approximation(27) = 317811 / 196418.
+golden_ratio_approximation(27) = 1.6180339887383030639256276117521338164806365966796875.
+G := golden_ratio_approximation(27) = 1.6180339887383030639256276117521338164806365966796875.
+
+golden_ratio_approximation(28) = fibonacci(28) / fibonacci(27).
+golden_ratio_approximation(28) = 514229 / 317811.
+golden_ratio_approximation(28) = 1.61803398875432247194794399547390639781951904296875.
+G := golden_ratio_approximation(28) = 1.61803398875432247194794399547390639781951904296875.
+
+golden_ratio_approximation(29) = fibonacci(29) / fibonacci(28).
+golden_ratio_approximation(29) = 832040 / 514229.
+golden_ratio_approximation(29) = 1.6180339887482035887700249077170155942440032958984375.
+G := golden_ratio_approximation(29) = 1.6180339887482035887700249077170155942440032958984375.
+
+golden_ratio_approximation(30) = fibonacci(30) / fibonacci(29).
+golden_ratio_approximation(30) = 1346269 / 832040.
+golden_ratio_approximation(30) = 1.6180339887505408302814657872659154236316680908203125.
+G := golden_ratio_approximation(30) = 1.6180339887505408302814657872659154236316680908203125.
+
+golden_ratio_approximation(31) = fibonacci(31) / fibonacci(30).
+golden_ratio_approximation(31) = 2178309 / 1346269.
+golden_ratio_approximation(31) = 1.6180339887496482109696671614074148237705230712890625.
+G := golden_ratio_approximation(31) = 1.6180339887496482109696671614074148237705230712890625.
+
+golden_ratio_approximation(32) = fibonacci(32) / fibonacci(31).
+golden_ratio_approximation(32) = 3524578 / 2178309.
+golden_ratio_approximation(32) = 1.618033988749989049438227084465324878692626953125.
+G := golden_ratio_approximation(32) = 1.618033988749989049438227084465324878692626953125.
+
+golden_ratio_approximation(33) = fibonacci(33) / fibonacci(32).
+golden_ratio_approximation(33) = 5702887 / 3524578.
+golden_ratio_approximation(33) = 1.618033988749858931299741016118787229061126708984375.
+G := golden_ratio_approximation(33) = 1.618033988749858931299741016118787229061126708984375.
+
+golden_ratio_approximation(34) = fibonacci(34) / fibonacci(33).
+golden_ratio_approximation(34) = 9227465 / 5702887.
+golden_ratio_approximation(34) = 1.618033988749908669291244223131798207759857177734375.
+G := golden_ratio_approximation(34) = 1.618033988749908669291244223131798207759857177734375.
+
+golden_ratio_approximation(35) = fibonacci(35) / fibonacci(34).
+golden_ratio_approximation(35) = 14930352 / 9227465.
+golden_ratio_approximation(35) = 1.618033988749889573455220670439302921295166015625.
+G := golden_ratio_approximation(35) = 1.618033988749889573455220670439302921295166015625.
+
+golden_ratio_approximation(36) = fibonacci(36) / fibonacci(35).
+golden_ratio_approximation(36) = 24157817 / 14930352.
+golden_ratio_approximation(36) = 1.6180339887498969009271831964724697172641754150390625.
+G := golden_ratio_approximation(36) = 1.6180339887498969009271831964724697172641754150390625.
+
+golden_ratio_approximation(37) = fibonacci(37) / fibonacci(36).
+golden_ratio_approximation(37) = 39088169 / 24157817.
+golden_ratio_approximation(37) = 1.61803398874989401434731917106546461582183837890625.
+G := golden_ratio_approximation(37) = 1.61803398874989401434731917106546461582183837890625.
+
+golden_ratio_approximation(38) = fibonacci(38) / fibonacci(37).
+golden_ratio_approximation(38) = 63245986 / 39088169.
+golden_ratio_approximation(38) = 1.6180339887498951245703437962220050394535064697265625.
+G := golden_ratio_approximation(38) = 1.6180339887498951245703437962220050394535064697265625.
+
+golden_ratio_approximation(39) = fibonacci(39) / fibonacci(38).
+golden_ratio_approximation(39) = 102334155 / 63245986.
+golden_ratio_approximation(39) = 1.6180339887498946804811339461593888700008392333984375.
+G := golden_ratio_approximation(39) = 1.6180339887498946804811339461593888700008392333984375.
+
+golden_ratio_approximation(40) = fibonacci(40) / fibonacci(39).
+golden_ratio_approximation(40) = 165580141 / 102334155.
+golden_ratio_approximation(40) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(40) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(41) = fibonacci(41) / fibonacci(40).
+golden_ratio_approximation(41) = 267914296 / 165580141.
+golden_ratio_approximation(41) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(41) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(42) = fibonacci(42) / fibonacci(41).
+golden_ratio_approximation(42) = 433494437 / 267914296.
+golden_ratio_approximation(42) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(42) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(43) = fibonacci(43) / fibonacci(42).
+golden_ratio_approximation(43) = 701408733 / 433494437.
+golden_ratio_approximation(43) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(43) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(44) = fibonacci(44) / fibonacci(43).
+golden_ratio_approximation(44) = 1134903170 / 701408733.
+golden_ratio_approximation(44) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(44) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(45) = fibonacci(45) / fibonacci(44).
+golden_ratio_approximation(45) = 1836311903 / 1134903170.
+golden_ratio_approximation(45) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(45) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(46) = fibonacci(46) / fibonacci(45).
+golden_ratio_approximation(46) = 2971215073 / 1836311903.
+golden_ratio_approximation(46) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(46) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(47) = fibonacci(47) / fibonacci(46).
+golden_ratio_approximation(47) = 4807526976 / 2971215073.
+golden_ratio_approximation(47) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(47) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(48) = fibonacci(48) / fibonacci(47).
+golden_ratio_approximation(48) = 7778742049 / 4807526976.
+golden_ratio_approximation(48) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(48) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(49) = fibonacci(49) / fibonacci(48).
+golden_ratio_approximation(49) = 12586269025 / 7778742049.
+golden_ratio_approximation(49) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(49) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(50) = fibonacci(50) / fibonacci(49).
+golden_ratio_approximation(50) = 20365011074 / 12586269025.
+golden_ratio_approximation(50) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(50) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(51) = fibonacci(51) / fibonacci(50).
+golden_ratio_approximation(51) = 32951280099 / 20365011074.
+golden_ratio_approximation(51) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(51) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(52) = fibonacci(52) / fibonacci(51).
+golden_ratio_approximation(52) = 53316291173 / 32951280099.
+golden_ratio_approximation(52) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(52) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(53) = fibonacci(53) / fibonacci(52).
+golden_ratio_approximation(53) = 86267571272 / 53316291173.
+golden_ratio_approximation(53) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(53) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(54) = fibonacci(54) / fibonacci(53).
+golden_ratio_approximation(54) = 139583862445 / 86267571272.
+golden_ratio_approximation(54) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(54) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(55) = fibonacci(55) / fibonacci(54).
+golden_ratio_approximation(55) = 225851433717 / 139583862445.
+golden_ratio_approximation(55) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(55) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(56) = fibonacci(56) / fibonacci(55).
+golden_ratio_approximation(56) = 365435296162 / 225851433717.
+golden_ratio_approximation(56) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(56) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(57) = fibonacci(57) / fibonacci(56).
+golden_ratio_approximation(57) = 591286729879 / 365435296162.
+golden_ratio_approximation(57) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(57) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(58) = fibonacci(58) / fibonacci(57).
+golden_ratio_approximation(58) = 956722026041 / 591286729879.
+golden_ratio_approximation(58) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(58) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(59) = fibonacci(59) / fibonacci(58).
+golden_ratio_approximation(59) = 1548008755920 / 956722026041.
+golden_ratio_approximation(59) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(59) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(60) = fibonacci(60) / fibonacci(59).
+golden_ratio_approximation(60) = 2504730781961 / 1548008755920.
+golden_ratio_approximation(60) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(60) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(61) = fibonacci(61) / fibonacci(60).
+golden_ratio_approximation(61) = 4052739537881 / 2504730781961.
+golden_ratio_approximation(61) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(61) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(62) = fibonacci(62) / fibonacci(61).
+golden_ratio_approximation(62) = 6557470319842 / 4052739537881.
+golden_ratio_approximation(62) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(62) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(63) = fibonacci(63) / fibonacci(62).
+golden_ratio_approximation(63) = 10610209857723 / 6557470319842.
+golden_ratio_approximation(63) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(63) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(64) = fibonacci(64) / fibonacci(63).
+golden_ratio_approximation(64) = 17167680177565 / 10610209857723.
+golden_ratio_approximation(64) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(64) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(65) = fibonacci(65) / fibonacci(64).
+golden_ratio_approximation(65) = 27777890035288 / 17167680177565.
+golden_ratio_approximation(65) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(65) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(66) = fibonacci(66) / fibonacci(65).
+golden_ratio_approximation(66) = 44945570212853 / 27777890035288.
+golden_ratio_approximation(66) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(66) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(67) = fibonacci(67) / fibonacci(66).
+golden_ratio_approximation(67) = 72723460248141 / 44945570212853.
+golden_ratio_approximation(67) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(67) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(68) = fibonacci(68) / fibonacci(67).
+golden_ratio_approximation(68) = 117669030460994 / 72723460248141.
+golden_ratio_approximation(68) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(68) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(69) = fibonacci(69) / fibonacci(68).
+golden_ratio_approximation(69) = 190392490709135 / 117669030460994.
+golden_ratio_approximation(69) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(69) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(70) = fibonacci(70) / fibonacci(69).
+golden_ratio_approximation(70) = 308061521170129 / 190392490709135.
+golden_ratio_approximation(70) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(70) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(71) = fibonacci(71) / fibonacci(70).
+golden_ratio_approximation(71) = 498454011879264 / 308061521170129.
+golden_ratio_approximation(71) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(71) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(72) = fibonacci(72) / fibonacci(71).
+golden_ratio_approximation(72) = 806515533049393 / 498454011879264.
+golden_ratio_approximation(72) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(72) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(73) = fibonacci(73) / fibonacci(72).
+golden_ratio_approximation(73) = 1304969544928657 / 806515533049393.
+golden_ratio_approximation(73) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(73) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(74) = fibonacci(74) / fibonacci(73).
+golden_ratio_approximation(74) = 2111485077978050 / 1304969544928657.
+golden_ratio_approximation(74) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(74) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(75) = fibonacci(75) / fibonacci(74).
+golden_ratio_approximation(75) = 3416454622906707 / 2111485077978050.
+golden_ratio_approximation(75) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(75) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(76) = fibonacci(76) / fibonacci(75).
+golden_ratio_approximation(76) = 5527939700884757 / 3416454622906707.
+golden_ratio_approximation(76) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(76) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(77) = fibonacci(77) / fibonacci(76).
+golden_ratio_approximation(77) = 8944394323791464 / 5527939700884757.
+golden_ratio_approximation(77) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(77) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(78) = fibonacci(78) / fibonacci(77).
+golden_ratio_approximation(78) = 14472334024676221 / 8944394323791464.
+golden_ratio_approximation(78) = 1.6180339887498946804811339461593888700008392333984375.
+G := golden_ratio_approximation(78) = 1.6180339887498946804811339461593888700008392333984375.
+
+golden_ratio_approximation(79) = fibonacci(79) / fibonacci(78).
+golden_ratio_approximation(79) = 23416728348467685 / 14472334024676221.
+golden_ratio_approximation(79) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(79) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(80) = fibonacci(80) / fibonacci(79).
+golden_ratio_approximation(80) = 37889062373143906 / 23416728348467685.
+golden_ratio_approximation(80) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(80) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(81) = fibonacci(81) / fibonacci(80).
+golden_ratio_approximation(81) = 61305790721611591 / 37889062373143906.
+golden_ratio_approximation(81) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(81) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(82) = fibonacci(82) / fibonacci(81).
+golden_ratio_approximation(82) = 99194853094755497 / 61305790721611591.
+golden_ratio_approximation(82) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(82) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(83) = fibonacci(83) / fibonacci(82).
+golden_ratio_approximation(83) = 160500643816367088 / 99194853094755497.
+golden_ratio_approximation(83) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(83) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(84) = fibonacci(84) / fibonacci(83).
+golden_ratio_approximation(84) = 259695496911122585 / 160500643816367088.
+golden_ratio_approximation(84) = 1.6180339887498946804811339461593888700008392333984375.
+G := golden_ratio_approximation(84) = 1.6180339887498946804811339461593888700008392333984375.
+
+golden_ratio_approximation(85) = fibonacci(85) / fibonacci(84).
+golden_ratio_approximation(85) = 420196140727489673 / 259695496911122585.
+golden_ratio_approximation(85) = 1.6180339887498946804811339461593888700008392333984375.
+G := golden_ratio_approximation(85) = 1.6180339887498946804811339461593888700008392333984375.
+
+golden_ratio_approximation(86) = fibonacci(86) / fibonacci(85).
+golden_ratio_approximation(86) = 679891637638612258 / 420196140727489673.
+golden_ratio_approximation(86) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(86) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(87) = fibonacci(87) / fibonacci(86).
+golden_ratio_approximation(87) = 1100087778366101931 / 679891637638612258.
+golden_ratio_approximation(87) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(87) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(88) = fibonacci(88) / fibonacci(87).
+golden_ratio_approximation(88) = 1779979416004714189 / 1100087778366101931.
+golden_ratio_approximation(88) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(88) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(89) = fibonacci(89) / fibonacci(88).
+golden_ratio_approximation(89) = 2880067194370816120 / 1779979416004714189.
+golden_ratio_approximation(89) = 1.6180339887498946804811339461593888700008392333984375.
+G := golden_ratio_approximation(89) = 1.6180339887498946804811339461593888700008392333984375.
+
+golden_ratio_approximation(90) = fibonacci(90) / fibonacci(89).
+golden_ratio_approximation(90) = 4660046610375530309 / 2880067194370816120.
+golden_ratio_approximation(90) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(90) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(91) = fibonacci(91) / fibonacci(90).
+golden_ratio_approximation(91) = 7540113804746346429 / 4660046610375530309.
+golden_ratio_approximation(91) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(91) = 1.6180339887498949025257388711906969547271728515625.
+
+golden_ratio_approximation(92) = fibonacci(92) / fibonacci(91).
+golden_ratio_approximation(92) = 12200160415121876738 / 7540113804746346429.
+golden_ratio_approximation(92) = 1.6180339887498949025257388711906969547271728515625.
+G := golden_ratio_approximation(92) = 1.6180339887498949025257388711906969547271728515625.
+
+--------------------------------
+End Of Program
+--------------------------------
