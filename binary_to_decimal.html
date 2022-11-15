@@ -1,0 +1,143 @@
+<!--
+/**
+ * file: binary_to_decimal.html
+ * type: Hyper-Text-Markup-Language
+ * date: 15_AUGUST_2022
+ * author: Karlina Ray Beringer
+ * license: PUBLIC_DOMAIN
+ */
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BINARY_TO_DECIMAL</title>
+    <link rel="stylesheet" href="karbytes_aesthetic.css">
+    <script src="binary_to_decimal.js"></script>
+    <style>
+        .highlight {
+            background: #ffff00;
+            color: #000000;
+        }
+        div {
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body onload="initialize_application()">
+    <h1>BINARY_TO_DECIMAL</h1>
+    <p class="highlight">
+        This single page web application allows the user to click switches which each
+        flip a single uniquely corresponding light bulb from "OFF" to "ON" and vice versa and, also,
+        to click a BINARY_TO_DECIMAL button which computes the binary number represented
+        by the light bulb array configuration at the time that button is clicked. Algebraic equations 
+        which are used to convert the base-two integer value represented by the array of eight light bulbs
+        to that base-two integer's base-ten equivalent value are displayed at the bottom of this web page.
+        (Clicking the RESET button will return this web page to its initial state such that each one of
+        the eight light bulbs is set to "OFF" and all buttons on this web page are set to visible).
+    </p>
+    <p>
+        Each one of the eight light bulbs which are displayed in the table below (while that light bulb is in its "ON" state)  
+        represents two multiplied by itself N times (and N is a nonnegative integer no larger than seven which represents the 
+        unique place value of the corresponding light bulb's binary digit value).
+    </p>
+    <p>
+        The integer value 0 is an abstract representation of the relatively physical "OFF" (sufficiently low voltage) light bulb state.
+    </p>
+    <p>
+        The integer value 1 is an abstract representation of the relatively physical "ON" (sufficiently high voltage) light bulb state.
+    </p>
+    <p>
+        Each of the eight values of N are arranged in descending order starting with N = 7 and ending with N = 0.
+    </p>
+    <p>
+        The leftmost light bulb has an N value of 7 and that light bulb represents the 
+        "highest order bit" in the byte which the light bulb array represents.
+    </p>
+    <p class="console">
+        highest_order_bit(<strong class="highlight">ON</strong>) 
+        = <strong class="highlight">1</strong> * (2 ^ 7) 
+        = 1 * 2 * 2 * 2 * 2 * 2 * 2 * 2 = 128.
+    </p>
+    <p class="console">
+        highest_order_bit(<strong class="highlight">OFF</strong>) 
+        = <strong class="highlight">0</strong> * (2 ^ 7) 
+        = 0 * 2 * 2 * 2 * 2 * 2 * 2 * 2 = 0.
+    </p>
+    <p>
+        The rightmost light bulb has an N value of 0 and that light bulb represents the "lowest order bit" 
+        in the byte which the light bulb array represents.
+    </p>
+    <p class="console">
+        lowest_order_bit(<strong class="highlight">ON</strong>) 
+        = <strong class="highlight">1</strong> * (2 ^ 0) = 1.
+    </p>
+    <p class="console">
+        lowest_order_bit(<strong class="highlight">OFF</strong>) 
+        = <strong class="highlight">0</strong> * (2 ^ 0) = 0.
+    </p>
+    <p>
+        (Note that word <strong class="highlight">bit</strong> is an abbreviation of the
+        word "binary digit" and that the word <strong class="highlight">byte</strong> is an abbreviation of the
+        word "binary term" (and that a binary term is a sequence of exactly 8 binary digits)).
+    </p>
+    <p>
+        (Note also that a single byte can represent 256 unique patterns and that the largest base-ten value
+        which a byte can represent is 255 and the smallest base-ten value which a byte can represent is 0).
+    </p>
+    <div>
+        <table style="text-align: center">
+            <tr>
+                <td>N</td>
+                <td>7</td>
+                <td>6</td>
+                <td>5</td>
+                <td>4</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>light_bulb_N</td>
+                <td id="light_bulb_7"><img src="light_bulb_off.png" width="60"></td>
+                <td id="light_bulb_6"><img src="light_bulb_off.png" width="60"></td>
+                <td id="light_bulb_5"><img src="light_bulb_off.png" width="60"></td>
+                <td id="light_bulb_4"><img src="light_bulb_off.png" width="60"></td>
+                <td id="light_bulb_3"><img src="light_bulb_off.png" width="60"></td>
+                <td id="light_bulb_2"><img src="light_bulb_off.png" width="60"></td>
+                <td id="light_bulb_1"><img src="light_bulb_off.png" width="60"></td>
+                <td id="light_bulb_0"><img src="light_bulb_off.png" width="60"></td>
+            </tr>
+            <tr>
+                <td>bit_N</td>
+                <td id="bit_7" class="console">0</td>
+                <td id="bit_6" class="console">0</td>
+                <td id="bit_5" class="console">0</td>
+                <td id="bit_4" class="console">0</td>
+                <td id="bit_3" class="console">0</td>
+                <td id="bit_2" class="console">0</td>
+                <td id="bit_1" class="console">0</td>
+                <td id="bit_0" class="console">0</td>
+            </tr>
+            <tr>
+                <td>switch_N</td>
+                <td><input type="button" id="switch_7" value="SWITCH" onclick="switch_7()"></td>
+                <td><input type="button" id="switch_6" value="SWITCH" onclick="switch_6()"></td>
+                <td><input type="button" id="switch_5" value="SWITCH" onclick="switch_5()"></td>
+                <td><input type="button" id="switch_4" value="SWITCH" onclick="switch_4()"></td>
+                <td><input type="button" id="switch_3" value="SWITCH" onclick="switch_3()"></td>
+                <td><input type="button" id="switch_2" value="SWITCH" onclick="switch_2()"></td>
+                <td><input type="button" id="switch_1" value="SWITCH" onclick="switch_1()"></td>
+                <td><input type="button" id="switch_0" value="SWITCH" onclick="switch_0()"></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <input type="button" id="binary_to_decimal_button" value="BINARY_TO_DECIMAL" onclick="binary_to_decimal()">
+        &nbsp;
+        <input type="button" id="reset_button" value="RESET" onclick="initialize_application()">
+    </div>
+    <div id="output"><p>???</p></div>
+</body>
+</html>
