@@ -1,0 +1,231 @@
+--------------------------------
+Start Of Program
+--------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 0: TRIANGLE class default constructor, TRIANGLE class print method, and TRIANGLE class destructor.
+--------------------------------------------------------------------------------------------------
+TRIANGLE triangle;
+triangle.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a10. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&A = 0x7ffd70890a10. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&B = 0x7ffd70890a18. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&C = 0x7ffd70890a20. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(0, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(1, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 1.4142135623730951454746218587388284504413604736328. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  90.0000000000000142108547152020037174224853515625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 3.4142135623730949234300169337075203657150268554688. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 0.49999999999999977795539507496869191527366638183594. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 1: TRIANGLE class default constructor, TRIANGLE class overloaded ostream operator method, TRIANGLE getter methods, and TRIANGLE class destructor.
+--------------------------------------------------------------------------------------------------
+TRIANGLE triangle;
+POINT copy_of_point_A = triangle.get_A();
+POINT copy_of_point_B = triangle.get_B();
+POINT copy_of_point_C = triangle.get_C();
+output << triangle;
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a10. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&A = 0x7ffd70890a10. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&B = 0x7ffd70890a18. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&C = 0x7ffd70890a20. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(0, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(1, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 1.4142135623730951454746218587388284504413604736328. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  90.0000000000000142108547152020037174224853515625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 3.4142135623730949234300169337075203657150268554688. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 0.49999999999999977795539507496869191527366638183594. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+copy_of_point_A.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd708909f8. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffd708909f8. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffd708909fc. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 0. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 0. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+copy_of_point_B.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a00. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffd70890a00. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffd70890a04. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 0. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 1. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+
+copy_of_point_C.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a08. // The keyword named this is a pointer to the memory address of the first cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object.
+&X = 0x7ffd70890a08. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named X.
+&Y = 0x7ffd70890a0c. // The operation returns the memory address of the first memory cell of an int-sized block of memory cells which are allocated to the instantiation of some int-type variable named Y.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+X := 1. // X stores an int-type value which represents the horizontal position of a two-dimensional point plotted on a Cartesian grid.
+Y := 0. // Y stores an int-type value which represents the vertical position of a two-dimensional point plotted on a Cartesian grid.
+--------------------------------------------------------------------------------------------------
+triangle.get_side_length_AB() := 1.
+triangle.get_side_length_BC() := 1.4142135623730951454746218587388284504413604736328.
+triangle.get_side_length_CA() := 1.
+triangle.get_interior_angle_ABC() := 44.9999999999999857891452847979962825775146484375.
+triangle.get_interior_angle_BCA() := 44.9999999999999857891452847979962825775146484375.
+triangle.get_interior_angle_CAB() := 90.0000000000000142108547152020037174224853515625.
+triangle.get_perimeter() := 3.4142135623730949234300169337075203657150268554688.
+triangle.get_area() := 0.49999999999999977795539507496869191527366638183594.
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 2: TRIANGLE class normal constructors, TRIANGLE class copy constructor, TRIANGLE class print method, and TRIANGLE class destructor.
+--------------------------------------------------------------------------------------------------
+TRIANGLE triangle_0 = TRIANGLE(-1, -1, 0, 5, 2, -5); // normal constructor which takes exactly 6 int-type values as its only inputs
+TRIANGLE triangle_1 = TRIANGLE( POINT(-3,-3), POINT(-4,-8), POINT(0,1) ); // normal constructor which takes 3 POINT-type values as its only inputs
+TRIANGLE triangle_2 = TRIANGLE(triangle_0); // copy constructor which takes 1 TRIANGLE-type value as its only input
+triangle_0.print(output);
+triangle_1.print(output);
+triangle_2.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd708909d0. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&A = 0x7ffd708909d0. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&B = 0x7ffd708909d8. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&C = 0x7ffd708909e0. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(-1, -1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 5). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(2, -5). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 10.198039027185568983213670435361564159393310546875. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 5. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 6.0827625302982193389311760256532579660415649414062. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  133.667780146130354523847927339375019073486328125. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  20.772254682045858231731472187675535678863525390625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  25.559965171823815666130030876956880092620849609375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 21.280801557483787433966426760889589786529541015625. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 10.999999999999994670929481799248605966567993164062. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd708909f0. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&A = 0x7ffd708909f0. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&B = 0x7ffd708909f8. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&C = 0x7ffd70890a00. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(-3, -3). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(-4, -8). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(0, 1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 9.848857801796103927927106269635260105133056640625. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 5. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 5.0990195135927844916068352176807820796966552734375. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  154.440034828176152359446859918534755706787109375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  12.652556500557967211761933867819607257843017578125. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  12.90740867126584845436809700913727283477783203125. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 19.94787731538888664317710208706557750701904296875. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 5.4999999999999831246100256976205855607986450195312. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a10. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&A = 0x7ffd70890a10. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&B = 0x7ffd70890a18. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&C = 0x7ffd70890a20. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(-1, -1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 5). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(2, -5). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 10.198039027185568983213670435361564159393310546875. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 5. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 6.0827625302982193389311760256532579660415649414062. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  133.667780146130354523847927339375019073486328125. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  20.772254682045858231731472187675535678863525390625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  25.559965171823815666130030876956880092620849609375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 21.280801557483787433966426760889589786529541015625. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 10.999999999999994670929481799248605966567993164062. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+Unit Test # 3: degenerate triangle examples.
+--------------------------------------------------------------------------------------------------
+TRIANGLE triangle_0 = TRIANGLE( POINT(-1,-1), POINT(0,0), POINT(1,1) ); // Because these inputs would generate a degenerate triangle, default coordinate values are used for A, B, and C instead of the input value.
+TRIANGLE triangle_1 = TRIANGLE( POINT(-1,-1), POINT(0,0), POINT(-1,-1) ); // Because these inputs represent only 2 unique points instead of 3 unique points, default coordinate values are used for A, B, and C instead of the input values.
+triangle_0.print(output);
+triangle_1.print(output);
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd708909f0. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&A = 0x7ffd708909f0. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&B = 0x7ffd708909f8. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&C = 0x7ffd70890a00. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(0, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(1, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 1.4142135623730951454746218587388284504413604736328. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  90.0000000000000142108547152020037174224853515625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 3.4142135623730949234300169337075203657150268554688. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 0.49999999999999977795539507496869191527366638183594. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this := 0x7ffd70890a10. // The keyword named this is a pointer to the memory address of the first cell of a TRIANGLE-sized block of memory cells which are allocated to the instantiation of some TRIANGLE-type object.
+&A = 0x7ffd70890a10. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named A.
+&B = 0x7ffd70890a18. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named B.
+&C = 0x7ffd70890a20. // The operation returns the address of the first memory cell of a POINT-sized block of memory cells which are allocated to the instantiation of some POINT-type object named C.
+sizeof(int) = 4. // The operation returns the number of bytes of memory which an int-type variable occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(POINT) = 8. // The operation returns the number of bytes of memory which a POINT-type object occupies. Each memory cell has a data capacity of 1 byte.
+sizeof(TRIANGLE) = 24. // The operation returns the number of bytes of memory which a TRIANGLE-type object occupies. Each memory cell has a data capacity of 1 byte.
+A := POINT(0, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+B := POINT(0, 1). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+C := POINT(1, 0). // POINT( { X : (int) horizontal_coordinate }, { Y : (int) vertical_coordinate } )
+get_side_length_BC() = 1.4142135623730951454746218587388284504413604736328. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point B and point C.
+get_side_length_CA() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point C and point A.
+get_side_length_AB() = 1. // The method returns the nonnegative number of Cartesian grid unit lengths which span the length of the shortest path between point A and point B.
+get_interior_angle_CAB() =  90.0000000000000142108547152020037174224853515625. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and C with the line segment whose endpoints are A and C at intersection point A in degrees and not in radians.
+get_interior_angle_ABC() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are A and B with the line segment whose endpoints are B and C at intersection point B in degrees and not in radians.
+get_interior_angle_BCA() =  44.9999999999999857891452847979962825775146484375. // The method returns the acute angle formed by the intersection of the line segment whose endpoints are B and C with the line segment whose endpoints are A and C at intersection point C in degrees and not in radians.
+get_perimeter() = 3.4142135623730949234300169337075203657150268554688. // The method returns the sum of the three side lengths which the caller TRIANGLE object represents.
+get_area() = 0.49999999999999977795539507496869191527366638183594. // The method returns the number of Cartesian grid unit squares which are enclosed inside of the two-dimensional region formed by the three line segments which connect points A, B, and C.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------
+End Of Program
+--------------------------------
