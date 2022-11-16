@@ -1,0 +1,19 @@
+/**
+ * file: bordered_container.css
+ * type: Cascading-Style-Sheet
+ * author: Karlina Ray Beringer
+ * date: 17_AUGUST_2022
+ * license: PUBLIC_DOMAIN
+ */
+
+/**
+ * Create a space which is 10 pixels in width between adjacent div elements with the class property "bordered_container".
+ */
+.bordered_container {
+    border-color: #00ff00; /** Make the borders of div elements whose class property is "bordered_container" GREEN in color. */
+    border-width: 3px; /** Make the borders of div elements whose class property is "bordered_container" 3 pixels in width. */
+    border-style: solid; /** Make the borders of div elements whose class property is "bordered_container" solid (rather than dotted, et cetera). */
+    border-radius: 5px; /** Make the corners of div elements whose class property is "bordered_container" rounded with a circumference of 5 pixels. */
+    padding:  10px; /** Create a space which is 10 pixels in width between div content and div borders for div elements whose class property is "bordered_container". */
+    margin: 10px; /** Create a space which is 10 pixels in width between adjacent div elements whose class property is "bordered_container". */
+}
