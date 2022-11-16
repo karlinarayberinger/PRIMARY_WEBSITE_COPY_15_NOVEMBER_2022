@@ -1,0 +1,39 @@
+<!--
+/**
+ * file: sound_track_looper.html
+ * type: Hyper-Text-Markup-Language
+ * author: Karlina Ray Beringer
+ * date: 17_AUGUST_2022
+ * license: PUBLIC_DOMAIN
+ */
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>SOUND_TRACK_LOOPER</title> 
+    <link rel="stylesheet" href="karbytes_aesthetic.css">
+    <link rel="stylesheet" href="bordered_container.css">
+    <script src="sound_track_looper.js"></script>
+ </head>
+ <body onload="load_web_page()">
+ 	<div class="bordered_container">
+ 		<h1>SOUND_TRACK_LOOPER</h1>
+ 		<p>Play a sound (whose duration is finite) for some indefinite number of cycles.</p>
+ 	</div>
+ 	<div class="bordered_container">
+ 		<p>1. Select a sound file from the list below.</p>
+ 		<p><select id="sound_file_menu"></select></p>
+ 		<p>2. Click the button to start playing the sound file.</p>
+ 		<p><input id="the_button" type="button" value="start_sound_track_looper()" onclick="start_sound_track_looper()"></p>
+ 	</div>
+ 	<div id="output" class="bordered_container">
+ 		<p>Seconds Elapsed:&nbsp;<span id="seconds_elapsed_display" class="data">???</span></p>
+ 		<p>Loops Completed:&nbsp;<span id="loops_completed_display" class="data">???</span></p>
+ 		<p>File Selected:&nbsp;<span id="file_selected_display" class="data">???</span></p>
+ 	</div>
+    <div class="bordered_container">
+        <p class="console" id="console_display">???</p>
+    </div>
+ </body>
+ </html>
