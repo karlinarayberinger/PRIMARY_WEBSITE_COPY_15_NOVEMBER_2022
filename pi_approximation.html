@@ -1,0 +1,51 @@
+<!--
+/**
+ * file: pi_approximation.html
+ * type: Hyper-Text-Markup-Language
+ * date: 15_AUGUST_2022
+ * author: Karlina Ray Beringer
+ * license: PUBLIC_DOMAIN
+ */
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PI_APPROXIMATION</title>
+    <link rel="stylesheet" href="karbytes_aesthetic.css">
+    <script src="pi_approximation.js"></script>
+    <style>
+        #cartesian_plane {
+            background: #ffffff;
+            border-width: 0px;
+        }
+    </style>
+</head>
+<body onload="initialize_application()">
+    <h1>PI_APPROXIMATION</h1>
+    <p>
+        This single page web application implements a 3600 second Monte Carlo dart 
+        throwing simulation to approximate the irrational number Pi by dividing the 
+        number of darts which land within 200 pixels of the center of a square canvas 
+        (whose side length is 400 pixels) by the total number of darts which are 
+        plotted on that canvas. One pixel-sized dart is plotted at a random location 
+        onto the square canvas per second of the 3600 second timer interval. Darts which 
+        are plotted within 200 pixels of the center of the canvas are colored 
+        <span style="background:#000000;color:#ff0000">RED</span>. 
+        Darts which are plotted farther than 200 pixels away from the center of the 
+        canvas are colored <span style="background:#000000;color:#0000ff">BLUE</span>.
+    </p>
+    <p class="console">pi = (circle.circumference / circle.diameter)</p>
+    <p class="console">pi_approximation = (4 * (red_pixel_count / (red_pixel_count + blue_pixel_count)))</p>
+    <p><input type="button" id="start_button" value="START" onclick="start_monte_carlo_simulation()"></p>
+    <p><input type="button" id="reset_button" value="RESET" onclick="initialize_application()"></p>
+    <canvas id="cartesian_plane" width="400" height="400"></canvas>
+    <div id="output">
+        <p>seconds_remaining: <span id="seconds_remaining_span">???</span></p>
+        <p>red_pixel_count: <span id="red_pixel_count_span">???</span></p>
+        <p>blue_pixel_count: <span id="blue_pixel_count_span">???</span></p>
+        <p>pi_approximation: <span id="pi_approximation_span">???</span></p>
+    </div>
+    <div id="timestamped_events_log" class="console"></div>
+</body>
+</html>
